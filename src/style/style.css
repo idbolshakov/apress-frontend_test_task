@@ -1,0 +1,352 @@
+.container {
+    width: 100%;
+    flex: 0 0 auto;
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    position: relative;
+}
+
+.col {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.col-2 {
+    width: 100%;
+    flex: 0 0 16.67%;
+    max-width: 16.67%;
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.col-3 {
+    width: 100%;
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.col-7 {
+    width: 100%;
+    flex: 0 0 58.33%;
+    max-width: 58.33%;
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.col-9 {
+    width: 100%;
+    flex: 0 0 75%;
+    max-width: 75%;
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.header_h1 {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.product {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.product.product__position {
+    display: flex;
+    justify-content: center;
+}
+
+.product .product_image {
+    max-width: 300px;
+}
+
+.product .product_header {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.product .product_price {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.product .product_button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product .product_button .product_button__order {
+    width: 120px;
+    height: 30px;
+    outline: none;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    position: relative;
+    margin-top: 30px;
+    color: white;
+    background-color: #D60D0D;
+}
+
+.product .product_button .product_button__order:hover {
+    cursor: pointer;
+    background-color: #9F0000;
+}
+
+.product .product_button .product_button__basket {
+    width: 120px;
+    height: 30px;
+    outline: none;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    position: relative;
+    margin-top: 30px;
+}
+
+.product .product_button .product_button__basket:hover {
+    cursor: pointer;
+    background-color: #BFBFBF;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal__position {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.modal .modal_wrap {
+    width: 100%;
+    position: relative;
+    border: 3px solid #BFBFBF;
+    background-color: white;
+    padding: 15px;
+}
+
+.modal .modal_header {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.modal .modal_image {
+    max-width: 300px;
+}
+
+.modal .modal_price {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 15px;
+    color: #D60D0D;
+}
+
+.modal .modal_comment {
+    display: flex;
+    margin-top: 15px;
+    height: 250px;
+}
+
+.modal .modal_comment-input {
+    width: 75%;
+    height: 150px;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    background-color: #E3E3E3;
+    vertical-align: top;
+    padding: 15px;
+}
+
+.modal .modal_comment-label {
+    width: 20%;
+    padding: 0 15px;
+    border-left: 4px solid #D60D0D;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal__contacts {
+    margin-top: 20px;
+}
+
+.modal .modal_phone-desc {
+    text-align: end;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal .modal_phone-input {
+    border: none;
+    outline: none;
+    background-color: #E3E3E3;
+    height: 25px;
+    padding-left: 10px;
+}
+
+.modal .model__send {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.modal .modal_submit{
+    width: 120px;
+    height: 30px;
+    outline: none;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    position: relative;
+    margin-top: 30px;
+    color: white;
+    background-color: #D60D0D;
+}
+.modal .modal_submit:hover {
+    cursor: pointer;
+    background-color: #9F0000;
+}
+
+.modal .modal_close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    z-index: 3;
+}
+.modal .modal_close:hover {
+    cursor: pointer;
+}
+.modal .modal_close:hover svg line {
+    cursor: pointer;
+    stroke: black;
+}
+
+.modal-basket {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 400px;
+    background-color: #EBEBEB;
+}
+.modal-basket::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 20%;
+    width: 20px;
+    height: 20px;
+    background-color: #848484;
+    transform: rotate(45deg)
+}
+
+.modal-basket .modal-basket_header {
+    padding: 20px 15px;
+    background-color: #848484;
+}
+
+.modal-basket .modal-basket_header-h3 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+.modal-basket .modal-basket_body {
+    position: relative;
+    display: flex;
+    padding: 15px;
+}
+.modal-basket .modal-basket_close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.modal-basket .modal-basket_close:hover {
+    cursor: pointer;
+}
+
+.modal-basket .modal-basket_close:hover svg line {
+    cursor: pointer;
+    stroke: #9F0000;
+}
+
+.modal-basket .modal-basket_image {
+    max-width: 170px;
+    margin-right: 7.5px;
+}
+.modal-basket .modal-basket_body__wrap {
+    max-width: 160px;
+    margin-left: 7.5px;
+}
+
+.modal-basket .modal-basket_title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+.modal-basket .modal-basket_price {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #4B4B4B;
+    margin-top: 10px;
+}
+
+.modal-basket .modal-basket_footer {
+    padding: 15px;
+}
+
+.modal-basket .modal-basket_button {
+    outline: none;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    position: relative;
+    color: white;
+    padding: 13px 25px;
+    background-color: #D60D0D;
+}
+
+.modal-basket .modal-basket_button:hover {
+    cursor: pointer;
+    background-color: #9F0000;
+}
