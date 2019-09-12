@@ -1,4 +1,4 @@
-var API = {
+let API = {
   products: [
     {
       "id": 1, 
@@ -71,3 +71,4 @@ var API = {
     },           
   ]
 };
+console.log(API.products[0].id);

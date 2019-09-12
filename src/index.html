@@ -1,13 +1,64 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-  </head>
+<html lang="ru">
 
-  <body>
-    <main class="product-listing-wrapper">
-    </main>
+<head>
+    <meta charset="utf-8">
+    <title>product sheet</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
 
-    <script src="api/products.js"></script>
-  </body>
-</html>
+<body>
+    <header>
+        <p class="header-basket">Вы добавили в корзину:</p>
+    </header>
+    <main class="product-listing-wrapper"></main>
+    <!-- Popup 4 order -->
+    <div class="b-popup">
+        <div class="b-popup-content">
+            <div class="popup-title-container">
+                <p class="popup-title"></p>
+                <button class="close-button">&#10006</button>
+                <script>
+                    const closeButton = document.querySelector(".close-button");
+                    closeButton.onclick = () => document.querySelector(".b-popup").style.display = "none";
+                </script>
+            </div>
+            <div class="popup-inner-container">
+                <div class="popup-image-container">
+                    <img src="assets/images/2.jpg" class="popup-image">
+                    <p class="popup-price"></p>
+                </div>
+                <p class="popup-comment" align="right">Комментарий<br> к заказу:</p>
+                <input type="text" class="popup-comment-input">
+            </div>
+            <div class="popup-tel-container">
+                <p class="popup-tel">Ваш телефон*:</p>
+                <input type="tel" class="popup-input-tel">
+            </div>
+            <button class="popup-button">Отправить</button>
+        </div>
+    </div>
+    <!-- Popup 4 basket -->
+    <div class="a-popup">
+        <div class="a-popup-content">
+            <div class="a-popup-inner-container">
+                <img src="assets/images/2.jpg" class="a-popup-image">
+                <div class="a-popup-title-container">
+                    <p class="a-popup-title"></p>
+                    <button class="a-close-button">&#10006</button>
+                    <script>
+                        const aCloseButton = document.querySelector(".a-close-button");
+                        aCloseButton.onclick = () => {
+                            document.querySelector(".a-popup").style.display = "none";
+                            document.querySelector(".header-basket").style.display = "none";
+                        };
+                    </script>
+                    <p class="a-popup-price"></p>
+                </div>
+            </div>
+            <button class="a-popup-button">Перейти в корзину</button>
+
+            </main>
+            <script src="api/products.js"></script>
+            <script src="main.js"></script>
+</body>

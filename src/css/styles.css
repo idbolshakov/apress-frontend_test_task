@@ -1,0 +1,253 @@
+* {
+    font-family: sans-serif;
+}
+
+header {
+    height: 25px;
+    width: 100%;
+    background-color: dimgray;
+    margin-bottom: 25px;
+    padding: 10px;
+    display: flex;
+    justify-content: end;
+}
+.header-basket {
+    font-size: 130%;
+    color: #fff;
+    margin: 0px 130px 0px auto;
+    display: none;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-card {
+    display: flex;
+    height: 25vh;
+    max-width: 600px;
+    width: 100vw;
+    justify-content: center;
+}
+
+.img-container {
+    width: 25vw;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+}
+
+.text-container {
+    padding: 15px;
+    width: 50vw;
+    color: dimgray;
+}
+.product-cost {
+    margin-top: 10px;
+    font-size: 120%;
+}
+
+.button-container {
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button-order {
+    color: #fff;
+    background-color: crimson;
+    border: none;
+    height: 3vh;
+    margin-bottom: 2vh;
+}
+
+.button-basket {
+    color: grey;
+    background-color: lightgray;
+    border: none;
+    height: 3vh;
+}
+
+/* a-popup-rules */
+.a-popup {
+    width: 360px;
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    display: none;
+}
+
+.a-popup .a-popup-content {
+    margin-top: 45px;
+    height: 260px;
+    padding-left: 10px;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+}
+
+.a-popup-title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 100px;
+}
+
+.a-close-button {
+    outline: none;
+    border: 0;
+    background: transparent;
+    margin-right: 10px;
+    align-self: flex-start;
+    color: red;
+}
+
+.a-popup-title-container {
+    width: 180px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+
+.a-popup-image {
+    width: 150px;
+    height: 150px;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+
+.a-popup-price {
+    margin-top: 0px;
+    color: gray;
+}
+
+.a-popup-inner-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.a-popup-button {
+    color: #fff;
+    background-color: crimson;
+    border: none;
+    height: 5vh;
+    width: 150px;
+    margin-top: 10px;
+}
+
+/* b-popup-rules */
+.b-popup {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    display: none;
+}
+
+.b-popup .b-popup-content {
+    margin: 80px auto 0px auto;
+    width: 100vw;
+    max-width: 800px;
+    height: 60vh;
+    padding: 10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 45px;
+}
+
+.popup-title {
+    margin-top: 0px;
+    font-size: 120%;
+    font-weight: 600;
+}
+
+.close-button {
+    outline: none;
+    border: 0;
+    background: transparent;
+    margin-right: 10px;
+    color: gray;
+}
+
+.popup-image-container {
+    border-right: crimson solid 3px;
+    padding-right: 30px;
+    margin-right: 10px;
+    color: crimson;
+}
+
+.popup-image {
+    width: 200px;
+    height: 200px;
+}
+
+.popup-price {
+    font-size: 150%;
+}
+
+.popup-inner-container {
+    display: flex;
+    padding-right: 20px;
+    margin-top: 15px;
+}
+.popup-comment {
+    margin-top: 0px;
+}
+.popup-comment-input {
+    height: 200px;
+    flex-grow: 1;
+    background-color: #c5c5c5;
+    border: none;
+    margin-left: 15px;
+    text-align: top;
+    padding: 10px 0 10px 10px;
+   
+}
+
+.popup-tel-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.popup-tel {
+    align-self: flex-start;
+    margin-left: 95px;
+    margin-right: 20px;
+}
+
+.popup-input-tel {
+    width: 200px;
+    height: 20px;
+    background-color: #c5c5c5;
+    border: none;
+}
+
+.popup-button {
+    color: #fff;
+    background-color: crimson;
+    border: none;
+    height: 3vh;
+    width: 150px;
+    margin-left: 228px;
+}
