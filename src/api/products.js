@@ -71,4 +71,3 @@ let API = {
     },           
   ]
 };
-console.log(API.products[0].id);
