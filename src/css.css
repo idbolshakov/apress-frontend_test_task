@@ -1,0 +1,208 @@
+html *{
+	  font-size: 1em !important;
+   color: #000 !important;
+   font-family: Arial !important;
+}
+
+.photo{
+	width:200px;
+	height:200px;
+	/*border:2px solid black;*/
+}
+.card{
+	background-color:#f0f0f0;
+	width:100%;
+/*	border:1px solid black;*/
+}
+.description{
+	max-width:400px;
+	min-width:400px;
+}
+.buttons{
+	min-width: 150px;
+}
+.order,.ToCart{
+margin:10px;
+width: 90%;
+border-radius: 12px;
+/*z-index:1;*/
+}
+.order{
+
+	/*	opacity:0.8;*/
+	  color: #fff; /* цвет текста */
+  text-decoration: none; /* убирать подчёркивание у ссылок */
+  user-select: none; /* убирать выделение текста */
+  background: rgb(212,75,56); /* фон кнопки */
+  padding: .7em 1.5em; /* отступ от текста */
+  outline: none; /* убирать контур в Mozilla */
+}
+.order:hover{
+ background: rgb(232,95,76);
+}
+.order:active{ background: rgb(152,15,0);}
+.ToCart{
+	/*opacity:0.8;*/
+	  color: #fff; /* цвет текста */
+  text-decoration: none; /* убирать подчёркивание у ссылок */
+  user-select: none; /* убирать выделение текста */
+  background: rgb(191,191,191); /* фон кнопки */
+  padding: .7em 1.5em; /* отступ от текста */
+  outline: none; /* убирать контур в Mozilla */
+}
+.ToCart:hover{
+ background: rgb(160,160,160);
+}
+.ToCart:active{
+ background: rgb(152,15,0);
+}
+.Card_div{
+	margin:auto;
+	max-width:900px;
+	min-width:900px;
+	width:900px;
+	align-self: center;
+	margin-top:20px;
+}
+td{
+	/*border:1px solid black;*/
+}
+
+.border{
+	border:1px solid red;
+}
+/*Quick ORder*/
+.closeQuickOrder{
+	position: fixed;
+	max-width: 40px;
+	    max-height: 40px;
+    margin-left: 17%;
+}
+.QuickOrder_photo{
+max-width: 150px;
+max-height: 150px;
+	}
+.QuickOrder_title{
+text-align: left;
+	}
+	.QuickOrder_comment_textarea{
+		position:relative;
+		top:0px;
+	}
+	.QuickOrder_comment{
+		vertical-align: top;
+		border-left:2px solid red;
+		padding-left:20px;
+	}
+	.QuickOrder_price{
+		margin:0px;
+		padding:0px;
+	}
+  .QuickOrder_popup { 
+  	border-radius: 30px;
+                height: 300px;  
+                width: 700px;
+                border: 3px outset gray; 
+              background-color: rgba(0,0,0,0.5);
+                  background-color: #c5c5c5;
+                top: 20%; /* отступ сверху */
+                right: 0;
+                left: 0;
+                font-size: 14px; 
+                margin: 0 auto;
+                z-index:2; /* поверх всех */
+                display: none;  /* сначала невидим */
+                position: fixed; /* фиксированное позиционирование, окно стабильно при прокрутке */
+                padding: 15px;
+                border: 1px solid #383838;
+            }
+            #shadow { 
+                position: fixed;
+                width:100%;
+                height:100%;
+                z-index:1; /* поверх всех  кроме окна*/
+                background:#000;
+                opacity: 0.5; /*прозрачность*/
+                left:0;
+                top:0;
+            }
+
+.send{
+	border-radius:8px;
+margin:5px;
+	  color: #fff; /* цвет текста */
+  text-decoration: none; /* убирать подчёркивание у ссылок */
+  user-select: none; /* убирать выделение текста */
+  background: rgb(212,75,56); /* фон кнопки */
+  padding: 5px; /* отступ от текста */
+  outline: none; /* убирать контур в Mozilla */
+}
+.send:hover{
+ background: rgb(232,95,76);
+}
+.send:active{ background: rgb(152,15,0);}
+
+
+/*CartPopup*/
+ .CartPopup { 
+ 	border-radius: 20px;
+                height: 200px;  
+                width: 400px;
+                border: 3px outset gray; 
+             	background-color: rgba(0,0,0,0.5);
+                background-color: #c5c5c5;
+                top: 0%; /* отступ сверху */
+                right: 0;
+                /* opacity:0.5;*/
+                font-size: 14px; 
+                margin: 0 auto;
+                z-index:2; /* поверх всех */
+                display: none;  /* сначала невидим */
+                position: fixed; /* фиксированное позиционирование, окно стабильно при прокрутке */
+                /*padding: 15px;*/
+                margin:2px;
+              /*  border: 1px solid #383838;*/
+                z-index: 5;
+            }
+            #shadow { 
+                position: fixed;
+                width:100%;
+                height:100%;
+                z-index:1; /* поверх всех  кроме окна*/
+                background:#000;
+                opacity: 0.5; /*прозрачность*/
+                left:0;
+                top:0;
+            }
+
+.Cart_header{
+	background-color:grey;
+	margin:0px;
+	padding:0px;
+}
+
+.Cart_photo{
+	max-width: 150px;
+max-height: 150px;
+}
+
+
+.close{
+	max-width: 15px;
+	max-height: 15px;
+}
+
+.OpenCart{
+	border-radius: 20px;
+	position:fixed;
+	  color: #fff; /* цвет текста */
+  text-decoration: none; /* убирать подчёркивание у ссылок */
+  user-select: none; /* убирать выделение текста */
+  background: rgb(212,75,56); /* фон кнопки */
+  padding: .7em 1.5em; /* отступ от текста */
+  outline: none; /* убирать контур в Mozilla */
+}
+.OpenCart:hover{
+ background: rgb(232,95,76);
+}
+.OpenCart:active{ background: rgb(152,15,0);}
