@@ -1,0 +1,260 @@
+/* Clear some styles */
+button
+  padding: 0
+  border: none
+  font: inherit
+  color: inherit
+  background-color: transparent
+  cursor: pointer
+  &:focus
+    outline: none
+
+textarea
+  border: none
+  overflow: auto
+  outline: none
+  box-shadow: none
+  resize: none
+
+input
+  background: none
+  border: none
+  &:focus
+    outline: none
+
+
+/* Main */
+body
+  background: #ebc7c7
+
+.app
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.list
+  max-width: 980px
+  min-width: 980px
+  padding: 50px 25px
+  background: white
+  box-shadow: 0 5px 5px 5px rgba(0,0,0,.2)
+  border-radius: 4px
+
+.list-item
+  display: flex
+  justify-content: space-between
+  margin-bottom: 50px
+
+
+/* List item left */
+.list-item-left
+  display: flex
+  max-width: 80%
+
+.list-item-image
+  width: 300px
+  user-select: none
+  border: 2px rgba(0,0,0,.1) outset
+  margin-right: 10px
+  border-radius: 3px
+
+.list-item-text
+  margin-top: 0px
+
+.list-item-text-title
+  margin-bottom: 10px
+  font-size: 20px
+
+.list-item-text-price
+  font-size: 32px
+
+
+/* List item right */
+.list-item-right
+  display: flex
+  flex-direction: column
+  button
+    padding: 10px 40px
+    font-size: 26px
+    border-radius: 3px
+    &:hover
+      filter: contrast(90%)
+    &:active
+      filter: contrast(80%)
+
+.list-item-order
+  margin-bottom: 20px
+  background-color: #cc2157
+  color: #f1d1e3
+
+.list-item-busket
+  background-color: #eaeaea
+  color: #666767
+
+
+/* Order */
+.order-overlay
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 999999
+  background: rgba(0,0,0,.05)
+  display: flex
+  justify-content: space-around
+  align-items: center
+
+.order
+  width: 1000px
+  padding: 25px 50px 50px 25px
+  position: relative
+  border: 6px #eeeeef outset
+  background-color: #ffffff
+  box-shadow: 0 5px 5px rgba(0,0,0,.2)
+  border-radius: 4px
+  margin-bottom: 100px
+  margin-right: 16px
+
+.order-title
+  font-weight: bold
+  font-size: 28px
+  margin-bottom: 30px
+
+.order-main
+  display: flex
+  margin-bottom: 20px
+
+.order-main-left
+  padding-right: 50px
+  border-right: 6px black solid
+  width: 25%
+
+.order-main-left-img
+  max-width: 100%
+  margin-bottom: 25px
+  border: 2px rgba(0,0,0,.1) outset
+
+.order-main-left-price
+  font-size: 40px
+  color: #d05393
+
+.order-main-right
+  display: flex
+  justify-content: space-between
+
+.order-main-right-title
+  text-align: right
+  font-size: 20px
+  font-weight: bold
+  width: 200px
+  margin-right: 20px
+
+.order-main-right-input
+  background-color: #eeeeef
+  width: 500px
+  padding: 10px
+
+.order-phone
+  margin-left: 38px
+  display: flex
+  margin-bottom: 20px
+
+.order-phone-title
+  font-size: 26px
+  margin-right: 27px
+
+.order-phone-input
+  background-color: #eeeeef
+  width: 200px
+  padding: 5px
+
+.order-send
+  background-color: #cc2157
+  color: #f1d1e3
+  padding: 7px 40px
+  font-size: 18px
+  border-radius: 3px
+  margin-left: 255px
+  &:hover
+    filter: contrast(90%)
+  &:active
+    filter: contrast(80%)
+
+.order-close
+  position: absolute
+  top: 10px
+  right: 10px
+  font-size: 20px
+  font-weight: bold
+
+
+/* Basket */
+.basket
+  position: fixed
+  top: 10px
+  right: 50px
+  width: 400px
+  background-color: white
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.2)
+
+.basket-title
+  background-color: #919191
+  color: white
+  font-size: 24px
+  padding: 25px 0 25px 25px
+  width: 375px
+  position: relative
+
+.basket-triangle
+  position: absolute
+  top: -10px
+  right: 100px
+  width: 0
+  height: 0
+  border-left: 5px solid transparent
+  border-right: 5px solid transparent
+  border-bottom: 10px solid #919191
+
+.basket-main
+  display: flex
+  padding: 30px 0 30px 25px
+
+.basket-main-img
+  width: 150px
+  margin-right: 15px
+  padding-top: 20px
+  border: 2px rgba(0,0,0,.1) outset
+  border-radius: 3px
+
+.basket-right
+  position: relative
+  padding-right: 30px
+
+.basket-right-title
+  font-size: 14px
+  margin-bottom: 10px
+
+.basket-right-price
+  color: #d05393
+  font-size: 24px
+
+.basket-right-close
+  position: absolute
+  top: -3px
+  right: 15px
+  font-weight: bold
+  font-size: 20px
+
+.basket-send
+  background-color: #cc2157
+  color: #f1d1e3
+  padding: 10px 40px
+  font-size: 20px
+  border-radius: 3px
+  margin: 0 0 25px 25px
+  &:hover
+    filter: contrast(90%)
+  &:active
+    filter: contrast(80%)
