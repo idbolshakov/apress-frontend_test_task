@@ -2,12 +2,327 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <style type="text/css">
+      html {
+        box-sizing: border-box;
+        position: relative;
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+      :root {
+        --main-bg-color: #cc2057;
+        --main-bg-color-hover: #af1b4a;
+      }
+      .fluid-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      .product-listing-wrapper {
+        width: 980px;
+        margin: 200px auto 0; 
+      }
+      .product {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-column-gap: 1.5rem;
+        margin: 1.5rem 0;
+      }
+      .product__image {
+        width: 175px;
+        height: 175px;
+      }
+      .product__price {
+        font-weight: bold;
+        font-size: 1.125rem;
+      }
+      .product__aside {
+        display: flex;
+        flex-flow: column;
+      }
+      .button {
+        -webkit-appearance: none;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 0 1rem 0;
+        padding: 0.625em 2em;
+        border: 1px solid transparent;
+        border-radius: 0;
+        transition: background-color 0.25s ease-out, color 0.25s ease-out;
+        font-family: inherit;
+        font-size: 0.875rem;
+        line-height: 1;
+        text-align: center;
+        cursor: pointer;
+        background-color: #ddd;
+      }
+      a.button {
+        text-decoration: none;
+      }
+      .button:hover {
+        background-color: #ccc;
+      }
+      .button--pink {
+        background-color: var(--main-bg-color);
+        color: #fff;
+      }
+      .button--pink:hover {
+        background-color: var(--main-bg-color-hover);
+      }
+      .button--long {
+        padding: 0.425em 3em;
+      }
+      .button--big {
+        padding: 1em 2em;
+      }
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0, .5);
+      }
+      .modal__body {
+        background-color: #fff;
+        padding: 1rem;
+        width: 900px;
+        margin: 15% auto 0;
+        border: 4px solid #ccc;
+        position: relative;
+      }
+      .modal__close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        padding: 10px 15px;
+        line-height: 1;
+        font-size: 18px;
+        color: #ccc;
+      }
+      .order {
+        display: grid;
+        grid-template-columns: 175px 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "title title" "image comment" "price comment" "phone-label phone-number" ". submit";
+        grid-column-gap: 40px;
+      }
+      .order__title {
+        margin-top: 0;
+        margin-bottom: 24px;
+      }
+      .order__title {
+        grid-area: title;
+        font-size: 18px;
+      }
+      .order__image {
+        width: 175px;
+        max-height: 175px;
+        grid-area: image;
+      }
+      .order__comment {
+        grid-area: comment;
+        border-left: 4px solid var(--main-bg-color);
+        margin-bottom: 15px;
+      }
+      .order__price {
+        grid-area: price;
+        color: var(--main-bg-color);
+        font-size: 20px;
+        margin-bottom: 35px;
+      }
+      .order__phone-label {
+        grid-area: phone-label;
+        text-align: right;
+        font-weight: bold;
+      }
+      .order__phone-number {
+        grid-area: phone-number;
+        width: 200px;
+        height: 30px;
+        margin-bottom: 30px;
+      }
+      .order__submit {
+        grid-area: submit;
+        width: 150px
+      }
+      .order__comment {
+        display: flex;
+        align-items: start;
+      }
+      .order__comment textarea {
+        width: 100%;
+        height: 115px;
+      }
+      .order__comment label {
+        text-align: right;
+        font-weight: bold;
+        margin-right: 30px;
+      }
+      .control-textarea,
+      .control-input {
+        border: 0;
+        background-color: #eee;
+      }
+      .popup {
+        background-color: #f7f7f7;
+        box-shadow: 0px 0px 10px 0px rgba(51,51,51,.5);
+        width: 340px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: 2rem 4rem;
+      }
+      .popup__header {
+        background-color: #919191;
+        color: #fff;
+        font-size: 20px;
+        padding: 15px 20px;
+      }
+      .popup__header::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 70%;
+        height: 0;
+        width: 0;
+        border: solid transparent;
+        pointer-events: none;
+        border-bottom-color: #919191;
+        border-width: 10px;
+        margin-left: -10px;
+      }
+      .popup__body {
+        padding: 20px 20px 0;
+      }
+      .cart-list {
+        margin-bottom: 30px;
+      }
+      .cart-list__item {
+        position: relative;
+        display: flex;
+        margin-bottom: 15px;
+      }
+      .cart-list__item__remove {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: var(--main-bg-color);
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 1;
+        padding: 10px;
+        margin-top: -10px;
+        cursor: pointer;
+      }
+      .cart-list__image {
+        width: 140px;
+        flex-shrink: 0;
+        margin-right: 15px;
+      }
+      .cart-list__text {
+        max-width: 125px;
+        flex-basis: 125px;
+      }
+    </style>
   </head>
 
   <body>
-    <main class="product-listing-wrapper">
-    </main>
-
+    <main class="product-listing-wrapper" id="listing"></main>
+    <div class="modal" id="order" style="display: none">
+      <div class="modal__body">
+        <div class="modal__content js-modal-content">
+        </div>
+        <div class="modal__close js-modal-close">&times;</div>
+      </div>
+    </div>
+    <div class="popup" id="cart" style="display: none">
+      <div class="popup__header">Вы добавили в корзину:</div>
+      <div class="popup__body">
+        <div class="cart-list js-cart-list">
+        </div>
+        <a href="#" class="button button--pink button--big">Перейти в корзину</a>
+      </div>
+    </div>
     <script src="api/products.js"></script>
+    <script>
+      const products = API.products;
+      var catalogue = '';
+      products.forEach((product, index) => {
+        catalogue += `
+          <div class="product">
+            <div class="product__image"><img class="fluid-image" src="${product.img}"></div>
+            <div class="product__body">
+              <h2 class="product__title">${product.title}</h2>
+              <div class="product__price">${product.price.toLocaleString()}<span class="currency rub">&nbsp;руб.</span></div>
+            </div>
+            <div class="product__aside">
+              <button class="button button--pink" onclick="toOrder(${index})">Заказать</button>
+              <button class="button" onclick="toCart(${index})">В корзину</button>
+            </div>
+          </div>
+        `; 
+      });
+      document.getElementById("listing").innerHTML = catalogue;
+
+      function toOrder(id) {
+        const modalOrder = document.getElementById("order");
+        const order = `
+        <form action="" method="post" class="order">
+          <h4 class="order__title">${products[id].title}</h4>
+          <div class="order__image"><img class="fluid-image" src="${products[id].img}"></div>
+          <div class="order__price">${products[id].price.toLocaleString()}<span class="currency rub">&nbsp;руб.</span></div>
+          <div class="order__comment">
+            <label for="comment" class="control-label">Комментарий к заказу:</label>
+            <textarea id="comment" class="control-textarea"></textarea>
+          </div>
+          <label for="phone" class="order__phone-label">Ваш телефон *:</label>
+          <input type="phone" required class="control-input order__phone-number">
+          <input type="submit" value="Отправить" class="button button--pink button--long order__submit">
+        </form>
+        `;
+        modalOrder.style.display = "block";
+        modalOrder.onclick = (e) => {
+          if (e.target === modalOrder) {
+            modalOrder.style.display = "none"
+            modalOrder.querySelector(".js-modal-content").innerHTML = '';
+          }
+        }
+        modalOrder.querySelector(".js-modal-content").innerHTML = order;
+        modalOrder.querySelector(".js-modal-close").onclick = (e) => {
+          modalOrder.style.display = "none"
+          modalOrder.querySelector(".js-modal-content").innerHTML = '';
+        }
+      }
+      const popupCart = document.getElementById("cart");
+      const cartList = popupCart.querySelector(".js-cart-list");
+      function toCart(id) {
+        var cartItem = `
+        <div class="cart-list__item">
+          <div class="cart-list__image"><img class="fluid-image" src="${products[id].img}"></div>
+          <div class="cart-list__text">
+            <div class="cart-list__title">${products[id].title}</div>
+            <div class="cart-list__price">${products[id].price.toLocaleString()}<span class="currency rub">&nbsp;руб.</span></div>
+          </div>
+          <div class="cart-list__item__remove" onclick="remItem(this);">&times;</div>
+        </div>
+        `;
+        popupCart.style.display = "block";
+        cartList.insertAdjacentHTML('beforeend', cartItem);
+      }
+      function remItem(e) {
+        cartList.removeChild(e.parentNode);
+        if (cartList.innerHTML.trim().length === 0) {
+          popupCart.style.display = "none";
+        }
+      }
+    </script>
   </body>
 </html>
