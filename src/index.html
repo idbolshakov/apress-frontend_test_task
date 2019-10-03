@@ -2,12 +2,37 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
 
   <body>
     <main class="product-listing-wrapper">
     </main>
 
+    <div id="popupper">
+    <div id="popup-content"> <div id="topDiv"> <p> Вы добавили в корзину </p></div>
+    <img width="200" height="200" src="assets/images/2.jpg" id="popup-image">
+    <div id="popup-text"> <p> Диван Банжо Диван Банжо Диавн Банжо 60 000 </p> </div>
+
+    <button id="moveToCart"> Перейти в корзину</button>
+    <button id="closeButton"> X </button>
+    </div>
+    </div>
+
+    <div id="popupperOne">
+    <div id="popup-contentOne"> <div id="topDivOne"> <p> название название название </p></div>
+    <img width="200" height="200" src="assets/images/2.jpg" id="popup-imageOne">
+    <div id="popupPrice"> <p> price price </p> </div>
+    <div id="comments"> <p> Комментарии к заказу:</p> </div>
+    <div id="popup-textOne"> <textarea name="Комментарий" cols="30" rows="5"> </textarea>  </div>
+<div id="phone"> Ваш телефон: <input type="text"> </div>
+    <button id="sender"> Отправить</button>
+    <button id="closeButtonOne"> X </button>
+    </div>
+    </div>
+
     <script src="api/products.js"></script>
   </body>
+
+
 </html>

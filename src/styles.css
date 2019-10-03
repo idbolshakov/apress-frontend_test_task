@@ -1,0 +1,138 @@
+main {
+  margin-top: 200px;
+}
+section {
+  height: 250px;
+  width: 900px;
+  margin: auto;
+}
+section > img, p, h1, button {
+  display: inline;
+}
+section > p {
+  position: absolute;
+
+}
+section > h1 {
+  position: relative;
+  bottom: 140px;
+}
+section > button {
+  position: relative;
+  left: 800px;
+  bottom: 170px;
+  display: block;
+  width: 100px;
+  height: 30px;
+  margin: 10px;
+}
+#popup-content {
+  width: 400px;
+  height:  300px;
+  border: 1px solid black;
+  background-color: white;
+  margin: 40px 800px 0px;
+
+}
+#topDiv {
+  background-Color: DarkSalmon;
+  width: 400px;
+  height: 40px;
+}
+
+#popup-text {
+  height: 200px;
+  width: 200px;
+  position: fixed;
+  top: 135px;
+  left: 1000px;
+  font-size: 20px;
+}
+#popup-text > p {
+  text-align: center;
+}
+#popup-content > img {
+  position: fixed;
+}
+#moveToCart {
+  position: fixed;
+  left: 900px;
+  top: 270px;
+  width: 250px;
+  height: 50px;
+}
+#closeButton {
+position: fixed;
+top: 100px;
+left: 1170px;
+}
+.orderButton {
+  background-color: DeepPink;
+  color: white;
+}
+ #popupper {
+  width:100%;
+    min-height:100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+    display: none;
+}
+#popupperOne {
+  width:100%;
+    min-height:100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+    display: none;
+}
+#popup-contentOne {
+  width: 600px;
+  height:  300px;
+  border: 1px solid black;
+  background-color: white;
+  margin: 150px auto;
+  background-color: LightGoldenRodYellow;
+
+
+}
+#popup-imageOne {
+  position: fixed;
+
+}
+#popupPrice {
+  position: fixed;
+  top: 370px;
+  left: 400px;
+}
+#popup-textOne {
+  position: fixed;
+  top: 250px;
+  left: 650px;
+}
+#comments {
+  position: fixed;
+  top: 230px;
+  left: 650px;
+}
+#phone {
+  position: fixed;
+  top: 370px;
+  left: 500px;
+}
+#sender {
+  position: fixed;
+  top: 400px;
+  left: 460px;
+  width: 200px;
+  height: 30px;
+  background-color: DeepPink;
+  color: white;
+}
+#closeButtonOne {
+  position: fixed;
+  top: 195px;
+  left: 930px;
+}
