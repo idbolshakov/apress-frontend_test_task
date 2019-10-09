@@ -2,12 +2,36 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Магазин мебели</title>
   </head>
 
   <body>
-    <main class="product-listing-wrapper">
+  	<div id="order-popup"></div>
+  	<div id="cart-popup">
+  		<div class="wrapper">
+  			<div class="message"><p>Ваша корзина:</p></div>
+  			<div class="product-list" id="product-list-id"></div>
+  			<button class="to-order-product">Перейти в корзину</button>
+  		</div>
+  	</div>
+
+  	<div id="fill"></div>
+
+  	<header>
+  		<div class="h-brand"><a href="#">Магазин мебели</a></div>
+  		<div class="h-cart"><span class="h-cart-counter" id="cart-counter-id">0</span><span id="h-toggle-cart" class="h-cart-icon"></span></div>
+  	</header>
+
+    <main id="product-listing-wrapper">
     </main>
 
+    <footer>
+    	<div class="f-author"><p>Автор: <a href="https://vk.com/malcorehardcore698">Даниил Попов</a></p></div>
+    	<div class="f-copyright">Copyright 2019 &copy;</div>
+    </footer>
+
     <script src="api/products.js"></script>
+    <script src="assets/js/scripts.js"></script>
   </body>
 </html>
