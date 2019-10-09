@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-  </head>
-
-  <body>
-    <main class="product-listing-wrapper">
-    </main>
-
-    <script src="api/products.js"></script>
-  </body>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<main class="product-listing-wrapper">
+<div class="container" id="container">
+</div>
+<div class="order_popup" id="order_popup">
+<div class="order_popup_content" id="order_popup_content">
+</div>
+<div class="x"><label onclick=orderclose()>x</label></div>
+</div>
+<div class="basket_popup" id="basket_popup">
+<h2>Вы добавили в корзину:</h2>
+<div class="basket_popup_content" id="basket_popup_content"></div>
+<input type="button" value="Перейти в корзину" id="basketbtn" class='red'>  
+</div>
+</main>  
+<script src="api/products.js"></script>
+<script src="index.js"></script> 
+</body>
 </html>
