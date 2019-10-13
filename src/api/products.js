@@ -71,3 +71,6 @@ var API = {
     },           
   ]
 };
+
+
+export default API;

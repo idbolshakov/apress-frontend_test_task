@@ -1,0 +1,11 @@
+.App {
+  .btn {
+    display: block; width: 100%; background: #f55; padding: 10px 20px; box-sizing: border-box; color: #fff; border: none; outline: none; cursor: pointer; font-size: 16px;
+    &:hover { background: #f74141; }
+    &.second {
+      background: #b9b9b9;
+      &:hover { background: #a5a5a5; }
+    }
+  }
+  a.btn { text-decoration: none; }
+}

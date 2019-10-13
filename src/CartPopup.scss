@@ -1,0 +1,16 @@
+.cart-popup {
+  width: 400px; margin: 0 30px; position: absolute; right: 200px; top: 20px; background: #fff; box-sizing: border-box; box-shadow: 0px 0 10px 2px rgba(0, 0, 0, 0.6);
+  &:before { content: ''; border-left: 10px transparent solid; border-right: 10px transparent solid; border-bottom: 10px #ccc solid; position: absolute; right: 50px; top: -10px; }
+  .cp-close {
+    position: absolute; right: 10px; top: 10px; width: 10px; height: 10px; font-size: 10px; cursor: pointer; color: #aaa; background: 0; border: 0; padding: 0;
+    &:before { content: '❌'; display: block; }
+    &:hover { color: #000; }
+  }
+  .cp-title { font-size: 24px; margin-bottom: 30px; padding: 20px; color: #fff; background: #ccc; }
+  .cp-image,
+  .cp-details { display: inline-block; vertical-align: top; box-sizing: border-box; }
+  .cp-image{ width: 130px; margin: 0 20px; }
+  .cp-details { width: 210px; margin-right: 20px; }
+  .cp-price { margin-top: 10px; }
+  .cp-link { margin: 20px; width: auto; display: inline-block; }
+}
