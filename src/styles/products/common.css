@@ -1,0 +1,19 @@
+/* Общие стили */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.modal-close {
+    border: none;
+    background: none;
+    color: #e0e0e0;
+    outline-color: transparent;
+    cursor: pointer;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+}
+
+.modal-close:hover {
+    color: black;
+}
+

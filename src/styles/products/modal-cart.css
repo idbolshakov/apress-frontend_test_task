@@ -1,0 +1,94 @@
+/* Стили для модального окна с корзиной */
+.modal-cart {
+    width: 350px;
+    position: fixed;
+    display: none;
+    background: white;
+    top: 9px;
+    right: 150px;
+    -webkit-box-shadow: 0px 10px 9px -4px rgba(0, 0, 0, 0.51);
+    box-shadow: 0px 10px 9px -4px rgba(0, 0, 0, 0.51);
+}
+
+.modal-cart__btn-close {
+    border: none;
+    background: none;
+    color: #cc2157;
+    outline-color: transparent;
+    font-weight: bold;
+}
+
+.modal-cart__item-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.modal-cart__item {
+    position: relative;
+}
+
+.modal-cart__notice {
+    display: block;
+    color: white;
+    background: #919191;
+    padding: 13px;
+    position: relative;
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.modal-cart__notice::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: #919191;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: -5px;
+    right: 70px;
+}
+
+.modal-cart__title {
+    font-size: 15px;
+    color: rgb(59, 59, 59);
+    margin: 0;
+}
+
+.modal-cart__price {
+    color: #919191;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+    display: block;
+}
+
+.modal-cart__img {
+    width: 150px;
+    margin-right: 10px;
+}
+
+.modal-cart__btn {
+    display: block;
+    padding: 13px;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    background: #cc2157;
+    text-decoration: none;
+    width: 150px;
+    margin: 15px;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+}
+
+.modal-cart__btn:hover {
+    background: #eaeaea;
+    color: #cc2157;
+    font-weight: bold;
+}
