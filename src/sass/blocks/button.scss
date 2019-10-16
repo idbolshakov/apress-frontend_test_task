@@ -1,0 +1,33 @@
+.button {
+  width: 130px;
+
+  padding-top: 6px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 6px;
+  border: none;
+
+  font-size: 15px;
+  line-height: 18px;
+
+  cursor: pointer;
+  transition: opacity 0.4s;
+
+  &--red {
+    color: #ffffff;
+    background-color: #cc2157;
+  }
+
+  &--gray {
+    color: #59595a;
+    background-color: #eaeaea;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}

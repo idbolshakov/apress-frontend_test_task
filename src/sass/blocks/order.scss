@@ -1,0 +1,160 @@
+.order {
+  box-sizing: border-box;
+  position: fixed;
+
+  width: 48%;
+  padding-top: 13px;
+  padding-left: 13px;
+  padding-right: 35px;
+  padding-bottom: 35px;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 4px solid #eeeeef;
+  background-color: #ffffff;
+  z-index: 1000;
+}
+
+.order__items,
+.order__images {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.order__items {
+  width: 70%;
+  margin-bottom: 25px;
+}
+
+.order__images {
+  margin-bottom: 15px;
+}
+
+.order__price {
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 600;
+  color: #cc2157;
+}
+
+.order__item {
+  margin-bottom: 5px;
+
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.order__first-column {
+  box-sizing: border-box;
+  width: 25.5%;
+  padding-bottom: 15px;
+  border-right: 4px solid #cc2157;
+}
+
+.order__second-column {
+  box-sizing: border-box;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  width: 74.5%;
+  padding-left: 10px;
+}
+
+.order__middle-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  padding-bottom: 15px;
+}
+
+.order__comment-label {
+  display: block;
+  width: 16%;
+
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.order__comment {
+  box-sizing: border-box;
+  width: 79%;
+  height: 115px;
+
+  padding: 5px;
+  border: 0;
+
+  background-color: #eeeeef;
+  resize: none;
+
+  &:focus {
+    opacity: 0.6;
+  }
+}
+
+.order__bottom-container {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-right: 325px;
+}
+
+.order__phone-label {
+  width: 32%;
+  margin-right: 25px;
+
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+.order__phone-input {
+  width: 50%;
+
+  min-height: 26px;
+
+  border: 0;
+  padding: 0;
+  background-color: #eeeeef;
+
+  &:focus {
+    opacity: 0.6;
+  }
+}
+
+.order__button {
+  margin-top: 25px;
+  margin-left: 140px;
+}
+
+.order__close-button {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
