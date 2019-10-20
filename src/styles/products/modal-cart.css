@@ -2,7 +2,6 @@
 .modal-cart {
     width: 350px;
     position: fixed;
-    display: none;
     background: white;
     top: 9px;
     right: 150px;
