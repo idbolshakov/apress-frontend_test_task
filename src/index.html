@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-  </head>
 
-  <body>
-    <main class="product-listing-wrapper">
-    </main>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="./assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap&subset=latin-ext" rel="stylesheet">
+</head>
+<body>
+  <!-- Cart -->
+  <div class="page">
+    <div class="shopping-cart" style="display:none">
+      <div class="speech-bubble">
+        Вы добавили в корзину:
+      </div>
+      <div class="cart-btn"><button class="cart-btn-send">Перейти в корзину</button></div>
+    </div>
+    <!-- /Cart -->
 
-    <script src="api/products.js"></script>
-  </body>
+    <!-- Order -->
+    <div class="order-list" style="display:none">
+      <div class="order-close"></div>
+      <div class="order-title"></div>
+      <div class="order-form">
+        <div class="order-content"></div>
+        <div class="order-comments">
+          <div class="order-text">Комментарий к заказу:</div>
+          <textarea class="order-input" name="name" rows="1" cols="39"></textarea>
+        </div>
+      </div>
+      <div class="order-client-data">
+        <div class="order-client-data-text">Ваш телефон *:</div>
+        <textarea class="order-client-data-input" name="" id="" cols="1" rows="1">
+      </textarea>
+      </div>
+      <div class="order-send"><button class="order-send-btn">Отправить</button></div>
+    </div>
+    <!-- /Order -->
+
+    <!-- Main -->
+    <main class="product-listing-wrapper" id="main"></main>
+    <!-- /Main -->
+  </div>
+  <!-- /Page -->
+
+  <script src="api/products.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
 </html>
