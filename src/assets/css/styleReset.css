@@ -1,0 +1,19 @@
+body {
+  /* background-color: red; */
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}

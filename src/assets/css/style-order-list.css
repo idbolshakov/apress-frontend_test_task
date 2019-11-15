@@ -1,0 +1,144 @@
+/* Order-list */
+.order-list {
+  left: 6%;
+  top: 25%;
+  position: fixed;
+  width: 80%;
+  height: auto;
+  background-color: #fff;
+  z-index: 200;
+  border: 1px solid rgba(148, 141, 143, 0.39);
+}
+
+/* Order close */
+.order-close {
+  position: relative;
+  margin-left: auto;
+  right: 0;
+  z-index: 300;
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  justify-content: center;
+}
+
+.order-close:before, .order-close:after {
+  position: absolute;
+  content: ' ';
+  height: 18px;
+  right: 10px;
+  top: 2px;
+  width: 2px;
+  background-color: #a9a9a9;
+}
+
+.order-close:before {
+  transform: rotate(45deg);
+}
+
+.order-close:after {
+  transform: rotate(-45deg);
+}
+
+/* Order inner */
+.order-content {
+  margin: 0;
+  padding-left: 25px;
+  color: #333;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Order-title */
+.order-title {
+  font-weight: 700;
+  font-size: 22px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.order-form {
+  width: 100%;
+  height: auto;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+
+.order-content {
+  width: 30%;
+  margin-left: 20px;
+  color: #e44174;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.order-content img {
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.order-comments {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  width: 100%;
+  border-left: 3px solid #cc2157;
+  padding-left: 10px;
+  /* justify-content: space-between; */
+}
+
+.order-input {
+  resize: none;
+  width: 80%;
+  height: 70%;
+  margin-left: 20px;
+  background-color: #eeeeef;
+  border: 0;
+}
+
+.order-text {
+  text-align: right;
+  width: 10%;
+  font-weight: 700;
+}
+
+/* Order-client-data */
+.order-client-data {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.order-client-data-text {
+  width: 24%;
+  text-align: right;
+  font-weight: 700;
+}
+
+.order-client-data-input {
+  resize: none;
+  width: 240px;
+  height: 34px;
+  margin-left: 20px;
+  background-color: #eeeeef;
+  border: 0;
+}
+
+.order-send-btn {
+  margin-left: 24%;
+  cursor: pointer;
+  width: 140px;
+  height: 40px;
+  line-height: 10px;
+  padding: 0 15px;
+  border: 3px solid #fff;
+  background-color: #cc2157;
+  color: #fff;
+}
+
+.order-send {
+  margin-bottom: 2%;
