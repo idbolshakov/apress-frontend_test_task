@@ -28,11 +28,7 @@ function createModal(product) {
     modal_header.textContent = 'Оформление заказа:'
     // Buttons
     close_btn.onclick = unshowModal // hide modal --- button from common.js
-    btn_order.onclick = function() { // hide modal and make order --- button from common.js
-        if (modal_product_phone.value.length === 12) {
-            return unshowModalSuccess()
-        }
-    }
+    btn_order.onclick = valueCheck // hide modal and make order --- button from common.js 
     // Image
     modal_product_img.src = product.img
     modal_product_img.alt = product.title

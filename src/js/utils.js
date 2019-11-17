@@ -1,6 +1,7 @@
 // Create button module
-function createButton (color, text, className) {
+function createButton (color, text, className, event) {
     const btn = document.createElement('button')
+    btn.addEventListener('click', event)
     btn.innerHTML = text,
     btn.style.backgroundColor = color
     btn.className = className
@@ -89,4 +90,10 @@ function smoothScrollToTop(){
          window.requestAnimationFrame(smoothScrollToTop);
          window.scrollTo (0, currentScroll - (currentScroll/5));
     }    
+}
+// Value check 
+function valueCheck() { 
+    if (modal_product_phone.value.length === 12) {
+        return unshowModalSuccess()
+    }
 }
