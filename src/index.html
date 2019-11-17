@@ -2,12 +2,67 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <!-- font roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
+    <title>Мебель.РФ</title>
   </head>
-
   <body>
     <main class="product-listing-wrapper">
+      <div id="list_product">
+        <!-- i-template -->
+        <div class="product" data-template="product">
+          <img class="photo" src="" alt="">
+            <div class="product_info">
+              <h4 class="title"></h4>
+              <p class="price"></p>
+            </div>
+            <div class="btns">
+              <button onclick="MyPopUp(this)" class="red btn PopUp">Заказать</button>
+              <button onclick="BasketPopUp(this)" class="grey btn BasketPop">В корзину</button>
+            </div>
+        </div>
+      </div>
+      <div class="cover none">
+        <div id="order" class="MyPopUp">
+            <span class="title"></span>
+            <div class='icon' onclick="closePopUp()"><img class='icon' src="./close_grey_24x24.png"></div>
+          <div class='order'>
+            <div class="leftMyPop">
+              <img class='photo order_photo' src="" alt="">
+              <span class="price"></span>
+            </div>  
+            <div class="vertical_line"></div>
+            <div class="comment">
+                <label for="comment">Комментарий<br> к заказу:</label>
+                <textarea class="comment_field" id='comment' type="text" maxlength="200"></textarea>
+            </div>
+          </div>
+          <div class="phone">
+            <label for="phone">Ваш телефон*:</label>
+            <input id="phone" class="phone_field" type="text" onclick="value='+7'" placeholder="+7(123)4567890" type="tel" pattern="[(\+7)8][0-9]{10}">
+          </div>
+          <button class="red btn order_button">Отправить</button>
+        </div>
+      </div>
+      <div class="BasketCover none">
+        <div class="BasketPopUp">
+          <div class="header">
+            <p>Вы добавили в корзину:</p>
+          </div>
+          <div id="Basket" class="cart">
+            <div onclick="closeBasket()"><img class='icon' src="./close_grey_24x24.png"></div>
+            <img class="photo cart_photo" src="" alt="">
+            <div class="cart_info">
+              <span class="title"></span>
+              <p class="price cart_price"></p>
+            </div>
+          </div>
+            <a href="https://www.blizko.ru/dashboard/customer/cart"><button class="red btn cart_button">Перейти в корзину</button></a>
+        </div>
+      </div>
     </main>
-
     <script src="api/products.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
