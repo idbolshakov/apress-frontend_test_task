@@ -1,13 +1,239 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-  </head>
+<html lang="RU">
 
-  <body>
-    <main class="product-listing-wrapper">
-    </main>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Ovchinnikov-Oleg</title>
+</head>
 
-    <script src="api/products.js"></script>
-  </body>
+<body>
+
+  <div id="preloader">
+    <div class="loader">
+      <div class="loader__inner cssload-one"></div>
+      <div class="loader__inner cssload-two"></div>
+      <div class="loader__inner cssload-three"></div>
+    </div>
+  </div>
+
+  <main class="product-listing-wrapper">
+
+    <!-- Корзина -->
+    <div class="popap-basket">
+      <div class="popap-basket__header">
+        <span>Вы добавили в корзину:</span>
+        <span class="popap-basket-counter">0</span>
+      </div>
+      <div class="popap-basket__products">
+
+      </div>
+      <button class="btn btn_basket-big">Перейти в корзину</button>
+    </div>
+    <!-- Корзина закончена -->
+
+    <!-- Блок с карточками -->
+    <div class="container">
+      <div class="product-listing-cards-wrapper">
+
+        <div id="card-1" class="product-listing-card">
+          <div class="product-listing-card__img">
+            <img class="popap-card-img" src="assets/images/1.jpg" alt="product">
+          </div>
+
+          <div class="product-listing-card-text">
+            <div class="product-listing-card__descr">Текст из API</div>
+            <div class="product-listing-card__price">Текст из API</div>
+          </div>
+          <div class="product-listing-card__buttons">
+            <button class="btn btn_buy">Заказать</button>
+            <button class="btn btn_basket">В корзину</button>
+          </div>
+        </div>
+
+        <div id="card-2" class="product-listing-card">
+          <div class="product-listing-card__img">
+            <img class="popap-card-img" src="assets/images/1.jpg" alt="product">
+          </div>
+          <div class="product-listing-card-text">
+            <div class="product-listing-card__descr">Текст из API</div>
+            <div class="product-listing-card__price">Текст из API</div>
+          </div>
+          <div class="product-listing-card__buttons">
+            <button class="btn btn_buy">Заказать</button>
+            <button class="btn btn_basket">В корзину</button>
+          </div>
+        </div>
+
+        <div id="card-3" class="product-listing-card">
+          <div class="product-listing-card__img">
+            <img class="popap-card-img" src="assets/images/1.jpg" alt="product">
+          </div>
+          <div class="product-listing-card-text">
+            <div class="product-listing-card__descr">Текст из API</div>
+            <div class="product-listing-card__price">Текст из API</div>
+          </div>
+          <div class="product-listing-card__buttons">
+            <button class="btn btn_buy">Заказать</button>
+            <button class="btn btn_basket">В корзину</button>
+          </div>
+        </div>
+
+        <div id="card-4" class="product-listing-card">
+          <div class="product-listing-card__img">
+            <img class="popap-card-img" src="assets/images/1.jpg" alt="product">
+          </div>
+          <div class="product-listing-card-text">
+            <div class="product-listing-card__descr">Текст из API</div>
+            <div class="product-listing-card__price">Текст из API</div>
+          </div>
+          <div class="product-listing-card__buttons">
+            <button class="btn btn_buy">Заказать</button>
+            <button class="btn btn_basket">В корзину</button>
+          </div>
+        </div>
+
+        <div id="card-5" class="product-listing-card">
+          <div class="product-listing-card__img">
+            <img class="popap-card-img" src="assets/images/1.jpg" alt="product">
+          </div>
+          <div class="product-listing-card-text">
+            <div class="product-listing-card__descr">Текст из API</div>
+            <div class="product-listing-card__price">Текст из API</div>
+          </div>
+          <div class="product-listing-card__buttons">
+            <button class="btn btn_buy">Заказать</button>
+            <button class="btn btn_basket">В корзину</button>
+          </div>
+        </div>
+
+        <div id="card-6" class="product-listing-card">
+          <div class="product-listing-card__img">
+            <img class="popap-card-img" src="assets/images/1.jpg" alt="product">
+          </div>
+          <div class="product-listing-card-text">
+            <div class="product-listing-card__descr">Текст из API</div>
+            <div class="product-listing-card__price">Текст из API</div>
+          </div>
+          <div class="product-listing-card__buttons">
+            <button class="btn btn_buy">Заказать</button>
+            <button class="btn btn_basket">В корзину</button>
+          </div>
+        </div>
+
+        <div id="card-7" class="product-listing-card">
+          <div class="product-listing-card__img">
+            <img class="popap-card-img" src="assets/images/1.jpg" alt="product">
+          </div>
+          <div class="product-listing-card-text">
+            <div class="product-listing-card__descr">Текст из API</div>
+            <div class="product-listing-card__price">Текст из API</div>
+          </div>
+          <div class="product-listing-card__buttons">
+            <button class="btn btn_buy">Заказать</button>
+            <button class="btn btn_basket">В корзину</button>
+          </div>
+        </div>
+
+        <div id="card-8" class="product-listing-card">
+          <div class="product-listing-card__img">
+            <img class="popap-card-img" src="assets/images/1.jpg" alt="product">
+          </div>
+          <div class="product-listing-card-text">
+            <div class="product-listing-card__descr">Текст из API</div>
+            <div class="product-listing-card__price">Текст из API</div>
+          </div>
+          <div class="product-listing-card__buttons">
+            <button class="btn btn_buy">Заказать</button>
+            <button class="btn btn_basket">В корзину</button>
+          </div>
+        </div>
+
+        <div id="card-9" class="product-listing-card">
+          <div class="product-listing-card__img">
+            <img class="popap-card-img" src="assets/images/1.jpg" alt="product">
+          </div>
+          <div class="product-listing-card-text">
+            <div class="product-listing-card__descr">Текст из API</div>
+            <div class="product-listing-card__price">Текст из API</div>
+          </div>
+          <div class="product-listing-card__buttons">
+            <button class="btn btn_buy">Заказать</button>
+            <button class="btn btn_basket">В корзину</button>
+          </div>
+        </div>
+
+        <div id="card-10" class="product-listing-card">
+          <div class="product-listing-card__img">
+            <img class="popap-card-img" src="assets/images/1.jpg" alt="product">
+          </div>
+          <div class="product-listing-card-text">
+            <div class="product-listing-card__descr">Текст из API</div>
+            <div class="product-listing-card__price">Текст из API</div>
+          </div>
+          <div class="product-listing-card__buttons">
+            <button class="btn btn_buy">Заказать</button>
+            <button class="btn btn_basket">В корзину</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- Блок с карточками -->
+
+
+    <!-- Окно заказа -->
+    <div class="popap-buy-ovarlay">
+      <div class="popap-buy">
+        <h2 class="popap-buy__title">
+          Текст из API
+        </h2>
+
+        <div class="popap-buy-wrapper">
+
+          <div class="popap-buy__card">
+            <div class="popap-buy__img">
+              <img class="popap-buy-img" src="assets/images/1.jpg" alt="product">
+            </div>
+            <span class="popap-buy__price">Текст из API</span>
+          </div>
+
+          <form id="popap-buy-form" action="#">
+
+            <div class="popap-buy__comment">
+              <span>Комментарий к заказу:</span>
+              <textarea name="popap-buy-user-comment" cols="70" rows="10"></textarea>
+            </div>
+
+            <div class="popap-buy__phone">
+              <span>Ваш телефон *:</span>
+              <input name="popap-buy-user-phone" type="text">
+            </div>
+            <button class="btn btn_buy-form">Отправить</button>
+          </form>
+        </div>
+
+        <span class="popap-close-buy-form">&#10006;</span>
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- Окно подтверждения добавления товара в корзину -->
+  <div class="popap-info">
+    <span>Товар успешно добавлен в корзину!</span>
+  </div>
+
+  <div id="div"></div>
+
+
+  <script src="api/products.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+
 </html>
