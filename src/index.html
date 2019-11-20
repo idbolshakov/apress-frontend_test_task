@@ -1,13 +1,38 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-  </head>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Test work</title>
+</head>
 
-  <body>
-    <main class="product-listing-wrapper">
-    </main>
+<body>
+<main>
 
-    <script src="api/products.js"></script>
-  </body>
+  <div class="cart-popup">
+    <div class="cart-popup-inner">
+      <div class="cart-popup__heading">Вы добавили в корзину:</div>
+      <div class="cart-popup-render">
+      </div>
+      <a href="#" class="cart-popup__goToCart btn btn--primary btn--high btn--wide">Перейти в корзину</a>
+    </div>
+  </div>
+
+  <form class="order-popup">
+    <div class="order-popup-close"></div>
+
+    <div class="order-popup-render">
+
+    </div>
+
+    <fieldset class="order-popup-product__phone">
+      <label for="orderPopup-phone">Ваш телефон*:</label>
+      <input id="orderPopup-phone" name="orderPopup-phone" type="tel" required>
+    </fieldset>
+    <button class="btn btn--primary btn--wide order-popup__submit" type="submit">Отправить</button>
+  </form>
+
+  <section class="product-listing-wrapper"></section>
+
+</main>
+</body>
 </html>
