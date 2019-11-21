@@ -1,7 +1,5 @@
 'use strict';
 
-import 'whatwg-fetch';
-
 if (!('remove' in Element.prototype)) {
   Element.prototype.remove = function() {
     if (this.parentNode) {
@@ -9,6 +7,11 @@ if (!('remove' in Element.prototype)) {
     }
   };
 }
+
+function nodeToArray(node) {
+  return Array.from(node);
+}
+
 /**
  * products listing api.
  * @class
@@ -19,30 +22,14 @@ class Api {
    * @constructor
    */
   constructor() {
-    this.products = {};
+    this.products = API.products;
     this.goodsPlace = document.querySelector('.product-listing-wrapper');
     this.cartPopupRender = document.querySelector('.cart-popup-render');
     this.cartPopup = document.querySelector('.cart-popup');
     this.cartItemsId = [];
   }
-  /**
-   * get data for products list.
-   * @param {string} url - take url where the data comes from
-   */
-  async getData(url) {
-    const response = await window.fetch(url);
 
-    if (response.ok) {
-      this.products = await response.json();
-    } else {
-      console.log('Ошибка HTTP: ' + response.status);
-    }
-  }
-  /**
-   * Showing goods with data received in getData method.
-   */
   showGoods() {
-    this.getData('products.json').then(() => {
       this.products.forEach((el) => {
         this.goodsPlace.insertAdjacentHTML('beforeEnd',
             '<div class="product" data-id="' + el.id + '">' +
@@ -62,7 +49,6 @@ class Api {
       });
       this.addToCart();
       this.order();
-    });
   }
   /**
    * Finding any product by his ID.

@@ -205,7 +205,7 @@ fieldset {
   width: 10px;
   height: 10px;
   cursor: pointer;
-  background-image: url('/assets/images/close.svg#close');
+  background-image: url('../assets/images/close.svg#close');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -264,7 +264,7 @@ fieldset {
   position: absolute;
   width: 10px;
   height: 10px;
-  background-image: url('/assets/images/close-gray.svg#close');
+  background-image: url('../assets/images/close-gray.svg#close');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
