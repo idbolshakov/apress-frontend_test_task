@@ -1,90 +1,147 @@
 'use strict';
-
-if (!('remove' in Element.prototype)) {
-  Element.prototype.remove = function() {
-    if (this.parentNode) {
-      this.parentNode.removeChild(this);
-    }
-  };
-}
-
-function nodeToArray(node) {
-  return Array.from(node);
-}
-
-/**
- * products listing api.
- * @class
- */
-class Api {
-  /**
-   * api constructor.
-   * @constructor
-   */
-  constructor() {
-    this.products = API.products;
-    this.goodsPlace = document.querySelector('.product-listing-wrapper');
-    this.cartPopupRender = document.querySelector('.cart-popup-render');
-    this.cartPopup = document.querySelector('.cart-popup');
-    this.cartItemsId = [];
-  }
-
-  showGoods() {
-      this.products.forEach((el) => {
-        this.goodsPlace.insertAdjacentHTML('beforeEnd',
-            '<div class="product" data-id="' + el.id + '">' +
-          '  <div class="product-image">' +
-          '    <img src="' + el.img + '" alt="">' +
-          '  </div>' +
-          '  <div class="product-info">' +
-          '    <div class="product-info__name">' + el.title + '</div>' +
-          '    <div class="product-info__price">' + el.price.toLocaleString('ru-RU') + ' руб.</div>' +
-          '  </div>' +
-          '  <div class="product-buttons">' +
-          '    <a href="javascript:" class="btn btn--primary product-buttons__order">Заказать</a>' +
-          '    <a href="javascript:" class="btn btn--secondary product-buttons__cart">В корзину</a>' +
-          '  </div>' +
-          '</div>'
-        );
+(function () {
+  const goodsPlace = document.querySelector('.product-listing-wrapper'),
+    cartPopupRender = document.querySelector('.cart-popup-render'),
+    cartPopup = document.querySelector('.cart-popup'),
+    cartItemsId = [];
+  
+  /* ie11 polyfills */
+  if (navigator.userAgent.indexOf('MSIE') !== -1
+    || navigator.appVersion.indexOf('Trident/') > -1) {
+    /* includes polyfill */
+    if (!Array.prototype.includes) {
+      Object.defineProperty(Array.prototype, 'includes', {
+        value: function (searchElement, fromIndex) {
+          if (this == null) {
+            throw new TypeError('"this" is null or not defined');
+          }
+          var o = Object(this);
+          var len = o.length >>> 0;
+          if (len === 0) {
+            return false;
+          }
+          var n = fromIndex | 0;
+          var k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
+          
+          function sameValueZero(x, y) {
+            return x === y || (typeof x === 'number' && typeof y === 'number' && isNaN(x) && isNaN(y));
+          }
+          
+          while (k < len) {
+            if (sameValueZero(o[k], searchElement)) {
+              return true;
+            }
+            k++;
+          }
+          return false;
+        }
       });
-      this.addToCart();
-      this.order();
+    }
+    
+    /* find polyfill */
+    if (!Array.prototype.find) {
+      Array.prototype.find = function (predicate) {
+        if (this == null) {
+          throw new TypeError('Array.prototype.find called on null or undefined');
+        }
+        if (typeof predicate !== 'function') {
+          throw new TypeError('predicate must be a function');
+        }
+        var list = Object(this);
+        var length = list.length >>> 0;
+        var thisArg = arguments[1];
+        var value;
+        
+        for (var i = 0; i < length; i++) {
+          value = list[i];
+          if (predicate.call(thisArg, value, i, list)) {
+            return value;
+          }
+        }
+        return undefined;
+      };
+    }
+    
+    /* remove polyfill */
+    if (!('remove' in Element.prototype)) {
+      Element.prototype.remove = function () {
+        if (this.parentNode) {
+          this.parentNode.removeChild(this);
+        }
+      };
+    }
   }
+  
+  /**
+   * transforming node to array.
+   * @param {object} node - nodes
+   * @return {array} array - array of nodes
+   */
+  function nodeToArray(node) {
+    return Array.prototype.slice.call(node);
+  }
+  
+  /**
+   * Showing goods with data received in getData method.
+   */
+  function productsShow() {
+    API.products.forEach(function (el) {
+      goodsPlace.insertAdjacentHTML('beforeEnd',
+        '<div class="product" data-id="' + el.id + '">' +
+        '  <div class="product-image">' +
+        '    <img src="' + el.img + '" alt="">' +
+        '  </div>' +
+        '  <div class="product-info">' +
+        '    <div class="product-info__name">' + el.title + '</div>' +
+        '    <div class="product-info__price">' + el.price.toLocaleString('ru-RU') + ' руб.</div>' +
+        '  </div>' +
+        '  <div class="product-buttons">' +
+        '    <a href="javascript:" class="btn btn--primary product-buttons__order">Заказать</a>' +
+        '    <a href="javascript:" class="btn btn--secondary product-buttons__cart">В корзину</a>' +
+        '  </div>' +
+        '</div>'
+      );
+    });
+    addToCart();
+    order();
+  }
+  
   /**
    * Finding any product by his ID.
    * @param {number} id - id of the product you want to find
    * @return {number} id - id of the product you found
    */
-  findProductById(id) {
-    return this.products.find((value) => {
+  function findProductById(id) {
+    return API.products.find(function (value) {
       return value.id === parseFloat(id);
     });
   }
+  
   /**
    * Adding listeners to add items in cart
    */
-  addToCart() {
-    const buttons = [...document.querySelectorAll('.product-buttons__cart')];
-
-    buttons.forEach((el) => {
-      const currentAttr = el.parentNode.parentNode.getAttribute('data-id');
-      el.addEventListener('click', () => {
-        if (!this.cartItemsId.includes(currentAttr)) {
-          this.cartItemsId.push(currentAttr);
+  function addToCart() {
+    const buttons = nodeToArray(document.querySelectorAll('.product-buttons__cart'));
+    let currentId;
+    buttons.forEach(function (el) {
+      currentId = el.parentNode.parentNode.getAttribute('data-id');
+      el.addEventListener('click', function () {
+        if (!cartItemsId.includes(currentId)) {
+          cartItemsId.push(currentId);
         }
-        this.cartAddItem(this.findProductById(currentAttr));
+        cartAddItem(findProductById(currentId));
       });
     });
   }
+  
   /**
    * Adding items to cart
    * @param {number} currentItem - getting current item by id with findProductById(id) method
    */
-  cartAddItem(currentItem) {
-    this.cartPopup.classList.add('opened');
-
-    this.cartPopupRender.insertAdjacentHTML('beforeEnd',
-        '<div class="cart-popup-item" data-id="' + currentItem.id + '">' +
+  function cartAddItem(currentItem) {
+    cartPopup.classList.add('opened');
+    cartPopupRender.insertAdjacentHTML('beforeEnd',
+      '<div class="cart-popup-item" data-id="' + currentItem.id + '">' +
       '  <div class="cart-popup-item__image">' +
       '    <img src="' + currentItem.img + '" alt="">' +
       '  </div>' +
@@ -95,65 +152,62 @@ class Api {
       '    <div class="cart-popup-item-info__price">' + currentItem.price.toLocaleString('ru-RU') + ' руб.</div>' +
       '  </div>' +
       '</div>');
-
-    this.removeFromCart();
+    removeFromCart();
   }
+  
   /**
    * Removing from cart
    */
-  removeFromCart() {
-    const cartPopupDeleteItem = [...document.querySelectorAll('.cart-popup-item-info__delete')];
-
-    cartPopupDeleteItem.forEach((el) => {
-      const deleteItem = (e) => {
-        const currentId = e.target.parentNode.parentNode.getAttribute('data-id');
-
-        this.cartItemsId.forEach((el, index) => {
+  function removeFromCart() {
+    const cartPopupDeleteItem = nodeToArray(document.querySelectorAll('.cart-popup-item-info__delete'));
+    let currentId;
+    cartPopupDeleteItem.forEach(function (el) {
+      const deleteItem = function (e) {
+        currentId = e.target.parentNode.parentNode.getAttribute('data-id');
+        cartItemsId.forEach(function (el, index) {
           if (parseFloat(el) === parseFloat(currentId)) {
-            this.cartItemsId.splice(index, 1);
+            cartItemsId.splice(index, 1);
           }
         });
-
         e.target.parentNode.parentNode.remove();
-
         if (document.querySelectorAll('.cart-popup-item').length < 1) {
-          this.cartPopup.classList.remove('opened');
+          cartPopup.classList.remove('opened');
         }
       };
       el.removeEventListener('click', deleteItem);
       el.addEventListener('click', deleteItem, {once: true});
     });
   }
+  
   /**
    * Listeners for order buttons
    */
-  order() {
-    const orderBtns = [...document.querySelectorAll('.product-buttons__order')];
-
-    orderBtns.forEach((el) => {
-      el.addEventListener('click', () => {
-        const currentId = el.parentNode.parentNode.getAttribute('data-id');
-        this.orderPopupOpen(currentId);
+  function order() {
+    const orderBtns = nodeToArray(document.querySelectorAll('.product-buttons__order'));
+    let currentId;
+    orderBtns.forEach(function (el) {
+      el.addEventListener('click', function () {
+        currentId = el.parentNode.parentNode.getAttribute('data-id');
+        orderPopupOpen(currentId);
       });
     });
-
-    this.orderPopupClose();
+    orderPopupClose();
   }
-
+  
   /**
    * order popup opened based on id of item clicked
    * @param {number} id - id of current item
    */
-  orderPopupOpen(id) {
+  function orderPopupOpen(id) {
     const orderPopup = document.querySelector('.order-popup');
     const orderPopupRender = document.querySelector('.order-popup-render');
-    const currentProduct = this.findProductById(id);
-
+    const currentProduct = findProductById(id);
+    
     orderPopup.classList.add('opened');
     orderPopupRender.innerHTML = '';
-
+    
     orderPopupRender.insertAdjacentHTML('beforeEnd',
-        '<div class="order-popup__name">' + currentProduct.title + '</div>' +
+      '<div class="order-popup__name">' + currentProduct.title + '</div>' +
       '  <div class="order-popup-inner">' +
       '    <div class="order-popup-inner--left">' +
       '      <div class="order-popup-product">' +
@@ -171,19 +225,19 @@ class Api {
       '    </div>' +
       '  </div>');
   }
+  
   /**
    * Listeners for closing order popup
    */
-  orderPopupClose() {
+  function orderPopupClose() {
     const orderPopupClose = document.querySelector('.order-popup-close');
     const orderPopup = document.querySelector('.order-popup');
-
-    orderPopupClose.addEventListener('click', () => {
+    
+    orderPopupClose.addEventListener('click', function () {
       orderPopup.classList.remove('opened');
     });
   }
-}
-
-window.API = new Api;
-
-window.API.showGoods();
+  
+  productsShow();
+  
+}());
