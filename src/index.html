@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Каталог товаров</title>
+		<link href="assets/styles.css" rel="stylesheet" type="text/css" />
+		<script src="assets/polyfill.js"></script>
+	</head>
 
-  <body>
-    <main class="product-listing-wrapper">
-    </main>
+	<body>
+		<div class="nav">
+			<div class="cart" tabindex="0">
+				<div class="cart-len"></div>
+				<div class="cart-popup">
+					<div class="cart-title">Вы добавили в корзину:</div>
+					<div class="cart-content"></div>
+					<div class="checkout" tabindex="0">Перейти в корзину</div>
+				</div>
+			</div>
+		</div>
+		<main class="product-listing-wrapper"></main>
 
-    <script src="api/products.js"></script>
-  </body>
+		<script src="api/products.js" async></script>
+	</body>
 </html>
