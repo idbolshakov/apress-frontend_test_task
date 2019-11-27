@@ -82,190 +82,123 @@ var cart = document.querySelector(".nav .cart"),
 
 
 const checkout = function(cart_data) {
-	if (typeof cart_data === "undefined") cart_data = JSON.parse(localStorage.getItem("cart")) || {};
-	let len = Object.keys(cart_data).length,
-		popup_wrap = document.createElement("div"),
-		popup = document.createElement("form"),
-		popup__title,
-		popup__row1,
-		popup__col1,
-		popup__img,
-		popup__price,
-		popup__comment,
-		popup__comment_textarea,
-		popup__total_price = document.createElement("div"),
-		total_price = 0,
-		popup__row2 = document.createElement("div"),
-		popup__phone = document.createElement("input"),
-		popup__submit = document.createElement("input"),
-		popup__close = document.createElement("div");
+	if (typeof cart_data === "undefined") cart_data = Object.values(JSON.parse(localStorage.getItem("cart")) || {});
+	let len = cart_data.length;
 
 	if (len === 0) return false;
 
-	popup__phone.setAttribute("type", "tel");
-	popup__phone.setAttribute("name", "phone");
-	popup__phone.setAttribute("autocomplete", "on");
-	popup__phone.setAttribute("required", "");
-	popup__phone.classList.add("phone");
-	popup__total_price.classList.add("price");
-	popup__row2.classList.add("row2");
-	popup__submit.setAttribute("type", "submit");
-	popup__submit.value = "Отправить";
-	popup__submit.classList.add("submit");
-	popup__close.classList.add("close");
-	popup.classList.add("popup-form");
-	popup.setAttribute("action", "#");
-	popup.setAttribute("method", "post");
-	popup.setAttribute("name", "checkout");
-	popup_wrap.classList.add("popup-wrap");
+	document.body.insertAdjacentHTML("beforeend", `<div class="popup-wrap">
+		<form class="popup-form" action="#" method="post" name="checkout">` +
+			cart_data.map(function(item) { return `
+			<div class="title">` + item["title"] + `</div>
+			<div class="row1">
+				<div class="col1">
+					<img src="` + item["img"] + `" class="preview">
+					<div class="price">` + item["price"].toLocaleString("ru-RU") + ` ₽</div>
+				</div>
+				<div class="comment-section">
+					<textarea class="comment"></textarea>
+				</div>
+			</div>`; }).join("\n") + 
+			(len > 1 ? '<div class="price">' + cart_data.map(function (a) { return a["price"] }).reduce(function (a, b) { return a + b }, 0).toLocaleString("ru-RU") + ' ₽</div>' : "") + `
+			<div class="row2">
+				<input type="tel" name="phone" class="phone" autocomplete="on" required>
+			</div>
+			<input type="submit" class="submit" value="Отправить">
+			<div class="close"></div>
+		</form>
+	</div>`);
 
-	for (let key in cart_data) {
-		popup__title = document.createElement("div");
-		popup__row1 = document.createElement("div");
-		popup__col1 = document.createElement("div");
-		popup__img = document.createElement("img");
-		popup__price = document.createElement("div");
-		popup__comment = document.createElement("div");
-		popup__comment_textarea = document.createElement("textarea");
+	let popup = document.body.querySelector(".popup-wrap");
+	console.log("popup", popup)
+	if (popup) popup.addEventListener("click", function(e) {
+		let t = e.target;
 
-		popup__title.innerText = cart_data[key]["title"];
-		popup__title.classList.add("title");
-		popup__img.src = cart_data[key]["img"];
-		popup__img.classList.add("preview");
-		popup__price.innerText = cart_data[key]["price"].toLocaleString("ru-RU") + " ₽";
-		popup__price.classList.add("price");
-		popup__col1.classList.add("col1");
-		popup__comment.classList.add("comment-section");
-		popup__comment_textarea.classList.add("comment");
-		popup__row1.classList.add("row1");
-		total_price += cart_data[key]["price"];
-
-		popup.appendChild(popup__title);
-		popup__col1.appendChild(popup__img);
-		popup__col1.appendChild(popup__price);
-		popup__row1.appendChild(popup__col1);
-		popup__comment.appendChild(popup__comment_textarea);
-		popup__row1.appendChild(popup__comment);
-		popup.appendChild(popup__row1);
-	}
-
-	if (len > 1) {
-		popup__total_price.innerText = total_price.toLocaleString("ru-RU") + " ₽";
-		popup.appendChild(popup__total_price);
-	}
-	popup__row2.appendChild(popup__phone);
-	popup.appendChild(popup__row2);
-	popup.appendChild(popup__submit);
-	popup.appendChild(popup__close);
-	popup_wrap.appendChild(popup);
-	document.body.appendChild(popup_wrap);
-
-	popup__submit.addEventListener("click", function() { popup_wrap.remove(); }, false);
-	popup__close.addEventListener("click", function() { popup_wrap.remove(); }, false);
+		if (t.classList.contains("submit")) {
+			// Отправка данных
+			popup.remove();
+		} else if (t.classList.contains("close")) {
+			// Отмена
+			popup.remove();
+		}
+	}, false);
 };
 
 
-const quick_checkout = function(item) {
-	let id = item.currentTarget.dataset["id"],
+const quick_checkout = function(e) {
+	let t = e.target;
+	if (!t.classList.contains("checkout")) return;
+
+	let id = t.dataset["id"],
 		data = API.products.find(function(o) {return o["id"] == id});
 
 	checkout({"id": data});
 };
+
 
 const render_cart = function(e) {
 	let cart_data = JSON.parse(localStorage.getItem("cart")) || {},
 		len = Object.keys(cart_data).length;
 
 	for (let key in cart_data) {
-		let item = document.createElement("div"),
-			img = document.createElement("img"),
-			txt = document.createElement("div"),
-			title = document.createElement("div"),
-			price = document.createElement("div"),
-			item_remove = document.createElement("div");
-
-		img.src = cart_data[key]["img"];
-		img.classList.add("preview");
-		img.setAttribute("loading", "lazy");
-		img.setAttribute("alt", cart_data[key]["title"]);
-		title.innerText = cart_data[key]["title"];
-		title.classList.add("title");
-		price.innerText = cart_data[key]["price"].toLocaleString("ru-RU") + " ₽";
-		price.classList.add("price");
-		txt.classList.add("text");
-		item_remove.dataset["id"] = cart_data[key]["id"];
-		item_remove.classList.add("remove");
-		item.classList.add("item");
-
-		item.appendChild(img);
-		txt.appendChild(title);
-		txt.appendChild(price);
-		item.appendChild(txt);
-		item.appendChild(item_remove);
-		cart_popup__content.appendChild(item);
+		cart_popup__content.insertAdjacentHTML("beforeend", `<div class="item">
+			<img src="` + cart_data[key]["img"] + `" class="preview" loading="lazy" alt="` + cart_data[key]["title"] + `">
+			<div class="text">
+				<div class="title">` + cart_data[key]["title"] + `</div>
+				<div class="price">` + cart_data[key]["price"].toLocaleString("ru-RU") + ` ₽</div>
+			</div>
+			<div data-id="` + cart_data[key]["id"] + `" class="remove"></div>
+		</div>`);
 		cart__len.innerText = len || "";
-
-		item_remove.addEventListener("click", remove_from_cart, false);
 	}
 };
 
+
 const add_to_cart = function(e) {
+	let t = e.target;
+	if (!t.classList.contains("cart-add")) return;
+
 	let cart_data = JSON.parse(localStorage.getItem("cart")) || {},
-		id = e.currentTarget.dataset["id"],
-		data = API.products.find(function(o) {return o["id"] == id}),
-		item = document.createElement("div"),
-		img = document.createElement("img"),
-		txt = document.createElement("div"),
-		title = document.createElement("div"),
-		price = document.createElement("div"),
-		item_remove = document.createElement("div"),
-		temp_popup = document.createElement("div");
+		id = t.dataset["id"],
+		data = API.products.find(function(o) {return o["id"] == id});
 
 	if (!(id in cart_data)) {
 		cart_data[id] = data;
 		localStorage.setItem("cart", JSON.stringify(cart_data));
-		let len = Object.keys(cart_data).length;
+		let len = Object.keys(cart_data).length,
+			temp_popup = document.createElement("div");
 
-		img.src = data["img"];
-		img.classList.add("preview");
-		img.setAttribute("loading", "lazy");
-		img.setAttribute("alt", data["title"]);
-		title.innerText = data["title"];
-		title.classList.add("title");
-		price.innerText = data["price"].toLocaleString("ru-RU") + " ₽";
-		price.classList.add("price");
-		txt.classList.add("text");
-		item_remove.dataset["id"] = data["id"];
-		item_remove.classList.add("remove");
-		item.classList.add("item");
+		cart_popup__content.insertAdjacentHTML("beforeend", `<div class="item">
+			<img src="` + data["img"] + `" class="preview" loading="lazy" alt="` + data["title"] + `">
+			<div class="text">
+				<div class="title">` + data["title"] + `</div>
+				<div class="price">` + data["price"].toLocaleString("ru-RU") + ` ₽</div>
+			</div>
+			<div data-id="` + data["id"] + `" class="remove"></div>
+		</div>`);
+
+		cart__len.innerText = len || "";
 		temp_popup.classList.add("popup");
 		temp_popup.innerText = "Товар добавлен в корзину";
-
-		item.appendChild(img);
-		txt.appendChild(title);
-		txt.appendChild(price);
-		item.appendChild(txt);
-		item.appendChild(item_remove);
-		cart_popup__content.appendChild(item);
-		cart__len.innerText = len || "";
 		document.body.appendChild(temp_popup);
 
-		item_remove.addEventListener("click", remove_from_cart, false);
 		setTimeout(function() { temp_popup.remove(); }, 4000);
 	}
 };
 
 
 const remove_from_cart = function(e) {
+	let t = e.target;
+	if (!t.classList.contains("remove")) return;
+
 	e.preventDefault();
 	let cart_data = JSON.parse(localStorage.getItem("cart")) || {},
-		id = e.currentTarget.dataset["id"];
+		id = t.dataset["id"];
 	delete cart_data[id];
 	localStorage.setItem("cart", JSON.stringify(cart_data));
-	e.currentTarget.parentElement.remove();
+	t.parentElement.remove();
 
-	let len = Object.keys(cart_data).length;
-	cart__len.innerText = len || "";
+	cart__len.innerText = Object.keys(cart_data).length || "";
 };
 
 
@@ -276,54 +209,30 @@ const clear_cart = function() {
 
 const render_products = function(response) {
 	response.products.forEach(function(product) {
-		let item = document.createElement("div"),
-			img = document.createElement("img"),
-			txt = document.createElement("div"),
-			title = document.createElement("div"),
-			price = document.createElement("div"),
-			buttons = document.createElement("div"),
-			checkout = document.createElement("div"),
-			item_add = document.createElement("div");
-
-		img.src = product["img"];
-		img.classList.add("preview");
-		img.setAttribute("loading", "lazy");
-		img.setAttribute("alt", product["title"]);
-		title.innerText = product["title"];
-		title.classList.add("title");
-		price.innerText = product["price"].toLocaleString("ru-RU") + " ₽";
-		price.classList.add("price");
-		txt.classList.add("text");
-		checkout.innerText = "Заказать";
-		checkout.classList.add("checkout");
-		checkout.setAttribute("tabindex", "0");
-		checkout.dataset["id"] = product["id"];
-		item_add.innerText = "В корзину";
-		item_add.classList.add("cart-add");
-		item_add.dataset["id"] = product["id"];
-		item_add.setAttribute("tabindex", "0");
-		buttons.classList.add("buttons");
-		item.classList.add("item");
-
-		item.appendChild(img);
-		txt.appendChild(title);
-		txt.appendChild(price);
-		item.appendChild(txt);
-		buttons.appendChild(checkout);
-		buttons.appendChild(item_add);
-		item.appendChild(buttons);
-		product_listing.appendChild(item);
-
-		checkout.addEventListener("click", quick_checkout, false);
-		item_add.addEventListener("click", add_to_cart, false);
+		product_listing.insertAdjacentHTML("beforeend", `<div class="item">
+			<img src="` + product["img"] + `" class="preview" loading="lazy" alt="` + product["title"] + `">
+			<div class="text">
+				<div class="title">` + product["title"] + `</div>
+				<div class="price">` + product["price"].toLocaleString("ru-RU") + ` ₽</div>
+			</div>
+			<div class="buttons">
+				<div class="checkout" data-id="` + product["id"] + `" tabindex="0">Заказать</div>
+				<div class="cart-add" data-id="` + product["id"] + `" tabindex="0">В корзину</div>
+			</div>
+		</div>`);
 	});
 };
 
+
+cart_popup__content.addEventListener("click", remove_from_cart, false);
 cart_popup__checkout.addEventListener("click", function() { checkout(); }, false);
+product_listing.addEventListener("click", quick_checkout, false);
+product_listing.addEventListener("click", add_to_cart, false);
 
 render_products(API);
 render_cart();
 
+/* IE11 support */
 if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
 	cart.removeAttribute("tabindex");
 	cart.addEventListener("click", function(e) { console.log(e.target === e.currentTarget); if (e.target === e.currentTarget) cart.classList.toggle("open"); }, false);
