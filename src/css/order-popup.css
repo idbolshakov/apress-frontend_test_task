@@ -1,0 +1,145 @@
+/* order-popup */
+.order-popup {
+  min-height: 400px;
+  height: auto;
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 101;
+  background: #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .35);
+  padding: 15px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+.order-popup.order-popup--opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+.order-popup__name {
+  display: block;
+  padding-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.order-popup-close {
+  top: 5px;
+  right: 5px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-image: url('../assets/images/close-gray.svg#close');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.order-popup-inner {
+  display: flex;
+  flex-direction: row;
+}
+
+.order-popup-inner--left {
+  display: flex;
+  flex-direction: column;
+  max-width: 25%;
+  flex-basis: 25%;
+}
+
+.order-popup-inner--right {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+  flex-basis: 75%;
+}
+
+.order-popup-product {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-popup-product__price {
+  font-size: 24px;
+  color: #CC2157;
+}
+
+.order-popup-product__image {
+  width: 170px;
+  height: 130px;
+  min-width: 170px;
+  position: relative;
+  overflow: hidden;
+}
+
+.order-popup-product__image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.order-popup-product__comment {
+  display: block;
+  border-left: 3px solid #CC2157;
+}
+
+.order-popup-product__comment label {
+  display: block;
+  padding-right: 15px;
+  float: left;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.order-popup-product__comment textarea {
+  resize: none;
+  width: 485px;
+  height: 120px;
+  background: #EEEEEF;
+  color: #000;
+  border: none;
+  padding: 20px;
+}
+
+.order-popup-product__phone {
+  display: block;
+  padding-left: 84px;
+  padding-top: 15px;
+}
+
+.order-popup-product__phone label {
+  display: flex;
+  padding-right: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.order-popup-product__phone label input {
+  background: #EEEEEF;
+  color: #000;
+  border: none;
+  height: 30px;
+  max-width: 190px;
+  width: 100%;
+  padding-top: 3.5px;
+  padding-bottom: 3.5px;
+  margin-left: 16px;
+}
+
+.order-popup__submit {
+  margin-left: 220px;
+}

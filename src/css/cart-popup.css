@@ -1,0 +1,113 @@
+.cart-popup {
+  min-height: 120px;
+  height: auto;
+  width: 100%;
+  max-width: 340px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .35);
+  position: fixed;
+  top: 50px;
+  right: 20%;
+  z-index: 99;
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+
+.cart-popup:after {
+  content: '';
+  position: absolute;
+  right: 80px;
+  top: -10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #919191;
+  clear: both;
+}
+
+.cart-popup.cart-popup--opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cart-popup-inner {
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.cart-popup__heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60px;
+  background: #919191;
+  color: #fff;
+  font-size: 18px;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.cart-popup-item {
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.cart-popup-item__image {
+  width: 140px;
+  min-width: 140px;
+  height: 100px;
+  position: relative;
+}
+
+.cart-popup-item__image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.cart-popup-item-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  padding-right: 15px;
+  padding-left: 5px;
+}
+
+.cart-popup-item-info__delete {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  background-image: url('../assets/images/close.svg#close');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.cart-popup-item-info__name {
+  color: #000;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.cart-popup-item-info__price {
+  display: block;
+  color: #5C5C5D;
+  font-size: 14px;
+  line-height: 1.1;
+  padding-top: 5px;
+}

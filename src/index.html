@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Test work</title>
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/product.css">
+  <link rel="stylesheet" href="css/cart-popup.css">
+  <link rel="stylesheet" href="css/order-popup.css">
 </head>
 
 <body>
@@ -14,7 +17,7 @@
       <div class="cart-popup__heading">Вы добавили в корзину:</div>
       <div class="cart-popup-render">
       </div>
-      <a href="#" class="cart-popup__goToCart btn btn--primary btn--high btn--wide">Перейти в корзину</a>
+      <button class="cart-popup__goToCart btn btn--primary btn--high btn--wide">Перейти в корзину</button>
     </div>
   </div>
 
@@ -26,8 +29,9 @@
     </div>
 
     <fieldset class="order-popup-product__phone">
-      <label for="orderPopup-phone">Ваш телефон*:</label>
-      <input id="orderPopup-phone" name="orderPopup-phone" type="tel" required>
+      <label>Ваш телефон*:
+        <input type="tel" required>
+      </label>
     </fieldset>
     <button class="btn btn--primary btn--wide order-popup__submit" type="submit">Отправить</button>
   </form>
@@ -35,6 +39,7 @@
   <section class="product-listing-wrapper"></section>
 
 </main>
+<script src="js/polyfills.js"></script>
 <script src="api/products.js"></script>
 <script defer src="js/index.js"></script>
 </body>
