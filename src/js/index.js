@@ -119,9 +119,9 @@ document.addEventListener("DOMContentLoaded", function () {
      * @param {number} id - id of current item
      */
     function orderPopupOpen(id) {
-      const orderPopup = document.querySelector('.order-popup');
-      const orderPopupRender = document.querySelector('.order-popup-render');
-      const currentProduct = findProductById(id);
+      const orderPopup = document.querySelector('.order-popup'),
+            orderPopupRender = document.querySelector('.order-popup-render'),
+            currentProduct = findProductById(id);
       
       orderPopup.classList.add('order-popup--opened');
       orderPopupRender.innerHTML = '';
@@ -150,8 +150,8 @@ document.addEventListener("DOMContentLoaded", function () {
      * Listeners for closing order popup
      */
     function orderPopupClose() {
-      const orderPopupClose = document.querySelector('.order-popup-close');
-      const orderPopup = document.querySelector('.order-popup');
+      const orderPopupClose = document.querySelector('.order-popup-close'),
+            orderPopup = document.querySelector('.order-popup');
       
       orderPopupClose.addEventListener('click', function () {
         orderPopup.classList.remove('order-popup--opened');
