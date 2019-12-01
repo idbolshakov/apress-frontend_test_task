@@ -6,7 +6,8 @@ const devWPConf = merge(baseWPConf, {
 
   devServer: {
     overlay: true,
-    contentBase: baseWPConf.externals.paths.dist
+    contentBase: baseWPConf.externals.paths.dist,
+    disableHostCheck: true
   },
   devtool: "cheap-module-eval-source-map",
   plugins: [

@@ -9,8 +9,9 @@
 }
 
 .cart__items {
+  overflow-x: none;
   max-height: 150px;
-  overflow: auto;
+  overflow-y: auto;
   margin: 0;
   padding: 0;
   list-style: none;

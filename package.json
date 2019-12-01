@@ -7,9 +7,10 @@
   "author": "Кондрев Г.А <george.kondrev@yandex.ru>",
   "license": "MIT",
   "browserslist": [
-    "last 1 version",
+    "last 3 version",
     "> 1%",
-    "not dead"
+    "not dead",
+    "ie 11"
   ],
   "devDependencies": {
     "@babel/core": "^7.6.4",

@@ -14,8 +14,6 @@ const cart = {
     this.show();
   },
   show: function() {
-    console.log(this.items);
-    console.log(this.cartNode.nextElementSibling);
     this.cartNode.innerHTML = "";
     if (this.items.length !== 0) {
       this.cartNode.nextElementSibling.style.display = "block";
@@ -155,5 +153,5 @@ function createCartItem({ id, title, price, img }) {
 
 products.forEach(elm => {
   const product = createProductItem(elm);
-  document.querySelector(".product-list").append(product);
+  document.querySelector(".product-list").appendChild(product);
 });

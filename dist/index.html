@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/main.css">
     <title>Document</title>
   <link href="/assets/css/main.css" rel="stylesheet"></head>
 
@@ -19,11 +18,35 @@
     </main>
     <section class="modal">
       <div class="modal__inner">
+        <button class="modal__close">✖</button>
+        <h2 class="modal__title"></h2>
+        <div class="modal__row">
+          <div class="modal__column">
+            <img class="modal__image" src="">
+            <span class="modal__price"></span>
+          </div>
+          <form id="form" class="modal__form" action="">
+            <div class="modal__left-border">
+              <label for="quest">Комментарий к заказу:</label>
+              <textarea name="quest" id="quest"></textarea>
+            </div>
 
+          </form>
+        </div>
+        <div class="modal__row modal__row--cut">
+          <label class="left" for="tel">Ваш телефон <sup>*</sup>:</label>
+          <input form="form" type="tel" name="tel" id="tel">
+
+        </div>
+        <div class="modal__row modal__row--cut">
+          <button form="form" class="button button--main modal__button" type="submit">Отправить</button>
+        </div>
       </div>
     </section>
     <section class="cart">
-
+      <p>Вы  добавили в корзину</p>
+      <ul class="cart__items"></ul>
+      <a href="#" class="cart__button button button--main">Перейти в корзину</a>
     </section>
   <script type="text/javascript" src="/assets/main.js"></script></body>
 </html>
