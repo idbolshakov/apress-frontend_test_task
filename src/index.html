@@ -6,8 +6,65 @@
 
   <body>
     <main class="product-listing-wrapper">
-    </main>
+<head>
+    <meta charset="utf-8">
+    <title>PRESS-test</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 
-    <script src="api/products.js"></script>
-  </body>
+<body>
+    <main>
+        <div>
+            <div class="to-cart-hidden" id="to-cart-hidden">
+                <div class="corner"><span><img src="assets/images/corner.png" alt=""></span></div>
+                <div class="in-cart-title">Вы добавили в корзину:</div>
+                <div class="border">
+                    <div class="in-cart-product-block">
+                        <div class="cart-close" onclick="CartClose('to-cart-hidden')">X</div>
+                        <div class="in-cart-product-img"><img src="" alt="" id="in-cart-product-img"></div>
+                        <div class="in-cart-product-desc">
+                            <div class="in-cart-product-title" id="in-cart-product-title"></div>
+                            <div class="in-cart-product-price"><span class="in-cart-price" id="in-cart-price"></span> руб.</div>
+                        </div>
+                    </div>
+                    <div class="in-cart-button-container"><button class="but in-cart">Перейти в корзину</button></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="product-block-container" id="product-block-container"></div>
+        </div>
+        <div class="to-order-container-hidden" id="to-order-container-hidden">
+            <div class="to-order-block">
+                <form action="">
+                    <div class="order-close" onclick="OrderClose('to-order-container-hidden')">X</div>
+                    <div class="order-product-title" id="order-product-title"></div>
+                    <div class="prod-desc-comment">
+                        <div class="order-product-desc">
+                            <div class="order-product-img"><img src="" alt="" id="order-product-img"></div>
+                            <div class="order-product-price"><span class="order-price" id="order-price"></span> руб.</div>
+                        </div>
+                        <div class="order-comment-block">
+                            <div>Комментарий к заказу: </div>
+                            <div class="comment">
+                                <textarea name="" id="" cols="60" rows="12"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-number-container">
+                        <div class="order-number">
+                            <div>Ваш телефон*:&nbsp;</div>
+                            <div class="number"> <input type="text"></div>
+                        </div>
+                    </div>
+                    <div class="order-button">
+                        <div><button class="but to-order">Отправить</button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+
 </html>
