@@ -1,0 +1,27 @@
+.button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  text-align: center;
+  border: none;
+
+  &--main {
+    background: rgb(148, 1, 50);
+    color: white;
+
+    &:hover {
+      background: rgb(145, 49, 140);
+    }
+  }
+
+  &--secondary {
+    background: rgb(201, 200, 200);
+    color: rgb(69, 73, 69);
+
+    &:hover {
+      background: rgb(71, 71, 71);
+      color: white;
+    }
+  }
+}

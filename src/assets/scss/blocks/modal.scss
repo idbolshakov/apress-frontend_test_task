@@ -1,0 +1,101 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #000000, $alpha: 0.3);
+  z-index: 2;
+}
+.modal__row {
+  display: flex;
+  width: 100%;
+
+  &--cut {
+    padding-left: 25%;
+  }
+}
+
+.modal__column {
+  display: flex;
+  flex-direction: column;
+  max-width: 25%;
+}
+
+.modal__inner {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  width: 60%;
+  padding: 25px 40px;
+
+  & label {
+    padding-right: 20px;
+    width: 20%;
+  }
+
+  & textarea,
+  & input {
+    border: none;
+    background: rgb(202, 200, 200);
+    padding: 5px;
+  }
+
+  & input {
+    width: 50%;
+    margin-bottom: 40px;
+  }
+
+  & textarea {
+    resize: none;
+    overflow: auto;
+    flex-grow: 1;
+    height: 75px;
+  }
+}
+
+.modal__close {
+  padding: 0;
+  border: none;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 1em;
+  color: rgb(46, 46, 46);
+  background: transparent;
+}
+
+.modal__button {
+  max-width: 50%;
+}
+
+.modal__form {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal__price {
+  font-size: 1.5em;
+  color: rgb(148, 1, 50);
+  margin-top: 20px;
+}
+
+.modal__title {
+  font-size: 1.2em;
+  width: 100%;
+}
+
+.modal__left-border {
+  margin-bottom: 20px;
+  width: 100%;
+  padding-left: 20px;
+  padding-bottom: 120px;
+  display: flex;
+  border-left: 5px solid rgb(148, 1, 50);
+}

@@ -1,0 +1,41 @@
+.cart {
+  width: 400px;
+  position: absolute;
+  top: 10px;
+  right: 150px;
+  z-index: 1;
+  background: #ffffff;
+  padding-bottom: 20px;
+}
+
+.cart__items {
+  max-height: 150px;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cart__button {
+  max-width: 75%;
+  display: none;
+}
+
+.cart > p {
+  margin: 0;
+  position: relative;
+  color: white;
+  background: rgb(71, 71, 71);
+  padding: 25px 10px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    transform: rotate(45deg);
+    background: rgb(71, 71, 71);
+    top: -8px;
+    left: 50%;
+  }
+}
