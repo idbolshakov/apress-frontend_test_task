@@ -39,6 +39,10 @@
     width: 20%;
   }
 
+  & label.left {
+    margin-left: -24%;
+  }
+
   & textarea,
   & input {
     border: none;
@@ -92,7 +96,7 @@
 }
 
 .modal__left-border {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   width: 100%;
   padding-left: 20px;
   padding-bottom: 120px;

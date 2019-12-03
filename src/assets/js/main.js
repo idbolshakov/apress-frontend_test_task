@@ -151,7 +151,13 @@ function createCartItem({ id, title, price, img }) {
   );
 }
 
-products.forEach(elm => {
-  const product = createProductItem(elm);
-  document.querySelector(".product-list").appendChild(product);
-});
+function showList() {
+  const list = createElement("ul", { className: "product-list" });
+  products.forEach(elm => {
+    const product = createProductItem(elm);
+    list.appendChild(product);
+  });
+  document.querySelector(".container").appendChild(list);
+}
+
+showList();
