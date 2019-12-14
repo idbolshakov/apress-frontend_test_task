@@ -1,13 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru-RU">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./assets/css/styles.css">
   </head>
 
   <body>
-    <main class="product-listing-wrapper">
+    <header class="header">
+      <div class="header__wrapper container">
+        <div class="header__cart">
+          <button class="header__cart-button button button--main" onclick="cart.toggle()">Корзина</button>
+          <div class="cart">
+            <div class="cart__wrapper">
+              <div class="cart__header">Вы добавили в корзину:</div>
+              <div class="cart__content"><div class="cart-list"></div></div>
+              <div class="cart__footer"><a href="" class="button button--main">Перейти в корзину</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="product-listing-wrapper container">
+      <div class="product-list"></div>
     </main>
+    <footer class="footer"></footer>
 
     <script src="api/products.js"></script>
+    <script src="assets/js/templates.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
   </body>
 </html>

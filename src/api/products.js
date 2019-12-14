@@ -1,4 +1,4 @@
-var API = {
+let API = {
   products: [
     {
       "id": 1, 
