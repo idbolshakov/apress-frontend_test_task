@@ -1,0 +1,71 @@
+
+/* PRODUCT CSS */
+
+.product-list {
+	width: 100%;
+	max-width: 762px;
+	padding: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.product-item {
+	font-size: 14px;
+}
+.product-item:not(:last-child) {
+	margin-bottom: 20px;
+}
+.product-item__wrapper {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+.product-item__image {
+	width: 170px;
+	height: 170px;
+	flex: 0 0 auto;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+	background: white;
+}
+.product-item__image img{
+	height: auto;
+	width: 100%;
+	max-width: 100%;
+}
+.product-item__content {
+	flex: 1 1 auto;
+	padding-left: 15px;
+	padding-right: 20px;
+}
+.product-item__price {
+	font-weight: bold;
+	font-size: 20px;
+	margin-top: 5px;
+}
+.product-item__buttons {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	justify-content: center;
+	flex: 0 0 auto;
+	width: 140px;
+}
+.product-item__buttons .button:not(:last-child) {
+	margin-bottom: 20px;
+}

@@ -1,22 +1,18 @@
 
 class Products {
 
-	constructor(){}
 
-	createProductsList() {
-		const productWrapper = document.querySelector('.product-list');
+	createProductsList () {
 		let productsContent = '';
 
-		for (let product of API.products) {
-			console.log(product.price);
-			productsContent += API.templates.product_item(product.id,product.img, product.title, product.price.toLocaleString());
-		}
+		API.products.forEach(
+			product => productsContent += API.templates.product_item(product.id,product.img, product.title, product.price.toLocaleString())
+		);
 
-		productWrapper.innerHTML = productsContent;
-
+		document.querySelector('.product-list').innerHTML = productsContent;
 	}
 
-	init() {
+	init () {
 		this.createProductsList();
 	}
 

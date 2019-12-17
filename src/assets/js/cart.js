@@ -2,7 +2,7 @@ API.cart = {}
 
 const cart = {
 
-	toggle: function() {
+	toggle: () => {
 		const cartDOM = document.querySelector('.cart');
 		if (cartDOM.classList.contains('cart--visible')) {
 				cartDOM.classList.remove('cart--visible');
