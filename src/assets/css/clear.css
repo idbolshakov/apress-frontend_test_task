@@ -1,0 +1,28 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { margin: 0; padding: 0; }
+html, body { height: 100%; margin: 0; padding: 0; width: 100%;}
+table { border-collapse: collapse; border-spacing: 0; }
+fieldset,img { border: 0; }
+ul { list-style-type: none; }
+caption,th { text-align: left; }
+h1,h2,h3,h4,h5,h6 { font-size: 100%; font-weight: normal; }
+q:before,q:after { content: ''; }
+abbr,acronym { border: 0; }
+textarea { outline: none; resize: none; }
+input, button { outline: none; }
+a, button, input[type='submit'] { cursor: pointer; }
+html {
+    -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+    -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+}
+*, *::before, *::after {
+    -webkit-box-sizing: inherit; -moz-box-sizing: inherit; box-sizing: inherit;
+}
+input, textarea, button {
+    font-family: 'plumb', Tahoma, Verdana, sans-serif;
+}
+
+/*clearfix*/
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: block; }
+html[xmlns] .clearfix { display: block; }
+* html .clearfix { height: 1%; }

@@ -1,13 +1,93 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
-  </head>
+    <title>Тестовое задание</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/clear.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+</head>
 
   <body>
-    <main class="product-listing-wrapper">
-    </main>
+  <main class="product-listing-wrapper" id="product-listing">
+      <article class="product-listing__item" id="item0">
+          <div class="product-listing__img-box">
+              <img class="product-listing__img" data-src="" src="" />
+          </div>
+          <div class="product-listing__info">
+              <span data-name="" class="product-listing__name"></span>
+              <span class="product-listing__price">
+                  <span data-price="" class="product-listing__price-number"></span> руб.
+              </span>
+          </div>
+          <div class="product-listing__btn-block">
+              <button class="btn btn_color-pink btn_order" onclick="order(this)">Заказать</button>
+              <button class="btn btn_color-default btn_basket" onclick="basket(this)">В корзину</button>
+          </div>
+      </article>
+  </main>
 
-    <script src="api/products.js"></script>
+  <div class="popup popup-order" id="popup-order">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <form>
+          <span class="product-listing__name"></span>
+          <div class="clearfix">
+              <div class="left-box">
+                  <div class="product-listing__img-box">
+                      <img class="product-listing__img" src="" />
+                  </div>
+                  <span class="product-listing__price">
+                      <span data-price="" class="product-listing__price-number"></span> руб.
+                  </span>
+              </div>
+              <div class="right-box">
+                  <div class="comment-box">
+                      <div class="form-group clearfix">
+                          <label for="comment">Комментарий к заказу:</label>
+                          <textarea id="comment"></textarea>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="clearfix form-group">
+              <div class="left-box">
+                  <label for="phone">Ваш телефон*:</label>
+              </div>
+              <div class="right-box">
+                  <input id="phone" class="form-control" type="text" required value="" />
+              </div>
+          </div>
+          <div class="clearfix form-btn">
+              <div class="right-box">
+                  <button type="submit" class="btn btn_color-pink">Отправить</button>
+              </div>
+          </div>
+      </form>
+  </div>
+
+  <div class="popup popup-basket" id="popup-basket">
+      <div class="popup-arrow"></div>
+      <div class="head-line">Вы добавили в корзину:</div>
+      <div class="popup-basket-inner">
+          <span class="close close_color-pink" onclick="closePopup()">&times;</span>
+          <div class="clearfix">
+              <div class="product-listing__img-box">
+                  <img class="product-listing__img" src="" />
+              </div>
+              <div class="product-listing__info">
+                  <span data-name="" class="product-listing__name"></span>
+                  <span class="product-listing__price">
+                      <span data-price="" class="product-listing__price-number"></span> руб.
+                  </span>
+              </div>
+          </div>
+          <div class="form-btn">
+              <a class="btn btn_color-pink btn_link" href="#">Перейти в корзину</a>
+          </div>
+      </div>
+  </div>
+
+  <div class="overlay"></div>
+  <script src="api/products.js"></script>
+  <script src="api/app.js"></script>
   </body>
 </html>
