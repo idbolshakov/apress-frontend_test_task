@@ -2,12 +2,23 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css"/>
   </head>
 
   <body>
-    <main class="product-listing-wrapper">
-    </main>
+    <nav class="menu"></nav>
+    <section class="content">
+      <aside class="sidebar"></aside>
+      <main id="productList" class="product-listing-wrapper"></main>
+    </section>
+
+    <div id="popupCart" hidden></div>
+
+    <div id="popupBuy" hidden></div>
+
+    <div id="cover" hidden onclick="hiddenPopup()"></div>
 
     <script src="api/products.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

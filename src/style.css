@@ -1,0 +1,275 @@
+body {
+    color:#222;
+    background-color: #fff;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+.menu {
+    width: 100%;
+    height: 20vh;
+}
+
+.sidebar {
+    width: 20%;
+    height: 80vh;
+    float:  left;
+}
+
+.product-listing-wrapper {
+    width: 80%;
+    height: 80vh;
+    float:  left;
+    text-align: left;
+}
+
+#cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+
+
+
+/* ------     product     -------   */
+
+.product {
+    margin: 15px;
+    height: 200px;
+    display: grid; 
+    grid-template-columns: 1fr 2fr 0.7fr;
+}
+
+.product .image {
+    background: center no-repeat;
+    background-size: contain;
+}
+
+.product .text a {
+    font-size: 1.4em;
+}
+
+.product button {
+    width: 150px;
+    padding: 8px 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.product [name="buy"] {
+    margin: 50px 20px 10px 20px;
+    color: #fff;
+    background-color: #CC2157;
+    border: 1px solid #F0BCCC;
+}
+
+.product [name="inCart"] {
+    margin: 10px 20px 30px 20px;
+    color: #666;
+    background-color: #EAEAEA;
+    border: 1px solid #EAEAEA;
+}
+
+
+
+
+/* ------     popupBuy     -------   */
+
+#popupBuy {
+    width: 70%;
+    height: 50%;
+    background: #fff;
+    position: fixed;
+    left: 10%;
+    width: 80%;
+    height: 45%;
+    box-shadow: 0 3px 5px #aaa;
+    z-index: 5;
+}
+
+#popupBuy .container {
+    height: 100%;
+}
+
+#popupBuy img {
+    position: absolute;
+    margin: 3px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+#popupBuy h4 {
+    margin: 20px;
+}
+
+#popupBuy .content {
+    height: 50%;
+    width: 100%;
+    display: grid; 
+    grid-template-columns: 1fr 3fr;
+}
+
+#popupBuy .image {
+    margin: 0 20px;
+    height: 70%;
+    background: center no-repeat;
+    background-size: contain;
+}
+
+#popupBuy span {
+    font-size: 1.2em;
+    margin: 20px;
+    color: #CC215C;
+}
+
+#popupBuy .line {
+    width: 4px;
+    height: 90%;
+    background-color: #CC2157;
+}
+
+#popupBuy .text {
+    display: grid; 
+    grid-template-columns: 0.1fr 1fr 5fr;
+}
+
+#popupBuy .text a {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 30px 0 8px;
+    text-align: right;
+}
+
+#popupBuy textarea {
+    width: 90%;
+    height: 50%; 
+    border: none;
+    background-color: #eee;
+    font-size: 14px;
+    font-weight: 600;
+    resize: none;
+}
+
+#popupBuy .row {
+    display: grid; 
+    grid-template-columns: 1.1fr 3.3fr;
+}
+
+#popupBuy .row a{
+    text-align: right;
+    margin: 0 30px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#popupBuy [name="tel"] {
+    height: 25px;
+    border: none;
+    background-color: #eee;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#popupBuy button{ 
+    margin: 30px 0;
+    padding: 8px 40px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #CC2157;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* ------     popupCart     -------   */
+
+#popupCart {
+    background: #fff;
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    width: 30%;
+    height: 35%;
+    box-shadow: 0 3px 5px #aaa;
+    z-index: 5;
+}
+
+.up{
+    width: 0; 
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 9px solid #919191;
+    position: relative;
+    top: -9px;
+    left: 70%;
+}
+
+#popupCart .cart {
+    height: 100%;
+}
+
+#popupCart p {
+    font-size: 18px;
+    padding: 20px;
+    margin: 0;
+    background-color: #919191;
+    color: #fff;
+    position: relative;
+    top: -9px;
+}
+
+#popupCart .content {
+    height: 45%;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 0.3fr;
+}
+
+#popupCart .image {
+    margin: 20px;
+    background: center no-repeat;
+    background-size: contain;
+}
+
+#popupCart .text{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 10px;
+    text-align: justify;
+}
+
+#popupCart span{
+    margin: 10px 0;
+    color: #777;
+    line-height: 2;
+}
+
+#popupCart img {
+    margin: 10px;
+    cursor: pointer;
+}
+
+#popupCart button {
+    position: absolute;
+    bottom: 0px;
+    margin: 20px;
+    padding: 1em 2em;
+    font-size: 14px;
+    color: #fff;
+    background-color: #CC2157;
+    border: none;
+    cursor: pointer;
+}
+
+
+
