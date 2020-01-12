@@ -80,8 +80,6 @@ body {
 /* ------     popupBuy     -------   */
 
 #popupBuy {
-    width: 70%;
-    height: 50%;
     background: #fff;
     position: fixed;
     left: 10%;
@@ -258,7 +256,7 @@ body {
 
 #popupCart button {
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     margin: 20px;
     padding: 1em 2em;
     font-size: 14px;

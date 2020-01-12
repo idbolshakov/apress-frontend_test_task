@@ -23,7 +23,7 @@ function inputCartTemplate(item) {
                     <br>
                     <span>${(+item.price).toLocaleString()} руб.</span>
                 </div>
-                <img src="assets/images/cart-x.png" onclick="hiddenPopup()">
+                <img alt="" src="assets/images/cart-x.png" onclick="hiddenPopup()">
             </div>
             <button onclick="hiddenPopup()">Перейти в корзину</button>
             `
@@ -31,7 +31,7 @@ function inputCartTemplate(item) {
 
 function inputBuyTemplate(item) {
     return `
-            <img class="close" src="assets/images/close.png" onclick="hiddenPopup()">
+            <img class="close" alt="" src="assets/images/close.png" onclick="hiddenPopup()">
             <h4>${item.title}</h4>
             <div class="content">
             <div>

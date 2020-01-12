@@ -48,7 +48,3 @@ function createElement(str) {
     return div;
 }
 
-function log(str) {
-    console.log(str);
-}
-
