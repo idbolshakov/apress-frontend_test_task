@@ -2,7 +2,7 @@ body {
     color:#222;
     background-color: #fff;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: sans-serif, Helvetica, Arial; 
 }
 
 .menu {
@@ -21,6 +21,13 @@ body {
     height: 80vh;
     float:  left;
     text-align: left;
+}
+
+img {
+    display:block;
+    margin: auto;
+    max-width: 85%;
+    max-height: 100%;
 }
 
 #cover {
@@ -45,10 +52,6 @@ body {
     grid-template-columns: 1fr 2fr 0.7fr;
 }
 
-.product img {
-    width: 100%;
-}
-
 .product .text a {
     font-size: 1.4em;
 }
@@ -60,14 +63,14 @@ body {
     cursor: pointer;
 }
 
-.product [name="buy"] {
+.product .buyButton {
     margin: 50px 20px 10px 20px;
     color: #fff;
     background-color: #CC2157;
     border: 1px solid #F0BCCC;
 }
 
-.product [name="inCart"] {
+.product .inCartButton {
     margin: 10px 20px 30px 20px;
     color: #666;
     background-color: #EAEAEA;
@@ -82,11 +85,15 @@ body {
 #popupBuy {
     background: #fff;
     position: fixed;
-    left: 10%;
-    width: 80%;
-    height: 45%;
+    left: 15%;
+    width: 70%;
+    height: 50%;
     box-shadow: 0 3px 5px #aaa;
     z-index: 5;
+}
+
+#popupBuy img {
+    max-height: 80%;
 }
 
 #popupBuy .container {
@@ -95,7 +102,9 @@ body {
 
 #popupBuy .close {
     position: absolute;
-    margin: 3px;
+    margin: 6px;
+    width: 9px;
+    height: 9px;
     top: 0;
     right: 0;
     cursor: pointer;
@@ -110,12 +119,6 @@ body {
     width: 100%;
     display: grid; 
     grid-template-columns: 1fr 3fr;
-}
-
-#popupBuy .image {
-    margin: 0 20px;
-    max-width: 80%;
-    max-height: 80%;
 }
 
 #popupBuy span {
@@ -164,7 +167,7 @@ body {
     font-size: 16px;
 }
 
-#popupBuy [name="tel"] {
+#popupBuy input {
     height: 25px;
     border: none;
     background-color: #eee;
@@ -195,7 +198,7 @@ body {
     top: 40px;
     right: 40px;
     width: 30%;
-    height: 35%;
+    height: 30%;
     box-shadow: 0 3px 5px #aaa;
     z-index: 5;
 }
@@ -231,11 +234,6 @@ body {
     grid-template-columns: 1fr 1fr 0.3fr;
 }
 
-#popupCart .image {
-    margin: 10px;
-    width: 90%;
-}
-
 #popupCart .text{
     font-size: 16px;
     font-weight: 600;
@@ -249,9 +247,11 @@ body {
     line-height: 2;
 }
 
-#popupCart img {
+#popupCart .close {
     margin: 10px;
     cursor: pointer;
+    width: 12px;
+    height: 12px;
 }
 
 #popupCart button {

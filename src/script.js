@@ -1,45 +1,73 @@
 document.addEventListener('DOMContentLoaded', function(){
     loadProducts();
+    addCloseClick();
+
+    const popupBuy = document.getElementById("popupBuy");
+    const popupCart = document.getElementById("popupCart");
+    const cover= document.getElementById("cover");
+    cover.addEventListener('click', hiddenPopup);
 });
 
 function loadProducts() {
+    const fragment = document.createDocumentFragment();
+
     API.products.forEach( (item) => {
-        const div = createElement('product');
-        div.innerHTML = inputProductTemplate(item);
-        getElement("productList").appendChild(div);
-    })
+        const product = document.createElement('div');
+        product.className = 'product';
+        product.innerHTML = inputProductTemplate(item);
+        fragment.appendChild(product);
+    });
+
+    const buyButtons = fragment.querySelectorAll('.buyButton');
+    [].forEach.call(buyButtons, (button) => {
+        button.addEventListener('click', (event) => {
+            clickOnBuy(event);
+        })
+    });
+
+    const inCartButtons = fragment.querySelectorAll('.inCartButton');
+    [].forEach.call(inCartButtons, (button) => {
+        button.addEventListener('click', (event) => {
+            clickOnCart(event);
+        })
+    });
+    
+    document.getElementById("productList").appendChild(fragment);
 }
 
-function clickOnBuy(id) {
-    const popup = getElement("popupBuy");
+
+function clickOnBuy(event) {
     const div = createElement('container');
-    const item = API.products.find( (element) => element.id === id );
+    const item = API.products.find( (element) => element.id === +event.target.id );
     div.innerHTML = inputBuyTemplate(item);
-    popup.innerHTML = '';
-    popup.appendChild(div);
-    popup.hidden = false;
-    getElement("cover").hidden = false;
+    popupBuy.innerHTML = '';
+    popupBuy.appendChild(div);
+    popupBuy.hidden = false;
+    cover.hidden = false;
+    addCloseClick();
 }
 
-function clickOnCart(id) {
-    const popup = getElement("popupCart");
+function clickOnCart(event) {
     const div = createElement('cart');
-    const item = API.products.find( (element) => element.id === id );
+    const item = API.products.find( (element) => element.id === +event.target.id );
     div.innerHTML = inputCartTemplate(item);
-    popup.innerHTML = '';
-    popup.appendChild(div);
-    popup.hidden = false;
-    getElement("cover").hidden = false;
+    popupCart.innerHTML = '';
+    popupCart.appendChild(div);
+    popupCart.hidden = false;
+    cover.hidden = false;
+    addCloseClick();
+}
+
+function addCloseClick() {
+    const closeClick = document.querySelectorAll(".closeClick");
+    [].forEach.call(closeClick, (button) => {
+        button.addEventListener('click', hiddenPopup) });
 }
 
 function hiddenPopup() {
-    getElement("popupCart").hidden = true;
-    getElement("popupBuy").hidden = true;
-    getElement("cover").hidden = true;
-}
-
-function getElement(str) {
-    return document.getElementById(str);
+    popupCart.hidden = true;
+    popupBuy.hidden = true;
+    cover.hidden = true;
 }
 
 function createElement(str) {
@@ -47,4 +75,5 @@ function createElement(str) {
     div.className = str;
     return div;
 }
+
 
