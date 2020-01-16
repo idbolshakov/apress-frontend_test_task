@@ -2,12 +2,117 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- include jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   </head>
 
   <body>
+
+  	<div class="window order">
+  		<div class="order-wrap">
+  			<span class="close"></span>
+  			<div class="wrapper">
+  				<h4 class="order-subtitle">2 кресла и стол чайный - комплект "Виктория" (Эдем)</h4>
+  				<div class="order-content">
+
+  					<div class="window-order-segment">
+	  					<div class="order-preview order-segment">
+	  						<img class="img-responsive" src="assets/images/old.jpg" alt="">
+	  						<div class="price">
+		  						<br>
+	  							<span class="amount">62 350</span>
+	  						</div>
+	  					</div>
+	  					<div class="order-comment order-segment">
+	  						<p>Комментарий<br>к заказу: </p>
+							<textarea name="" class="input" id="" cols="30" rows="10"></textarea>
+	  					</div>
+  					</div>
+
+  				</div>
+  				<div class="order-input">
+  					<form action="">
+
+  						<div class="window-order-segment">
+							<div class="order-preview order-segment">
+	  							<p class="order-phrase">Ваш телефон*: </p>
+	  						</div>
+	  						<div class="order-enter order-segment">
+	  							<div class="win-wrap-input">
+	  								<input type="text" class="input">
+	  							</div>
+	  							<div class="win-wrap-input">
+	  								<input type="submit" class="button btn-accent" value="Отправить">
+	  							</div>
+	  						</div>
+  						</div>
+  						
+  					</form>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+    
     <main class="product-listing-wrapper">
+    			
+		<header>
+			<div class="header-wrap">
+				<div class="header-part">
+					<div class="title">
+					<h2>Test Task: product list</h2></div>
+				</div>
+				<div class="header-part">
+					<div class="basket action">корзина</div>
+					<div class="shop-cart">
+						<div class="shop-cart-title">
+							<h4>Вы добавили в корзину:</h4>
+						</div>
+						<div class="shop-cart-content">
+							<div class="cart-segments">
+								<div class="cart-segment cart-image">
+									<img src="assets/images/old.jpg" class="img-responsive" alt="">
+								</div>
+								<div class="cart-segment">
+									<ul class="list-cart-shop">
+										<li>
+											<div class="cart-segments list-segments">
+												<div class="cart-segment">
+													<p>2 кресла и стол чайный - комплект "Виктория" (Эдем)</p>
+												</div>
+												<div class="cart-segment">
+													<div class="cancel"></div>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<div class="price">
+										<span class="amount">62 350</span>
+									</div>
+								</div>
+							</div>
+							<div class="button-wrap">
+								<button class="button btn-accent">Перейти в корзину</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+    	<div class="product-container">
+    		<div class="product-list">
+
+				<button class="button btn-accent action">Test</button>
+
+				<!-- Autogenerate in main.js -->
+    		
+    		</div>
+    	</div>
     </main>
 
     <script src="api/products.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
