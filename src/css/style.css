@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+h2,
+h3,
+h4,
+span {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.container {
+  width: 720px;
+  margin: auto;
+}
+
+.button {
+  font-family: Roboto, sans-serif;
+  cursor: pointer;
+}
+
+/* Цвета */
+:root {
+  --main-grey: #59595a;
+  --main-pink: #cc2157;
+  --light-grey: #eaeaea;
+}

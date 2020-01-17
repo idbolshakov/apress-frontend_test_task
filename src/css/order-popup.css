@@ -1,0 +1,135 @@
+.order {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3);
+  display: none;
+  z-index: 100;
+}
+
+.order__active {
+  display: flex;
+}
+
+.order-dialogue {
+  position: relative;
+  margin: auto;
+  width: 900px;
+  height: 400px;
+  background: white;
+  padding-left: 15px;
+  padding-top: 10px;
+  border: 4px solid var(--light-grey);
+  
+}
+
+.order-dialogue__close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  width: 20px;
+  height: 20px;
+}
+
+.order-dialogue__close-img {
+  width: 8px;
+  height: 8px;
+}
+
+/* Стили для контента */
+
+.order-content {
+  display: inline;
+}
+
+.order-title {
+  color: var(--main-grey);
+  font-size: 20px;
+  display: block;
+  margin-bottom: 25px;
+}
+.order-info {
+  display: inline-block;
+  margin-right: 36px;
+}
+
+.order-info__img {
+  margin-bottom: 16px;
+  width: 175px;
+  height: 130px;
+}
+
+.order-info__price {
+  color: var(--main-pink);
+  font-weight: normal;
+  font-size: 22px;
+}
+
+.order-form {
+  display: inline;
+}
+
+.order-comment {
+  display: inline-block;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--main-pink);
+  vertical-align: top;
+  height: 190px;
+}
+
+.order-comment__title {
+  width: 100px;
+  display: inline-block;
+  text-align: right;
+  vertical-align: top;
+  margin-left: 5px;
+  font-size: 14px;
+  color: var(--main-grey);
+  font-weight: 700;
+  margin-right: 25px;
+}
+
+.order-comment__textarea {
+  border: 0;
+  background: var(--light-grey);
+  resize: none;
+}
+
+.order-phone {
+  display: inline-block;
+  margin-left: 80px;
+}
+
+.order-phone__title {
+  color: var(--main-grey);
+  font-size: 14px;
+  font-weight: 700;
+  vertical-align: top;
+  margin-right: 30px;
+}
+
+.order-phone__input {
+  width: 190px;
+  height: 25px;
+  border: 0;
+  background: var(--light-grey);
+}
+
+.order__submit {
+  background: var(--main-pink);
+  color: white;
+  display: block;
+  margin-left: 216px;
+  margin-top: 33px;
+  width: 150px;
+  height: 28px;
+}

@@ -1,13 +1,92 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-  </head>
+<html lang="ru">
 
-  <body>
-    <main class="product-listing-wrapper">
-    </main>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тестовое задание - Бражник Данил</title>
+  <!-- Основные стили -->
+  <link href="css/style.css" rel="stylesheet">
+  <!-- Каталог товаров -->
+  <link href="css/listing.css" rel="stylesheet">
+  <!-- PopUp для кнопки Заказать-->
+  <link href="css/order-popup.css" rel="stylesheet">
+  <!-- PopUp для кнопки В корзину-->
+  <link href="css/cart-popup.css" rel="stylesheet">
+</head>
 
-    <script src="api/products.js"></script>
-  </body>
+<body>
+  <!-- Оболочка контейнера-->
+  <div class="main-container">
+    <!-- Контейнер, в котором будет весь контент-->
+    <div class="container">
+
+      <!-- Каталог товаров-->
+
+      <div class="products">
+        <div class="buttons-wrap" id="buttonsWrap"></div>
+      </div> <!-- /.products -->
+
+      <!-- PopUp для кнопки Заказать-->
+
+      <div class="order">
+        <div class="order-dialogue">
+
+          <div class="order-content" id="orderContent">
+            <div class="order-info" id="orderInfo">
+            </div>
+          </div>
+
+          <button class="order-dialogue__close-button">
+            <img src="img/cancel.png" alt="Крестик" class="order-dialogue__close-img">
+          </button>
+
+          <form class="order-form">
+            <div class="order-comment">
+              <span class="order-comment__title">Комментарий к заказу:</span>
+              <textarea cols="66" rows="7" class="order-comment__textarea" id="orderCommentTextare"></textarea>
+            </div>
+
+            <div class="order-phone">
+              <span class="order-phone__title">Ваш телефон*:</span>
+              <input type="text" class="order-phone__input">
+            </div>
+            <button type="submit" class="button order__submit">Отправить</button>
+          </form>
+
+        </div> <!-- /.order-dialogue -->
+      </div> <!-- /.order -->
+
+      <!-- PopUp для кнопки В корзину -->
+
+      <div class="add-cart">
+
+        <div class="add-cart__name-bg">
+          <h3 class="add-cart__name">Вы добавили в корзину:</h3>
+        </div>
+
+        <div class="add-cart-content" id="addCartContent">
+
+          <div class="add-cart-content__info" id="addCartContentInfo">
+            <button class="add-cart-content__button-close">
+              <img src="img/close.png" alt="Крестик" class="add-cart-content__close">
+            </button>
+
+          </div>
+          <button class="button button-add-cart">Перейти в корзину</button>
+        </div>
+
+      </div>
+      <!-- /.add-cart -->
+
+    </div>
+    <!-- /.container -->
+
+  </div>
+  <!-- /.main-container-->
+
+  <script src="js/apiProducts.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
 </html>
