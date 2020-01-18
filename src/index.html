@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/product-listing.css">
+    <link rel="stylesheet" href="./styles/modal-order.css">
+    <link rel="stylesheet" href="./styles/basket.css">
   </head>
 
   <body>
+    <nav class="navbar">
+      <div class="tooltip">
+        <button>
+          <img src="assets/icons/basket.png" width="24px" height="24px">
+        </button>
+        <div class="tooltip-content">
+          <span class="content-title">Вы добавили в корзину:</span>
+          <div class="content-elements"></div>
+          <button class="element-button">Перейти в корзину</button>
+        </div>
+        <div class="tooltip-arrow" />
+      </div>
+    </nav>
+    
     <main class="product-listing-wrapper">
+      <section class="products"></section>
+      <div class="modal-dialog">
+        <div class="modal-order">
+          <div class="order-content"></div>
+        </div>
+      </div>
     </main>
 
-    <script src="api/products.js"></script>
+    <script src="./api/products.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>

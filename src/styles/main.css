@@ -1,0 +1,38 @@
+:root {
+  --color-gray: rgb(234,234,234);
+  --color-red: rgb(204, 33, 87);
+}
+
+.navbar {
+  display: flex;
+  flex: 0 0 100%;
+  justify-content: flex-end;
+  margin: auto;
+  width: 50%;
+}
+
+body {
+  border: 0;
+  color: rgb(33, 37, 41);
+  font-family: -apple-system,BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,Noto Color Emoji;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  user-select: none;
+}
+
+h3 {
+  margin: 0;
+}

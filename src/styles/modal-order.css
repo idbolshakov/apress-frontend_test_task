@@ -1,0 +1,117 @@
+.modal-dialog {
+  display: none;
+  height: 100%;
+  left: 0;
+  outline: 0;
+  overflow-y: auto;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+.modal-dialog.show {
+  display: block;
+}
+
+.modal-order {
+  background-color: rgb(255, 255, 255);
+  border-radius: 0.3rem;
+  border: 3px solid var(--color-gray);
+  margin: 2rem auto 2rem auto;
+  max-width: 1280px;
+  min-height: 30%;
+  min-width: 320px;
+  outline: 0;
+  width: 90%;
+}
+
+.order-content {
+  background-clip: padding-box;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  pointer-events: auto;
+  position: relative;
+  user-select: none;
+}
+
+.order-title {
+  display: flex;
+  flex: 0 0 100%;
+  margin-bottom: 1rem;
+}
+
+.order-title-text {
+  flex: 0 0 90%;
+}
+
+.order-close-button {
+  margin-left: auto;
+  opacity: 0.7;
+}
+
+
+.order-data {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.order-data-image {
+  border-right: 5px solid var(--color-red);
+  display: flex;
+  flex: 0 0 300px;
+  flex-wrap: wrap;
+}
+
+.order-data-image-img {
+  width: 250px;
+  height: auto;
+}
+
+.order-data-price {
+  color: var(--color-red);
+  font-size: 1.5rem;
+  flex: 0 0 100%;
+}
+
+.order-data-comments {
+  display: flex;
+  flex: 1 0 0;
+  padding-left: 1rem;
+}
+
+.order-comments-input {
+  background-color: var(--color-gray);
+  flex: 0 0 70%;
+  margin-left: 1rem;
+}
+
+.order-phone {
+  flex: 0 0 100%;
+  padding-left: 150px;
+  margin-bottom: 2rem;
+}
+
+.order-phone-input {
+  background-color: var(--color-gray);
+  border: 0;
+  height: 30px;
+  margin-left: 2rem;
+  padding: 0;
+}
+
+.order-button {
+  padding-left: calc(150px + 2rem + 13ch);
+}
+
+.order-send-button {
+  background-color: var(--color-red);
+  border: 1px solid var(--color-red);
+  color: rgb(255, 255, 255);
+  height: 30px;
+  width: 120px;
+}
