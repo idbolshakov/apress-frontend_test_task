@@ -2,12 +2,59 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+    <link type="text/css" rel="stylesheet" href="css/modal.css">
   </head>
 
   <body>
-    <main class="product-listing-wrapper">
+    <main class="product-listing-wrapper" id="main">
+      <div class="product-item">
+        <a href="assets/images/1.jpg"><img alt="картинка продукта" src="assets/images/1.jpg" class="product-image"></a>
+        <div class="product-details">
+          <div class="product-title">Выкатной детский диван Зайка производитель фабрика Blanes</div>
+          <span class="product-price"><span class="price-number">11740</span> руб.</span>
+        </div>
+        <div class="checkout">
+          <a href="#" onclick="buy(this)" class="btn-checkout buy">Заказать</a>
+          <a href="#" onclick="add_basket(this)" class="btn-checkout add-basket">В корзину</a>
+        </div>
+      </div>
     </main>
 
+    <div id="modal-basket">
+      <div class="header-basket">
+        <span>Вы добавили в корзину:</span>
+      </div>
+      <img alt="картинка продукта" src="assets/images/1.jpg" class="image-basket">
+      <div class="details-basket">
+        <div class="product-title">Выкатной детский диван Зайка производитель фабрика Blanes</div>
+        <span class="product-price"><span class="price-number">11740</span> руб.</span>
+      </div>
+      <a href="#"><span class="delete-product">x</span></a>
+      <a href="#" class="go-to-basket">Перейти в корзину</a>
+    </div>
+
+    <div id="modal-buy">
+      <div class="buy-product-title">Выкатной детский диван Зайка производитель фабрика Blanes</div>
+      <a href="#" onclick="close_buy()"><span class="close-buy">x</span></a>
+      <div class="img-price-comment">
+        <div class="img-price">
+          <img alt="картинка продукта" src="assets/images/1.jpg" class="image-buy">
+          <span class="product-price"><span class="price-number">11740</span> руб.</span>
+        </div>
+        <div class="vertical-hr"></div>
+        <span class="comment">Комментарий к заказу:</span>
+        <textarea class="form-comment"></textarea>
+      </div>
+      <div class="phone">
+        <span>Ваш телефон*:</span>
+        <input>
+      </div>
+      <button class="push">Отправить</button>
+    </div>
+
+    <script src="api/products.js"></script>
+    <script src="js/index.js"></script>
     <script src="api/products.js"></script>
   </body>
 </html>

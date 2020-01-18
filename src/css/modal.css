@@ -1,0 +1,133 @@
+/*Стили модульного окна корзины*/
+#modal-basket {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    width: 30%;
+    background: rgb(247,247,247);
+}
+.header-basket {
+    background: rgb(145,145,145);
+    color: white;
+    height: 55px;
+    font-size: 25px;
+    padding: 20px 0 0 20px ;
+}
+.image-basket {
+    position: relative;
+    float: left;
+    max-width: 40%;
+    max-height: 150px;
+    margin: 40px 0 0 20px;
+}
+.details-basket {
+    position: relative;
+    float: left;
+    width: 40%;
+    margin: 20px 0 0 20px;
+}
+.details-basket>div{
+    font-weight: bold;
+}
+.delete-product {
+    color: rgb(205,39,88);
+    float: left;
+    margin: 25px 0 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.go-to-basket {
+    display: block;
+    width: 250px;
+    height: 40px;
+    margin: 200px 0px 30px 20px;
+    padding-top: 15px;
+    background: rgb(204,33,87);
+    color: white;
+}
+
+/*Стили модульного окна оформления покупки*/
+#modal-buy {
+    position: fixed;
+    width: 80%;
+    left: 10%;
+    right: 5%;
+    top: 20%;
+    background: white;
+    border: rgb(224,224,224) 6px solid;
+}
+.image-buy {
+    max-height: 170px;
+    max-width: 250px;
+}
+.buy-product-title {
+    position: relative;
+    float: left;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px 0 0 20px;
+}
+.close-buy {
+    position: relative;
+    float: right;
+    margin-right: 5px;
+}
+.img-price-comment {
+    margin-top: 60px;
+    margin-left: 20px;
+}
+.img-price {
+    position: relative;
+    float: left;
+    width: 20%;
+}
+.vertical-hr {
+    position: relative;
+    float: left;
+    background: rgb(205,37,90);
+    width: 4px;
+    height: 240px;
+    margin-left: 30px;
+}
+.comment {
+    position: relative;
+    float: left;
+    width: 9%;
+    text-align: right;
+    margin-left: 10px;
+    font-weight: bold;
+}
+.img-price-comment textarea {
+    background: rgb(238,238,239);
+    border: none;
+    width: 60%;
+    height: 130px;
+    max-width: 60%;
+    max-height: 130px;
+    margin-left: 30px;
+}
+.phone {
+    margin-top: 120px;
+    margin-left: 160px;
+    font-weight: bold;
+}
+.phone input {
+    margin-left: 25px;
+    height: 35px;
+    width: 200px;
+    border: none;
+    background: rgb(238,238,239);
+}
+.push {
+    margin: 20px 0 30px 290px;
+    width: 150px;
+    height: 35px;
+    border: none;
+    background: rgb(205,37,90);
+    color: white;
+}
+.img-price .product-price {
+    font-weight: bold;
+    color: rgb(205,37,90);
+    font-size: 27px;
+}

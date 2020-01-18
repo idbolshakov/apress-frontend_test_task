@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+html {
+    font-family: 'PT Sans', sans-serif;
+}
+.product-listing-wrapper {
+    width: 60%;
+    margin-left:20%;
+    margin-top: 150px;
+    /*border: 1px solid black;*/
+}
+a{
+    text-decoration: none;
+    color: black;
+    /*border: 1px solid black;*/
+    text-align: center;
+    padding-top: 5px;
+}
+.btn-checkout {
+    position: relative;
+    float: right;
+    width: 130px;
+    height: 25px;
+    margin-bottom: 25px;
+}
+
+.product-item {
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+    /*border: 1px solid black;*/
+}
+.product-image {
+    position: relative;
+    float: left;
+    width: 25%;
+}
+.product-details {
+    position: relative;
+    float: left;
+    max-width: 50%;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.product-price {
+    font-size: 20px;
+    /*font-weight: bold;*/
+    line-height: 40px;
+}
+.checkout {
+    position: relative;
+    float: right;
+    width: 15%;
+    margin-right: 5%;
+    margin-top: 45px;
+}
+.buy {
+    background: rgb(204,33,87);
+    color: white;
+}
+.add-basket{
+    background: rgb(234,234,234);
+    color: gray;
+}
