@@ -2,12 +2,29 @@
 <html>
   <head>
     <meta charset="UTF-8">
+	
+	<link href="./assets/css/product-listing.css" rel="stylesheet">
+	
+	<script defer src="./assets/js/product.js"></script>
+	<script defer src="./assets/js/product-listing.js"></script>
+	<script defer src="./assets/js/basket-popup.js"></script>
+	<script defer src="./assets/js/order-popup.js"></script>
+	
   </head>
 
   <body>
-    <main class="product-listing-wrapper">
+    <main class="product-listing-wrapper" id="mainProductListingWrapper">
+			
     </main>
-
+	
     <script src="api/products.js"></script>
+	
+	<script>
+		document.addEventListener("DOMContentLoaded", 
+			function () {
+				let productList = productListing(document.getElementById('mainProductListingWrapper'), API.products);
+			}
+		);
+	</script>
   </body>
 </html>
