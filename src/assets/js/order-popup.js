@@ -6,7 +6,7 @@ let orderPopupClass = (function () {
 	let templatePopup = '<div id="order-popup" class="order-popup"></div>';
 	let template = '<div> <div class="order-popup__title">{title}</div> <div class="order-popup__close-button"></div> </div>'+
 		'<table class="order-popup__table"> <tr>'+
-			'<td class="order-popup__table-first-coll"> <img class="order-popup__product-img" style="background-image: url(./assets/images/4.jpg);"> <div class="order-popup__product-price">{price} руб.</div> </td>'+
+			'<td class="order-popup__table-first-coll"> <img class="order-popup__product-img" {background}> <div class="order-popup__product-price">{price} руб.</div> </td>'+
 			'<td class="left-red-border"> <div class="order-popup__comment-title">Комментарий к заказу</div> <textarea class="order-popup__input_size-large"></textarea> </td>'+
 		'</tr> <tr>'+
 			'<td class="order-popup__table-first-coll order-popup__phone-title">Ваш телефон*:</td>'+

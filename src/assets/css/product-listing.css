@@ -14,7 +14,7 @@
 .basket-popup .basket-popup__title { padding: 20px; background-color: #919191; color: #fff; }
 .basket-popup .basket-popup__button { margin: 15px 20px; width:190px; background-color: #cc2157; padding: 15px; text-align: center; color: #fff; cursor: pointer; }
 .basket-popup .basket-popup__shopping-list { margin: 15px 20px; }
-.basket-popup .basket-popup__product-img {  }
+.basket-popup .basket-popup__product-img { width: 140px; height: 110px; float:left; background: url(./assets/images/1.jpg) center center no-repeat; background-size: contain; }
 .basket-popup .basket-popup__product-text { font-weight: bold; }
 .basket-popup .basket-popup__product-price {  }
 .basket-popup .basket-popup__product-del-button { color: #cc2157; cursor: pointer; }

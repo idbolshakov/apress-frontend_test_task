@@ -13,11 +13,11 @@ let basketPopupClass = (function () {
 	'</div>';
 	
 	let templateProduct = '<div class="basket-popup__product">'+
-		'<div class="basket-popup__product-img"></div>'+
+		'<div class="basket-popup__product-img" {background}></div>'+
 		'<div class="basket-popup__product-text">{title}</div>'+
 		'<div class="basket-popup__product-price">{price} руб.</div>'+
 		'<div class="basket-popup__product-del-button">[ X ]</div>'+
-	'</div>';
+	'<div class="clear"></div></div>';
 	
 	let products = [];
 	let domTemplates = []; // чтоб не перегенерировать код добавленных сохраняем
