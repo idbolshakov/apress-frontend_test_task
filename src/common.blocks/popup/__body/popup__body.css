@@ -1,0 +1,8 @@
+.popup__body {
+    width: 900px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px 0px 15px;
+    background-color: var(--main-bg-color);
+}

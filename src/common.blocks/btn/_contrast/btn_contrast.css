@@ -1,0 +1,4 @@
+.btn_contrast {
+    color: var(--main-bg-color);
+    background-color: var(--contrast-color);
+}

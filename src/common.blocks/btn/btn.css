@@ -1,0 +1,17 @@
+.btn {
+    width: 150px;
+    height: 40px;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    border: solid 1px transparent;
+    outline: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn:active {
+    opacity: 0.5;
+}

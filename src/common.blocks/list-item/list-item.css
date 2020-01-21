@@ -1,0 +1,9 @@
+.list-item {
+    max-width: 1000px;
+    height: 30vh;
+    display: flex;
+    margin-left: auto;
+}
+
+
+

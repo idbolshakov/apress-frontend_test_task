@@ -1,0 +1,4 @@
+.popup__right-block_vertical {
+    flex-direction: column;
+    justify-content: space-between;
+}

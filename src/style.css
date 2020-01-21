@@ -1,0 +1,55 @@
+/* main */
+@import url('/common.blocks/main/main.css');
+/* main page */
+@import url('/common.blocks/main-page/main-page.css');
+@import url('/common.blocks/main-page/__header/main-page__header.css');
+@import url('/common.blocks/main-page/__list/main-page__list.css');
+/* list item */
+@import url('/common.blocks/list-item/list-item.css');
+@import url('/common.blocks/list-item/__button/list-item__button.css');
+@import url('/common.blocks/list-item/__txt/list-item__txt.css');
+/* btn */
+@import url('/common.blocks/btn/btn.css');
+@import url('/common.blocks/btn/_contrast/btn_contrast.css');
+@import url('/common.blocks/btn/_secondary/btn_secondary.css');
+/* close-btn */
+@import url('/common.blocks/close-btn/close-btn.css');
+@import url('/common.blocks/close-btn/_contrast/close-btn_contrast.css');
+/* popup */
+@import url('/common.blocks/popup/popup.css');
+@import url('/common.blocks/popup/__body/popup__body.css');
+@import url('/common.blocks/popup/__main-section/popup__main-section.css');
+@import url('/common.blocks/popup/__header/popup__header.css');
+@import url('/common.blocks/popup/__right-block/popup__right-block.css');
+@import url('/common.blocks/popup/__right-block/_border/right-block_border.css');
+@import url('/common.blocks/popup/__right-block/_vertical/popup__right-block_vertical.css');
+@import url('/common.blocks/popup/__left-block/popup__left-block.css');
+@import url('/common.blocks/popup/__txt/popup__txt.css');
+@import url('/common.blocks/popup/__close-btn/popup__close-btn.css');
+@import url('/common.blocks/popup/__input-section/popup__input-section.css');
+@import url('/common.blocks/popup/__txt-input/popup__txt-input.css');
+/* cart */
+@import url('/common.blocks/cart/cart.css');
+@import url('/common.blocks/cart/__header/cart__header.css');
+@import url('/common.blocks/cart/__footer/cart__footer.css');
+@import url('/common.blocks/cart/__main-section/cart__main-section.css');
+@import url('/common.blocks/cart/__info/cart__info.css');
+/* txt-input */
+@import url('/common.blocks/txt-input/txt-input.css');
+@import url('/common.blocks/txt-input/_comment/txt-input_comment.css');
+/* img */
+@import url('/common.blocks/img/img.css');
+/* txt */
+@import url('/common.blocks/txt/txt.css');
+@import url('/common.blocks/txt/_contrast/txt_contrast.css');
+@import url('/common.blocks/txt/_grey/txt_grey.css');
+@import url('/common.blocks/txt/_bold/txt_bold.css');
+@import url('/common.blocks/txt/_white/txt_white.css');
+@import url('/common.blocks/txt/_al-r/txt_al-r.css');
+/* header */
+@import url('/common.blocks/header/_arrow/header_arrow.css');
+/* mg */
+@import url('/common.blocks/mg/mg_t.css');
+/* source */
+@import url('/common.blocks/source/constants/constants.css');
+

@@ -1,0 +1,15 @@
+.header_arrow {
+    height: 70%;
+    width: 100%;
+    background: var(--header-bg-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+   }
+.header_arrow::after {
+    content: ''; 
+    position: absolute; 
+    left: 300px; bottom: 40px; 
+    border: 20px solid transparent;	border-bottom: 20px solid var(--header-bg-color);
+   }

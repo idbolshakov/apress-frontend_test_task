@@ -1,0 +1,4 @@
+.popup__left-block {
+    width: 25%;
+    flex-shrink: 0;
+}

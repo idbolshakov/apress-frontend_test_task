@@ -1,0 +1,4 @@
+.main-page__header {
+    height: 70px;
+    background-color: var(--header-bg-color);
+}

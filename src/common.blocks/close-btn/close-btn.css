@@ -1,0 +1,12 @@
+.close-btn {
+    width: 15px;
+    height: 15px;
+    background: none;
+    border: none;
+    background-image: url(close-btn.svg);
+}
+
+.close-btn:hover {
+    cursor: pointer;
+}
+

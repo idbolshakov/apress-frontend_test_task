@@ -1,0 +1,4 @@
+.popup__right-block_border {
+    border-left: 4px solid var(--contrast-color);
+    padding-left: 10px;
+}

@@ -1,0 +1,9 @@
+.cart {
+    overflow: hidden;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    height: 300px;
+    width: 400px;
+    display: none;
+}
