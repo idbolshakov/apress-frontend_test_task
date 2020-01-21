@@ -9,6 +9,8 @@
   justify-content: flex-end;
   margin: auto;
   width: 50%;
+  position: fixed;
+  left: 25%;
 }
 
 body {
