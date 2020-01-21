@@ -7,34 +7,21 @@ const getTargetProduct = (index, products) => products.filter(product => parseIn
 // Функция возвращает число в формате вида цены
 const formatPrice = (data) => data.toLocaleString();
 
-// Функция создает html товара
+// Функция создает товар по входным данным
 const createProductItem = (productData) => (
     `<li class="product__item" >
         <div class="product-image__wrapper">
-            <img src="${productData.img}" class="product__img" />
+            <img src="${productData.img}" class="product__img" alt="${productData.title}" />
         </div>
         <a href="#" class="product__title">${productData.title}</a>
         <span class="product__price">${formatPrice(productData.price)} руб.</span>
-        <button class="btn order-btn" name="order" data-index="${productData.id}">Заказать</button>
-        <button class="btn addtocart-btn" name="cart-notification" data-index="${productData.id}">В корзину</button>
+        <button type="button" class="btn order-btn" name="order" data-index="${productData.id}">Заказать</button>
+        <button type="button" class="btn addtocart-btn" name="cart-notification" data-index="${productData.id}">В корзину</button>
     </li>`
 );
 
 //  Функция создает список товаров по заданным данным
-const createProductsList = (data) => {
-
-    // Создаем контейнер для будущих товаров и назначаем ему css класс
-    let productsContainer = document.createElement('ul');
-    productsContainer.classList.add('product__list');
-
-    // Создаем список товаров, полученных из API
-    let resultList = data.map(product => createProductItem(product));
-
-    // Добавляем его в контейнер productsContainer
-    productsContainer.insertAdjacentHTML('afterbegin', resultList.join(''));
-
-    return productsContainer;
-}
+const createProductsList = (data) => `${data.map(product => createProductItem(product)).join('')}`;
 
 // Функция создает модальное окно заказа "в один клик" выбранного товара
 const createOrderModal = (productData) => (
@@ -44,7 +31,7 @@ const createOrderModal = (productData) => (
                 <h3 class="modal__title">${productData.title}</h3>
                 <div class="product-info__wrapper">
                     <div class="product-image__wrapper modal__product-image-wrapper">
-                        <img src="${productData.img}" class="product__img" />
+                        <img src="${productData.img}" class="product__img" alt="${productData.title}" />
                     </div>
                     <span class="product__price modal__product-price">${formatPrice(productData.price)} руб.</span>
                 </div>
@@ -69,7 +56,7 @@ const createAddToCartPopup = (productData) => (
         <header class="addtocart-notification__header">Вы добавили в корзину:</header>
         <div class="addtocart-notification__body">
             <div class="product-image__wrapper addtocart-notification__image-wrapper">
-                <img src="${productData.img}" class="product__img" />
+                <img src="${productData.img}" class="product__img" alt="${productData.title}" />
             </div>
             <div class="addtocart-notification__content-wrapper">
                 <h6 class="addtocart-notification__title">${productData.title}</h6>
@@ -79,7 +66,7 @@ const createAddToCartPopup = (productData) => (
             <span class="delete-btn">&times</span>
         </div>
         <footer class="addtocart-notification__footer">
-            <button class="btn order-btn addtocart-notification-btn">Перейти в корзину</button>
+            <button type="button" class="btn order-btn addtocart-notification-btn">Перейти в корзину</button>
         </footer>
     </div>`
 )
@@ -108,7 +95,7 @@ const init = async (container) => {
         const productsContainer = createProductsList(products);
 
         //  Рендерим список на страницу пользователя
-        container.appendChild(productsContainer);
+        container.insertAdjacentHTML('afterbegin', productsContainer);
 
         return products;
 
@@ -122,7 +109,7 @@ const renderPopup = async (type, index, data) => {
     try {
 
         // Получаем данные о выбранном товаре
-        let targetProduct = await getTargetProduct(index, data);
+        const targetProduct = await getTargetProduct(index, data);
 
 
         if (type === 'order') {
@@ -130,8 +117,8 @@ const renderPopup = async (type, index, data) => {
             document.body.insertAdjacentHTML('afterbegin', createdModal);
 
             //  обработка модального окна
-            let modal = document.querySelector('.modal-overlay');
-            let closeBtn = document.querySelector('.close-btn');
+            const modal = document.querySelector('.modal-overlay');
+            const closeBtn = document.querySelector('.close-btn');
 
             modalHandler(modal, closeBtn)
 
