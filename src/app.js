@@ -1,8 +1,10 @@
 const basketProducts = [];
 
 function renderProducts() {
+  const products = document.querySelector(".products")
+
   API.products.forEach(productData => {
-    document.querySelector(".products").insertAdjacentHTML(
+    products.insertAdjacentHTML(
       "beforeend",
       `
       <div class="product">
@@ -14,23 +16,22 @@ function renderProducts() {
         </div>
   
         <div class="product-buttons">
-          <button class="product-buttons-buy" id="${productData.id}">Заказать</button>
-          <button class="product-buttons-basket" id="${productData.id}">В коризну</button>
+          <button class="product-buttons-buy" data-action="renderOrderModal" id="${productData.id}">Заказать</button>
+          <button class="product-buttons-basket" data-action="addInBasket" id="${productData.id}">В коризну</button>
         </div>
       `
     );
   });
 
-  [...document.getElementsByClassName("product-buttons-buy")].forEach(button => {
-    button.addEventListener("click", event => {
-      renderOrderModal(event);
-    });
-  });
+  products.addEventListener("click", event => {
+    const action = event.target.dataset.action;
+    if (!action) return
 
-  [...document.getElementsByClassName("product-buttons-basket")].forEach(button => {
-    button.addEventListener("click", event => {
+    if (action === "renderOrderModal") {
+      renderOrderModal(event);
+    } else if (action === "addInBasket") {
       addInBasket(event);
-    });
+    }
   });
 }
 
