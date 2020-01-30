@@ -2,12 +2,64 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <main class="product-listing-wrapper">
     </main>
 
+    <div class="overlay">
+      <div class="popup">
+        <div class="popup_title">
+          <p id="popup-title"></p>
+        </div>
+        <div class="popup_content">
+          <div class="popup_content-image">
+            <img id="popup-image" src="" alt="">
+            <p id="popup-price"></p>
+          </div>
+          <div class="popup_content-comment">
+            <p>Комментарий к заказу:</p>
+            <textarea cols="30" rows="10"></textarea>
+          </div>
+        </div>
+        <div class="popup_input-number">
+            <div class="popup_input-number-text">
+                <p>Ваш телефон *:</p>
+            </div>
+            <div class="popup_input-number-submit">
+                <input type="tel">
+                <div class="button-submit">
+                  <p>Отправить</p>
+                </div>
+            </div>
+        </div>
+        <div class="close-popup"></div>
+      </div>
+    </div>
+
+    <div class="small-popup">
+      <div class="small-popup_main-title">
+        <p>Вы добавили в корзину:</p>
+      </div>
+      <div class="small-popup_content">
+        <img id="small-popup-image" src="./assets/images/1.jpg">
+        <div class="text">
+            <p id="small-popup-title">Выкатной детский диван Зайка производитель фабрика Blanes</p>
+            <p id="small-popup-price">15800 руб.</p>
+        </div>
+      </div>
+      <div class="small-popup_buttons">
+        <div class="small-popup_buttons-follow">
+          <p>Перейти в корзину</p>
+        </div>
+      </div>
+    </div>
+
     <script src="api/products.js"></script>
+    <script src="./popup.js"></script>
   </body>
 </html>
