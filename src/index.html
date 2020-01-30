@@ -2,11 +2,70 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
     <main class="product-listing-wrapper">
+      <section class="product-listing-wrapper__catalog catalog">
+        <ul class="catalog__list">
+          <li class="catalog__item">
+            <img class="catalog__img" src="assets/images/3.jpg">
+            <div class="catalog__caption">
+              <h3 class="catalog__heading">
+                Гостиная классика Panamar Classic
+              </h3>
+              <div class="catalog__price">267593</div>
+            </div>
+            <div class="catalog__btns">
+              <a href="#" class="catalog__btn btn">Заказать</a>
+              <a href="#" class="catalog__btn btn--grey">В корзину</a>
+            </div>
+          </li>
+        </ul>
+      </section>
     </main>
+
+    <section class="modal-order">
+      <form action="" class="modal-order__form">
+        <div class="modal-order__top">
+          <div class="modal-order__left">
+            <img class="modal-order__img" src="assets/images/3.jpg">
+            <div class="modal-order__price">267593</div>
+          </div>
+          <div class="modal-order__right">
+            <label for="modal-order__message">Комментарий к заказу:</label>
+            <textarea name="" id="modal-order__message" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+        <div class="modal-order__bottom">
+          <div class="modal-order__left">
+            <label for="modal-order__phone">Ваш телефон *:</label>
+          </div>
+          <div class="modal-order__right">
+            <input class="modal-order__input" id="modal-order__phone">
+            <input class="modal-order__submit btn" type="submit" value="Отправить">
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section class="modal-cart">
+      <h2 class="modal-cart__title">Вы добавили в корзину:</h2>
+      <ul class="modal-cart__list">
+        <li class="modal-cart__item">
+          <img class="modal-cart__img" src="assets/images/3.jpg">
+          <div class="modal-cart__caption">
+            <h3 class="modal-cart__heading">
+                Гостиная классика Panamar Classic
+            </h3>
+            <div class="modal-cart__price">267593</div>
+            <button class="modal-cart__btn btn">X</button>
+          </div>
+        </li>
+      </ul>
+      <a class="modal-cart__link btn" href="#">Перейти в корзину</a>
+    </section>
 
     <script src="api/products.js"></script>
   </body>
