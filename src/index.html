@@ -2,13 +2,103 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
   </head>
-
   <body>
-    <main class="product-listing-wrapper">
-      <p class="test"></p>
-    </main>
+    <div class="container">
+      <main class="main">
+          <section class="catalog">
+            <h1 class="catalog__title visually-hidden">Каталог товаров</h1>
+            <div class="catalog__inner">
 
+              <!-- Эталон
+              <div class="catalog__item">
+                <div class="catalog__img-container">
+                  <img class="catalog__item-img" src="assets/images/1.jpg" alt="Описание фото" width="250" height="auto">
+                </div>
+                <div class="catalog__item-text">
+                  <h2 class="catalog__item-title">Выкатной детский диван Зайка производитель фабрика Blanes</h2>
+                  <p class="catalog__item-cost"><span class="catalog__item-cost-value">66 863</span> руб.</p>
+                </div>
+                <div class="catalog__item-control">
+                  <button class="catalog__item-btn btn">Заказать</button>
+                  <button class="catalog__item-btn btn btn--alt">В корзину</button>
+                </div>
+              </div> -->
+
+            </div>
+            
+          </section>
+      </main>
+      <template id="product-template">
+        <div class="catalog__item">
+          <div class="catalog__img-container">
+            <img class="catalog__item-img" src="" alt="Описание фото" width="250" height="auto">
+          </div>
+          <div class="catalog__item-text">
+            <h2 class="catalog__item-title"></h2>
+            <p class="catalog__item-cost"><span class="catalog__item-cost-value"></span> руб.</p>
+          </div>
+          <div class="catalog__item-control">
+            <button class="catalog__item-btn catalog__item-btn--order btn" data-id="">Заказать</button>
+            <button class="catalog__item-btn catalog__item-btn--basket btn btn--alt" data-id="">В корзину</button>
+          </div>
+        </div>
+      </template>
+      <template id="order-template">
+        <div class="order-popup">
+          <div class="order-popup__container">
+            <form id="order-form" action="post">
+              <input id="order-form__id" hidden type="number">
+              <h3 class="order-popup__title">Выкатной детский диван Зайка производитель фабрика Blanes</h3>
+              <button class="order-popup__close-btn btn-close" type="button"></button>
+              <div class="order-popup__inner">
+                <div class="order-popup__wrap">
+                  <div class="order-popup__img-container">
+                    <img class="order-popup__img" src="assets/images/9.jpg" alt="Описание" width="250">
+                  </div>
+                  <p class="order-popup__item-cost"><span class="order-popup__item-cost-value">66 863</span> руб.</p>
+                </div>
+                <div class="order-popup__textarea-container">
+                  <p class="order-popup__label-wrap">
+                    <label for="comment">Комментарий к заказу:</label>
+                  </p>
+                  <textarea class="order-popup__textarea" name="comment" id="order-popup__comment" cols="30" rows="10"></textarea>
+                </div>
+              </div> 
+                <div class="order-popup__submit-container">
+                  <p>
+                    <label for="phone">Ваш телефон<sup>*</sup>:</label>
+                    <input class="order-popup__input" type="number" name="phone" id="order-popup-phone">
+                  </p>
+                  <p>
+                    <button class="order-popup__submit btn" type="submit">Отправить</button>
+                  </p>
+                </div>
+            </form>
+          </div>
+        </div>
+      </template>
+      <template id="basket-template">
+        <div class="basket-popup">
+          <h5 class="basket-popup__title">Вы добавили в корзину:</h5>
+            <div class="backet-popup__inner">
+              <div class="basket-popup__img-container">
+                <img class="basket-popup__img" src="assets/images/1.jpg" alt="Описание" width="125" height="auto">
+              </div>
+              <div class="basket-popup__detail-container">
+                <p class="basket-popup__product-name">
+                  Выкатной детский диван Зайка производитель фабрика Blanes 
+                </p>
+                <p class="basket-popup__product-cost"><span class="basket-popup__product-cost-value">66 863</span> руб.</p>
+                <button class="basket-popup__product--close btn-close btn-close--alt"></button>
+              </div>
+            </div>
+            <a class="basket-popup__btn btn" href="/basket/">Перейти в корзину</a>
+        </div>
+      </template>
+    </div>
     <script src="api/products.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
