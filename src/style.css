@@ -3,6 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border: none;
 }
 
 body {
@@ -47,14 +48,14 @@ body {
     padding: 30px 10px;
 }
 
-.buttons div {
+.buttons button {
     width: 100%;
     line-height: 2;
     text-align: center;
     cursor: pointer;
 }
 
-.buttons div:first-child {
+.buttons button:first-child {
     margin-bottom: 20px;
 }
 
