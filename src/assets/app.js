@@ -8,28 +8,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const basket = [];
     
     goods.forEach((item) => {
-        const content = `
+        getGoods(item);
+    });
+
+    function getGoods(good) {
+        container.insertAdjacentHTML('beforeend', `
         <div class="card">
             <div class="card-img">
-                <img id="img" src="${item.img}" alt="divan">
+                <img id="img" src="${good.img}" alt="divan">
             </div>
             <div class="card-about">
-                <small id="name">${item.title}</small> 
-                <b id="price">${item.price} руб</b>
+                <small id="name">${good.title}</small> 
+                <b id="price">${good.price} руб</b>
             </div>
             <div class="card-control">
                 <button class="btn btn-red" data-action="order">Заказать</button>
                 <button class="btn" data-action="buy">В корзину</button>
             </div>
-        </div>`;
-    
-        container.innerHTML = container.innerHTML + content;
-    });
-    
+        </div>
+        `);
+    }
+
     const addToBusketButtons = document.querySelectorAll('[data-action="buy"]');
-    
-    
-    
     
     addToBusketButtons.forEach(addToBusketButton => {
     
