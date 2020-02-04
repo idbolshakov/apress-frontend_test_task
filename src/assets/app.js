@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const orderModal = document.querySelector('#modal');
     
     const basket = [];
-    console.log(basketIcon);
     
     goods.forEach((item) => {
         const content = `
@@ -52,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
             basket.push(good);
     
             deleteItem(basketElement);
-            console.log(basket);
         });
     });
     
@@ -87,8 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     basketElement.addEventListener('click', event => event.stopPropagation());
     
     const orderButtons = document.querySelectorAll('[data-action="order"]');
-    console.log(orderButtons);
-    
     orderButtons.forEach(orderButton => {
         orderButton.addEventListener('click', () => {
     
@@ -103,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 price: cardInfo.querySelector('#price').innerHTML,
                 img: cardImage.querySelector('#img').getAttribute('src')
             }
-            console.log(good);
             createOrder(good);
             closeOrderModal(orderModal);
             orderModal.classList.toggle('showModal');
@@ -148,11 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function closeOrderModal(orderModal) {
         const closeButton = orderModal.querySelector('#closeModal');
-        console.log(orderItem);
         closeButton.addEventListener('click', (event) => {
             orderModal.querySelector('#orderItem').remove(); 
             orderModal.classList.toggle('showModal');
-            console.log(event.target);
         })
     }
 }) 
