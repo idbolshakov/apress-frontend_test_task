@@ -25,6 +25,7 @@ body {
 }
 .catalog__btn {
   display: block;
+  width: 105px;
 }
 .catalog__btn ~ .catalog__btn {
   margin-top: 10px;
@@ -36,11 +37,9 @@ body {
     margin: 0;
     font-size: 13px;
 }
-.catalog__heading + .catalog__price {
+.catalog__price {
     font-size: 18px;
     font-weight: 700;
-}
-.catalog__heading + .catalog__price {
     margin-top: 10px;
 }
 
@@ -64,23 +63,64 @@ body {
 .modal-order__right {
   display: table-cell;
 }
+.modal-order__img {
+  max-width: 250px;
+}
 
 
 .modal-cart {
-  position: absolute;
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
   background-color: lightgoldenrodyellow;
 }
-
+.modal-cart__title {
+  margin: 0;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+  background-color: gray;
+}
+.modal-cart__inner {
+  padding: 20px;
+}
 .modal-cart__list {
   list-style-type: none;
   padding-left: 0;
   margin: 0;
 }
+.modal-cart__item {
+  display: flex;
+}
+
+.modal-cart__link {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+
+.btn-reset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+.btn-reset::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
 
 .btn {
-  width: 105px;
   padding: 6px 10px 7px;
   font-size: 14px;
   color: white;
