@@ -2,34 +2,21 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body>
     <main class="product-listing-wrapper"></main>
 
-    <section class="modal-cart">
-      <h2 class="modal-cart__title">Вы добавили в корзину:</h2>
-      <div class="modal-cart__inner">
-        <ul class="modal-cart__list">
-          <li class="modal-cart__item">
-            <img class="modal-cart__img" src="assets/images/3.jpg">
-            <div class="modal-cart__caption">
-              <h3 class="modal-cart__heading">
-                  Гостиная классика Panamar Classic
-              </h3>
-              <div class="modal-cart__price">267593</div>
-              <button class="modal-cart__delete-btn btn-reset">X</button>
-            </div>
-          </li>
-        </ul>
-        <a class="modal-cart__link btn" href="#">Перейти в корзину</a>
-      </div>
-    </section>
+
 
     <script src="api/products.js"></script>
-    <script src="renderCatalog.js"></script>
-    <script src="renderModalOrder.js"></script>
+    <script src="js/cart-data.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/modal-order.js"></script>
+    <script src="js/modal-cart.js"></script>
   </body>
 </html>
