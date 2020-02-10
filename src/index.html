@@ -7,14 +7,56 @@
   </head>
 
   <body>
-    <main class="product-listing-wrapper"></main>
+    <main class="product-listing-wrapper">
+      <section class="catalog">
+        <a href="#" class="catalog__cart js-cat-cart"></a>
+        <ul class="catalog__list">
+        </ul>
+      </section>
+    </main>
 
+    <section class="modal-cart js-modal-cart">
+      <h2 class="modal-cart__title">Вы добавили в корзину:</h2>
+      <div class="modal-cart__inner">
+        <ul class="modal-cart__list js-cart-list">
+        </ul>
+        <a class="modal-cart__link js-cart-link btn" href="#">Перейти в корзину</a>
+      </div>
+    </section>
 
+    <section class="modal-order">
+      <div class="modal-order__overlay"></div>
+      <div class="modal-order__inner">
+        <h2 class="modal-order__title js-order-title"></h2>
+        <form class="modal-order__form" action="https://echo.htmlacademy.ru" method="post">
+          <div class="modal-order__top">
+            <div class="modal-order__left modal-order__desc">
+              <img class="modal-order__img js-order-img" src="">
+              <div class="modal-order__price js-order-price"></div>
+            </div>
+            <div class="modal-order__right modal-order__comment">
+              <label class="modal-order__comment-title" for="modal-order__message">Комментарий к заказу:</label>
+              <textarea class="modal-order__comment-text" name="comment" id="modal-order__message"></textarea>
+            </div>
+          </div>
+          <div class="modal-order__bottom">
+            <div class="modal-order__left modal-order__phone-label">
+              <label for="modal-order__phone">Ваш телефон *:</label>
+            </div>
+            <div class="modal-order__right modal-order__phone">
+              <input class="modal-order__input" id="modal-order__phone" name="phone" required>
+              <input class="modal-order__submit btn btn-reset-style" type="submit" value="Отправить">
+              <input class="modal-order__product-id js-order-id" value="" name="product-id" style="display:none;">
+            </div>
+          </div>
+        </form>
+        <button class="modal-order__close-btn btn-reset-style">&#215;</button>
+      </div>
+    </section>
 
     <script src="api/products.js"></script>
     <script src="js/cart-data.js"></script>
     <script src="js/upload.js"></script>
-    <script src="js/render.js"></script>
     <script src="js/catalog.js"></script>
     <script src="js/modal-order.js"></script>
     <script src="js/modal-cart.js"></script>
