@@ -2,12 +2,93 @@
 <html>
   <head>
     <meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+	<script>
+function fetchAPIDataList() {
+  var productList = document.getElementById('productList');
+
+  for (var i = 0; i < API.products.length; i++) {
+  
+  	newdiv = document.createElement('div');
+    newdiv.id = 'proditem_'+API.products[i].id; 
+	newdiv.classList.add("item");
+    newdiv.innerHTML = '<div class="item-icon"><img src="'+ API.products[i].img +'"></div>'+
+		'<div class="item-description">' + API.products[i].title + 
+			'<div class="item-price">' + API.products[i].price.toLocaleString() + '</div>'+
+		'</div>'+
+		'<div class="item-buttons"><button type="button" class="order-button" onclick="MakeOrder('+ API.products[i].id +')">Заказать</button> <button type="button" onclick="AddToCart('+ API.products[i].id +')">В&nbsp;корзину</button></div>';
+	productList.appendChild(newdiv);   
+  }
+}
+
+</script>
   </head>
 
-  <body>
-    <main class="product-listing-wrapper">
+<!-- The Order Modal -->
+<div id="orderModal" class="modal">
+
+  <!-- Modal content -->
+  <form action="" class="order-modal-content">
+    <div class="order-modal-header">
+      <p id="order-title"></p>
+	  <span class="order-close" onclick='closeOrderModal()'>&times;</span>
+	</div>
+	<div class="order-modal-wrapper">
+	  <div class="order-modal-aside">
+	    <img id="order-img" src="" width="200px";/>
+	    <div id="order-price" class="item-price"></div>
+	  </div>
+	  <div class="divider-line"></div>
+	  <label for="comment">Комментарий к заказу:</label>
+      <textarea placeholder="" name="comment" rows="4" cols="65"></textarea>
+	</div>
+	<div class="order-modal-wrapper">
+	  <div class="order-modal-aside">
+	    <label for="phone">Ваш телефон *:</label>
+	  </div>
+	  <input type="tel" placeholder="" name="phone" required>
+    </div>
+	<div class="order-modal-wrapper">
+	   <div class="order-modal-aside">
+	   </div>
+
+	   <button type="button" class="order-button" onclick='closeOrderModal()'>Отправить</button>
+	</div>
+  </form>
+</div>
+
+<!-- The Cart Modal -->
+<div id="cartModal" class="modal">
+  <!-- Modal content -->
+  <form action="" class="cart-modal-content">
+    <span class="cart-close" onclick='closeCartModal()'>&times;</span>
+    <div class="cart-modal-header">
+      <p>Вы добавили в корзину: </p>
+	  
+	</div>
+	<div class="cart-modal-wrapper">
+	  <div class="order-modal-aside">
+	    <img id="cart-img" src="" width="200px";/>
+	  </div>
+	  <div class="cart-modal-main">
+	    <div id="cart-title"></div>
+	    <div id="cart-price" class="item-price"></div>
+	  </div>
+	</div>
+	<div class="cart-modal-wrapper">
+	   <button type="button" class="order-button" onclick='closeOrderModal()'>Перейти в корзину</button>
+	</div>
+  </form>
+</div>
+
+  <body onload="fetchAPIDataList()">
+    <main id="productList" class="product-listing-wrapper">
     </main>
 
+
+
     <script src="api/products.js"></script>
+	<script src="js/main.js"></script>
+
   </body>
 </html>

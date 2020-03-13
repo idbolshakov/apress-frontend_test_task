@@ -1,0 +1,175 @@
+body {
+	font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif;
+	color: #59595a;
+}
+button {
+    padding: 0 40px;
+    margin: 10px 0;
+	background-color: #eaeaea;
+	border: none;
+	height: 30px;
+	color: #59595a;
+}
+input,textarea {
+	background: #eee;
+    border: none;
+	resize: none;
+}
+
+.product-listing-wrapper {
+    padding: 5em;
+	min-width: 600px;
+	max-width: 1000px;
+    margin: 0 auto;
+}
+.item {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+    height: 200px;
+
+}
+.item-icon {
+	flex-basis: 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.item-icon img{
+	width: 300px;
+}
+.item-description {
+	flex-grow: 7;
+	flex-direction: column;
+}
+.item-price {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.item-price::after {
+	content:" руб.";
+}
+.item-buttons {
+	display: flex;
+	flex-basis: 1;
+	justify-content: center;
+	flex-direction: column;
+}
+.order-button {
+	background-color: #cc2157;
+	color: white;
+}
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* CART Modal Content/Box */
+
+.cart-modal-header {
+  //margin-bottom: 10px;
+  //margin-top: 10px;
+  padding-left:20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-size:1.2em;
+  background-color: #919191;
+  color: white;
+}
+.cart-modal-content {
+	background-color: #f7f7f7;
+    margin: 20px 20px auto auto;
+    /* padding: 20px; */
+    border: 1px solid #888;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    top: 20px;
+    right: 20px;
+}
+.cart-modal-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 20px 0 20px;
+}
+.cart-modal-main {
+    flex-basis: 200px;
+    flex-direction: column;
+    padding: 0 10px;
+}
+.cart-close {
+    color: #cc2157;
+    /* float: right; */
+    font-size: 1.2em;
+    font-weight: bold;
+    right: 40px;
+    top: 90px;
+    position: absolute;
+	cursor: pointer;
+}
+
+/* ORDER Modal Content/Box */
+.order-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  display: flex;
+  flex-direction: column;
+}
+.order-modal-wrapper {
+  //background-color: #eee;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.order-modal-header {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.order-modal-header p {
+  font-size: 1.2em;
+  margin: 0;
+  flex-grow: 1;
+}
+.order-modal-aside {
+  flex-basis: 200px;
+}
+.divider-line {
+  flex-basis: 3px;
+  background-color: #cc2157;
+  margin: 0px 25px 0px 0px;
+}
+
+/* The Close Button */
+.order-close {
+  color: #aaa;
+  float: right;
+  font-size: 1.2em;
+  font-weight: bold;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
