@@ -1,0 +1,287 @@
+.product-listing-wrapper {
+    position: absolute;
+    right: 250px;
+    top: 360px;
+    width: 1000px;
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+    height: 200px;
+}
+
+.product__img {
+    width: 220px;
+    height: 180px;
+
+    margin-right: 20px;
+}
+
+.product__information {
+    flex-grow: 1;
+    width: 430px;
+}
+
+.product__information .information__title {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.product__information .information__price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.product__buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    text-align: center;
+    padding: 10px 30px;
+
+    color: #FFFFFF;
+
+    cursor: pointer;
+    border: none;
+    background-color: #DC143C;
+}
+
+.product__buttons .button--order{
+    margin-top: 35px;
+    margin-bottom: 20px;
+
+}
+
+.product__buttons .button--to-basket{
+    background-color: #E2E2E2;
+    color: #000000;
+}
+
+.pop-up--order {
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    z-index: 1000;
+
+    transform: translate(-50%,-50%);
+
+    margin: 0 auto;
+    width: 1000px;
+    height: 400px;
+
+    padding: 10px;
+
+    border: 5px solid #E2E2E2;
+
+    background-color: #FFFFFF;
+}
+
+.order__exit {
+    position: absolute;
+    top: 1px;
+    right: 7px;
+
+    width: 10px;
+    height: 10px;
+
+    color: #E2E2E2;
+    outline: none;
+
+    cursor: pointer;
+
+    border: none;
+    background-color: transparent;
+}
+
+.order__title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+.order__img {
+    width: 200px;
+    height: 150px;
+}
+
+.pop-up--order .order-wrapper {
+    display: flex;
+    height: 210px;
+}
+
+.order-wrapper__left {
+    margin-right: 120px;
+}
+
+.order-wrapper__right {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-wrapper__right::before {
+    content: '';
+
+    position: absolute;
+
+    left: -95px;
+
+    border-left: 4px solid red;
+    width: 4px;
+    height: 190px;
+}
+
+.order__comment-heading {
+    font-weight: bold;
+    display: inline-block;
+
+    margin-right: 20px;
+    margin-top: 0;
+
+    width: 100px;
+
+    text-align: right;
+}
+
+.order__comment {
+    background-color: #E2E2E2;
+    border: none;
+    outline: none;
+    resize: none;
+
+    height: 130px;
+
+    margin-top: 0;
+}
+
+.order__price {
+    color: #DC143C;
+    font-weight: bold;
+    font-family: "Arial";
+    font-size: 20px;
+
+    margin-left: 20px;
+}
+
+.order__phone {
+    display: flex;
+    margin-left: 100px;
+
+    width: 350px;
+
+    margin-bottom: 20px;
+}
+
+.phone__heading {
+    margin-right: 20px;
+}
+
+.order__phone .phone-input {
+    height: 20px;
+    margin-top: 15px;
+
+    background-color: #E2E2E2;
+    border: none;
+
+    outline: none;
+}
+
+.button--submit {
+    margin-left: 224px;
+}
+
+.pop-up--to-basket {
+    position: absolute;
+
+    right: 30px;
+    top: 30px;
+
+    width: 320px;
+    min-height: 300px;
+
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.basket__title {
+    margin: 0;
+    background-color: grey;
+    vertical-align: middle;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.basket__title .title {
+    color: #FFFFFF;
+    margin: 0;
+
+    font-size: 18px;
+    font-family: Arial;
+}
+
+.basket__product {
+    position: relative;
+    display: flex;
+
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+
+    background-color: #FFFFFF;
+
+    margin-bottom: 20px;
+}
+
+.basket__product .product__exit {
+    position: absolute;
+
+    right: 0;
+    top: 12px;
+
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+
+    background-color: transparent;
+    outline: none;
+}
+
+.basket__img {
+    height: 100px;
+    width: auto;
+
+    margin: 20px;
+    margin-left: 0;
+}
+
+.pop-up--to-basket .product__about {
+    width: 150px;
+}
+
+.pop-up--to-basket .product__title {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.pop-up--to-basket .product__price {
+    font-family: Arial;
+}
+
+.basket__to-basket {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
