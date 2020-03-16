@@ -1,0 +1,90 @@
+.form {
+    width: 100%;
+}
+
+.form__title {
+    font-size: 18px;
+}
+
+.form__data {
+    display: grid;
+    padding-top: 20px;
+    grid-template-columns: 185px 1fr;
+    grid-template-areas: 'dataInfo comment'
+                         'phoneLabel phoneInput'
+                         'null buttonSubmit';
+    grid-column-gap: 37px;
+    grid-row-gap: 20px;
+}
+
+.form__data-info {
+    grid-area: dataInfo;
+}
+
+.form__image {
+    position: relative;
+    width: 100%;
+    height: 133px;
+}
+
+.form__image-picture {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    object-fit: contain;
+}
+
+.form__price {
+    padding: 20px 0 20px;
+    font-size: 22px;
+    color: rgb(204, 33, 87);
+}
+
+.form__comment {
+    grid-area: comment;
+    border-left: 3px solid rgb(204, 33, 87);
+    display: grid;
+    grid-template-columns: 95px 1fr;
+    grid-column-gap: 27px;
+    padding-left: 13px;
+}
+
+.form__comment-label {
+    display: inline-block;
+    font-size: 14px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.form__comment-area {
+    height: 115px;
+    background: rgb(238, 238, 239);
+    border: none;
+}
+
+.form__phone-label {
+    padding-right: 10px;
+    grid-area: phoneLabel;
+    font-size: 14px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.form__phone-input {
+    grid-area: phoneInput;
+    height: 28px;
+    width: 200px;
+    background: rgb(238, 238, 239);
+    border: none;
+}
+
+.form__button-submit {
+    width: 150px;
+    padding: 7px;
+    grid-area: buttonSubmit;
+    background: rgb(204, 33, 87);
+    border: none;
+    color: rgb(255, 255, 255);
+}

@@ -1,0 +1,112 @@
+.cart {
+    max-width: 768px;
+    min-height: 30px;
+    margin: 0 auto;
+    text-align: right;
+}
+.cart__wrapper {
+    position: relative;
+    display: none;
+}
+.cart__wrapper_view {
+    display: block;
+}
+
+.cart__icon {
+    transform: translateX(-115px);
+    display: inline-block;
+    background-image: url("../../images/shopping-cart.svg");
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.cart__popup {
+    position: absolute;
+    top: 6px;
+    right: 20px;
+    width: 340px;
+    border: 2px solid rgb(145, 145, 145);
+    background: rgb(255, 255, 255);
+}
+.cart__popup::before {
+    width: 10px;
+    height: 10px;
+    display: block;
+    background: rgb(145, 145, 145);
+    position: absolute;
+    top: -5px;
+    right: 100px;
+    content: "";
+    transform-origin: center;
+    transform: rotate(45deg);
+}
+
+.cart__title {
+    padding: 20px;
+    background: rgb(145, 145, 145);
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+}
+
+.cart__content {
+    padding: 20px;
+    min-height: 150px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.cart__content:empty::after {
+    min-height: 150px;
+    padding-top: 50px;
+    content: 'Корзина пуста';
+    color: black;
+    font-size: 16px;
+}
+.cart__to-cart {
+    margin: 20px;
+    width: 190px;
+    display: block;
+    padding: 15px;
+    text-align: center;
+    background: rgb(204, 33, 87);
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.cart__content-item {
+    display: flex;
+}
+
+.cart__content-item-image {
+    position: relative;
+    width: 50%;
+    height: 133px;
+}
+.cart__content-item-image-picture {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    object-fit: contain;
+}
+.cart__content-item-title {
+    width: 40%;
+    text-align: left;
+}
+.cart__content-item-descriprion {
+    font-size: 16px;
+    font-weight: bold;
+}
+.cart__content-item-price {
+    font-size: 16px;
+    padding-top: 7px;
+}
+.cart__content-item-close-button {
+    cursor: pointer;
+    width: 10%;
+    color: rgb(204, 33, 87);
+    font-size: 20px;
+}

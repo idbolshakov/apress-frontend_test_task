@@ -1,0 +1,70 @@
+/* Данные стили для списка товаров */
+/* These are the styles for the product list */
+
+.product-listing-wrapper {
+    max-width: 768px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.product-listing__list {
+}
+
+.product-listing__item {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.product-listing__item-image {
+    position: relative;
+    width: 33%;
+    height: 200px;
+}
+
+.product-listing__item-image-image-picture {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    object-fit: contain;
+}
+
+.product-listing__item-description {
+    padding: 22px 0;
+    width: 50%;
+}
+
+.product-listing__item-description-name {
+    font-size: 14px;
+    color: black;
+    display: block;
+    text-decoration: none;
+}
+
+.product-listing__item-description-price {
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.product-listing__item-buttons {
+    width: 17%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.product-listing__item-buttons-btn {
+    font-size: 14px;
+    padding: 7px;
+    background: rgb(234, 234, 234);
+    border: none;
+    margin: 10px 0 10px 0;
+}
+
+.product-listing__item-buttons-btn_theme_to-buy {
+    background: rgb(204, 33, 87);
+    color: rgb(255, 255, 255);
+}

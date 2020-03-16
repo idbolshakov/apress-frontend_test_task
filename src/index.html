@@ -2,12 +2,35 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/styles/normalize.css">
+    <link rel="stylesheet" href="assets/styles/layout.css">
+    <link rel="stylesheet" href="assets/styles/components/header.css">
+    <link rel="stylesheet" href="assets/styles/components/cart.css">
+    <link rel="stylesheet" href="assets/styles/components/modal-window.css">
+    <link rel="stylesheet" href="assets/styles/components/form.css">
+    <link rel="stylesheet" href="assets/styles/components/product-listing.css">
   </head>
 
   <body>
+    <header class="header">
+      <div class="cart">
+          <div class="cart__icon"></div>
+      <div class="cart__wrapper">
+        <div class="cart__popup">
+            <div class="cart__title">Вы добавили в корзину:</div>
+            <div class="cart__content">
+            </div>
+            <a class="cart__to-cart" href="/">Перейти в корзину</a>
+          </div>
+        </div>
+      </div>
+    </header>
     <main class="product-listing-wrapper">
+      <ul class="product-listing__list">
+      </ul>
     </main>
 
     <script src="api/products.js"></script>
+    <script src="assets/scripts/index.js"></script>
   </body>
 </html>
