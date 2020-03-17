@@ -1,0 +1,24 @@
+{
+  "name": "apress-frontend_test_task",
+  "version": "1.0.0",
+  "description": "Тестовое задание на должность фронтенд-разработчика ===================================================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EgorEf/apress-frontend_test_task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.0.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1"
+  },
+  "bugs": {
+    "url": "https://github.com/EgorEf/apress-frontend_test_task/issues"
+  },
+  "homepage": "https://github.com/EgorEf/apress-frontend_test_task#readme"
+}
