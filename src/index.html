@@ -1,13 +1,72 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <main class="product-listing-wrapper">
+    <main>
+      <nav>
+        <h1 class="product-listing-title">Каталог диванов</h1>
+        <div class="cart-icon">
+          <h2 class="product-cart-img">
+            <img src="./assets/cart.svg" alt="cart" />
+            <div class="product-cart-count">
+              <span class="cart-counter">0</span>
+            </div>
+          </h2>
+          <div class="cart-popup">
+            <ul class="cart-popup-list"></ul>
+          </div>
+        </div>
+      </nav>
+      <div class="product-listing-wrapper"></div>
     </main>
 
+    <div class="order-popup">
+      <div class="order-popup-content">
+        <div class="order-popup-content-title">
+          <h3></h3>
+        </div>
+        <div class="order-popup-content-details">
+          <div class="order-popup-content-info">
+            <img src="" alt="sofa" />
+            <div class="order-popup-content-price"></div>
+          </div>
+          <div class="order-popup-content-contacts">
+            <form class="order-popup-form">
+              <div>
+                <label for="comment-inpuy">Комментарий к заказу</label>
+                <textarea
+                  name="comment-input"
+                  id="comment-input"
+                  cols="40"
+                  rows="5"
+                ></textarea>
+              </div>
+              <div>
+                <label for="phone-input">Ваш телефон* :</label>
+                <input
+                  type="tel"
+                  name="phone-input"
+                  id="phone-input"
+                  required
+                />
+              </div>
+
+              <div class="order-popup-content-button">
+                <button class="order-btn send-order" type="button">
+                  Отправить
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="api/products.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
