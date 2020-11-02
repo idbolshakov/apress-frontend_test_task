@@ -2,12 +2,167 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
     <main class="product-listing-wrapper">
+      <!-- modal -->
+        <div class="form__box">
+          <form action=""></form>
+          <div class="cross"></div>
+          <h2 class="title"></h2>
+            <div class="form__info">
+              <div class="form__img__block">
+                <div class="form__img">
+                </div>
+                <div class="form__price"></div>
+              </div>
+              <div class="form__text">
+                <div class="comment__title">Комментарий к заказу:</div>
+                <textarea name="name" id="" cols="30" rows="10"></textarea>
+              </div>
+            </div>
+            <div class="form__input">
+              <label for="">
+                <span class="inp_text">Ваш телефон*:</span>
+                <input type="tel">
+                <input type="hidden" name="product-id">
+              </label>
+              <label for="">
+                <input class="btn-order" type="button" value="Отправить">
+              </label>
+            </div>
+          </form>
+        </div>
+      <!-- finish modal -->
+
+      <!-- popup-basket -->
+      <div class="popup-basket">
+        <div class="popup-basket__head">
+          Вы добавили в корзину:
+        </div>
+        <div class="popup-basket__body">
+          <div class="popup-basket__products"></div>
+          <a href="">Перейти в корзину</a>
+        </div>
+      </div>
+      <!-- finish popup-basket -->
+
     </main>
 
     <script src="api/products.js"></script>
+
+    <script> 
+
+    var num = API.products.price
+      // num.match(/\d{3}/g).join(" ")
+      (num.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
+      
+
+      // for (item of API.products) {
+      //   let itemWrap = document.createElement('div');   
+      //   itemWrap.className = 'item-wrap';
+      //   itemWrap.innerHTML = 
+      //     `<div class="item__photo"><a href="#"><img src="${item.img}" alt="${item.title}"></a></div> 
+      //      <div class="item__info"><div class="item-wrap__title">${item.title}</div><div class="price">${item.price}</div></div>
+      //      <div class="item__actions"><button class="btn-order">Заказать</button><button class="btn-basket">В корзину</button></div>`
+        
+      //   document.body.append(itemWrap);
+      // }
+
+      for (let index = 0; index < API.products.length; index++) {
+        let itemWrap = document.createElement('div');   
+        itemWrap.className = 'item-wrap';
+        itemWrap.innerHTML = 
+          `<div class="item__photo"><a href="#"><img src="${API.products[index].img}" alt="${API.products[index].title}"></a></div> 
+           <div class="item__info"><div class="item-wrap__title">${API.products[index].title}</div><div class="price">${API.products[index].price} руб.</div></div>
+           <div class="item__actions"><button product-id="${API.products[index].id}" class="btn-order">Заказать</button><button class="btn-basket" product-id="${API.products[index].id}">В корзину</button></div>`        
+        document.body.append(itemWrap);
+      }
+
+      
+      document.addEventListener('click', function(event) {
+        event.preventDefault();
+        let elem = event.target;
+        let modal = document.querySelector('.form__box');
+        let popup = document.querySelector('.popup-basket');
+        let modalId = document.querySelector('input[name="product-id"]');
+        let modalImg = document.querySelector('.form__img');
+        let modalNameProduct = document.querySelector('.title'); 
+        let modalPrice = document.querySelector('.form__price');
+        if(elem.classList.contains('btn-order') || elem.classList.contains('btn-basket')) {       
+
+          let item = elem.parentElement.parentElement;
+          let itemId = elem.getAttribute('product-id');
+          let itemImg = item.querySelector('.item__photo').innerHTML;
+          let itemName = item.querySelector('.item-wrap__title').innerHTML;
+          let itemPrice = item.querySelector('.price').innerHTML;
+
+          if(elem.classList.contains('btn-order')) {
+            modal.classList.add('open');
+            modalId.value = itemId;
+            modalImg.innerHTML = itemImg;
+            modalNameProduct.innerHTML = itemName;
+            modalPrice.innerHTML = itemPrice;
+          }else{
+            let ids = [];              
+            let basketList = document.querySelector('.popup-basket__products');
+            let basketItemWrap = document.createElement('div');   
+            basketItemWrap.className = 'popup-basket__item';
+            basketItemWrap.setAttribute('product-id', itemId);
+            
+            basketItemWrap.innerHTML = 
+              `<div class="popup-basket__photo">${itemImg}</div>
+              <div class="popup-basket__info">
+              <div class="popup-basket__title">${itemName}</div>
+              <div class="popup-basket__price">${itemPrice} руб.</div>
+              </div>
+              <div class="popup-basket__close"></div>`;            
+
+            let basketItemAdded = document.querySelectorAll('.popup-basket__item');           
+
+            basketItemAdded.forEach(function(element, index) {
+              ids[index] = element.getAttribute('product-id');
+            });    
+            
+            if(ids.indexOf(itemId) == -1) {
+              basketList.append(basketItemWrap);              
+            }   
+
+            popup.classList.add('start');    
+                          
+          }
+        }else if(elem.classList.contains('cross')) {
+          modal.classList.remove('open');
+        }else if(elem.classList.contains('popup-basket__close')) {
+          let basketItem = elem.parentElement.remove();
+          let popupBasket = document.querySelectorAll('.popup-basket__close');
+          if (popupBasket.length <= 0) {
+            popup.classList.remove('start');
+          }                 
+        }else{
+          if(!elem.closest('.popup-basket')) {
+            popup.classList.remove('start'); 
+          }
+          if(!elem.closest('.form__box')) {
+            modal.classList.remove('open');
+          }
+        }
+      });
+
+      // function price(n) {
+      //   return (n + "").split("").reverse().join("").replace(/(\d{3})/g, "$1 ").split("").reverse().join("").replace(/^ /, "")
+      // }
+
+
+      function formatNumber(n, sep) {
+        return (n+'').split(/(?=(?:\d{3})+$)/).join(sep == undefined ? ' ' : sep)
+        }
+        console.log(formatNumber(1000000))
+
+
+
+    </script>
   </body>
 </html>

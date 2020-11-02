@@ -1,0 +1,280 @@
+*, *::before, *::after {
+    box-sizing: border-box
+}
+body {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: sans-serif, arial;
+} 
+
+.item-wrap {
+    display: flex;
+    padding: 20px 0;
+    align-items: center;
+}
+
+.item-wrap > div {
+    height: 100%;
+}
+
+.item__photo,
+.item__actions {
+    flex-basis: 20%;
+    max-width: 20%;
+}
+
+.item__info {
+    flex: 0 0 60%;
+    max-width: 60%;
+    align-items: flex-start;
+    text-align: left;
+    font-size: 18px; 
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.item__actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;  
+    width: 100%;
+    margin: 10px 0;
+    font-size: 16px;
+    padding: 5px 0;
+}
+
+button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-order {
+    background: #cc2157;
+    color: #ffffff;
+}
+
+.btn-basket {
+    background: #eaeaea;
+    color: #5f5f5f;
+}
+
+img {
+    width: 100%;
+}
+
+
+/*------------ modal------------- */
+.form__box {
+    background-color: #fff;;
+    border: #e0e0e0 solid 3px;
+    padding: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: ease opacity .3s;
+    opacity: 0;
+    visibility: hidden;
+}
+.form__box.open {
+    opacity: 1;
+    visibility: visible;
+}
+.cross {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background-image: url('../images/cross.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.form__info {
+    display: flex;
+}
+
+.form__img__block {
+    flex: 0 0 20%;
+    max-width: 20%;
+    border-right: solid 3px #cc2157;
+    padding-right: 40px;
+    margin-right: 15px;
+}
+.form__price {
+    font-size: 24px;
+    color: #cc2157;
+}
+
+.form__text {
+    flex: 0 0 75%;
+    max-width: 75%;
+    display: flex;
+}
+
+.comment__title {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: right;
+    margin-right: 25px;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    height: 120px;
+    background: #e8ebe8;
+    border: none;
+    padding: 10px;
+}
+textarea:focus {
+    border: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.form__input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 20px 0 0 19.7%;
+
+}
+.form__input > label {
+    margin-bottom: 30px;
+}
+.inp_text {
+    position: absolute;
+    left: -120px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+input {
+    outline: none;
+    border: none;
+    background: #e8ebe8;
+    font-size: 16px;
+    padding: 5px 3px;
+}
+
+input[tylpe="tel"] {
+    position: relative;
+}
+
+input[type="button"] {
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    padding: 5px 38px;
+}
+
+.input__text {
+    margin-left: -148px;
+    font-size: 18px;
+    font-weight: normal;
+
+} 
+
+/*------------finish modal------------- */
+
+.popup-basket {
+    border: solid 2px #919191;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background-color: #fff;
+    z-index: 3;
+
+    transition: ease opacity .3s;
+    opacity: 0;
+    visibility: hidden;
+
+}
+
+.popup-basket.start {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-basket::after {
+    content: '▲';
+    width: 5px;
+    height: 10px;
+    color: #919191;
+    position: absolute;
+    top: -15px;
+    right: 30%;
+}
+
+
+.popup-basket__photo {
+    flex: 0 0 40%;
+    max-width: 40%;
+    margin-right: 15px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.popup-basket__body > a {
+    margin-top: 25px;
+    display: block;
+}
+
+.popup-basket__body {
+    padding: 20px;
+}
+.popup-basket__body > a {
+    color: #fff;
+    background-color: #cc2157;
+    padding: 10px 0;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    width: 200px;
+}
+
+.popup-basket__head {
+    background-color: #919191;
+    color: #fff;
+    font-size: 18px;
+    padding: 20px;
+}
+.popup-basket__info {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.popup-basket__item {
+    position: relative;
+    width: 350px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+}
+.popup-basket__close {
+    cursor: pointer;
+    background-image: url('../images/close-cross.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: 0;
+    top: 0;
+}
