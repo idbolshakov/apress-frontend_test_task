@@ -55,21 +55,11 @@
 
     <script> 
 
-    var num = API.products.price
-      // num.match(/\d{3}/g).join(" ")
-      (num.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
-      
-
-      // for (item of API.products) {
-      //   let itemWrap = document.createElement('div');   
-      //   itemWrap.className = 'item-wrap';
-      //   itemWrap.innerHTML = 
-      //     `<div class="item__photo"><a href="#"><img src="${item.img}" alt="${item.title}"></a></div> 
-      //      <div class="item__info"><div class="item-wrap__title">${item.title}</div><div class="price">${item.price}</div></div>
-      //      <div class="item__actions"><button class="btn-order">Заказать</button><button class="btn-basket">В корзину</button></div>`
-        
-      //   document.body.append(itemWrap);
-      // }
+  var num = API.products.price;
+  var formatted = num.format({
+    digitsCount: 3,
+    decimalCount: 2
+  });
 
       for (let index = 0; index < API.products.length; index++) {
         let itemWrap = document.createElement('div');   
@@ -150,18 +140,6 @@
           }
         }
       });
-
-      // function price(n) {
-      //   return (n + "").split("").reverse().join("").replace(/(\d{3})/g, "$1 ").split("").reverse().join("").replace(/^ /, "")
-      // }
-
-
-      function formatNumber(n, sep) {
-        return (n+'').split(/(?=(?:\d{3})+$)/).join(sep == undefined ? ' ' : sep)
-        }
-        console.log(formatNumber(1000000))
-
-
 
     </script>
   </body>
