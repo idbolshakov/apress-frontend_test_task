@@ -1,9 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
-
 * {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: sans-serif;
 }
 main {
   max-width: 800px;
@@ -160,8 +158,6 @@ nav {
 .cart-popup {
   display: none;
   position: absolute;
-  top: 80px;
-  left: 50px;
   width: 350px;
   padding: 20px;
   border-radius: 8px;
@@ -171,6 +167,11 @@ nav {
 
 .cart-popup.visible {
   display: block;
+  position: fixed;
+  right: 30px;
+  top: 40px;
+  max-height: 70vh;
+  overflow: scroll;
 }
 
 .cart-popup-list {

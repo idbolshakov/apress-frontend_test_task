@@ -7,21 +7,17 @@ class Catalog {
     this.productList.addEventListener("click", (e) => {
       let target = e.target;
       if (target.classList.contains("go-to-cart-btn")) {
-        const id = Number(target.parentNode.parentNode.dataset.id);
-        const { title, price, img } = this.products.find(
-          (item) => item.id === id
-        );
-        const cartItem = new CartItem(id, title, price, img);
-        cart.addItem(cartItem);
+        cart.addItem(this.getItemData(target));
       } else if (target.classList.contains("order-btn")) {
-        const id = Number(target.parentNode.parentNode.dataset.id);
-        const { title, price, img } = this.products.find(
-          (item) => item.id === id
-        );
-        const popupItem = new CartItem(id, title, price, img);
-        popup.showPopup(popupItem);
+        popup.showPopup(this.getItemData(target));
       }
     });
+  }
+
+  getItemData(target) {
+    const id = Number(target.parentNode.parentNode.dataset.id);
+    const { title, price, img } = this.products.find((item) => item.id === id);
+    return new CartItem(id, title, price, img);
   }
 
   getItemsList() {
