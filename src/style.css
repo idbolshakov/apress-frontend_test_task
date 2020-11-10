@@ -1,6 +1,5 @@
 * {
     margin: 0;
-    word-break: break-all;
 }
 
 body {
@@ -62,33 +61,13 @@ h3 {
 .order-popup {
     position: fixed;
     top: 30%;
-    z-index: 10;
-    display: none;
+    z-index: 12;
+    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     padding: 15px;
     background-color: white;
     border: 2px solid #d3d3d3;
-}
-
-.order-popup::after,
-.order-popup::before,
-.cart-popup__product::after,
-.cart-popup__product::before {
-    position: absolute;
-    content: "";
-    width: 2px;
-    height: 13px;
-    background-color: #d3d3d3;
-    top: 5px;
-    right: 10px;
-    transform: rotate(45deg);
-    cursor: pointer;
-}
-
-.order-popup::before,
-.cart-popup__product::before {
-    transform: rotate(-45deg);
 }
 
 .order-popup__wrapper {
@@ -144,15 +123,19 @@ h3 {
 /* cart-popup */
 
 .cart-popup {
-    position: relative;
-     display: none; /*inline-block; */
+    position: fixed;
+    top: 0;
+    right: 20px;
+    z-index: 10;
+    display: inline-block;
+    max-width: 350px;
+    max-height: 400px;
+    word-break: break-all;
+    background-color: white;
     border: 1px solid gray;
+    overflow: auto;
 }
 
-.cart-popup::after,
-.cart-popup::before {
-    background-color: #c7315e;
-}
 .cart-popup__title {
     padding: 20px;
     padding-right: 50px;
@@ -167,13 +150,11 @@ h3 {
     border-bottom: 1px solid black;
 }
 
-.cart-popup__product::after,
-.cart-popup__product::before {
-    background-color: #c7315e;
-}
-
 .cart-popup__info {
-    margin: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-right: 30px;
 }
 
 .cart-popup__name {
@@ -188,6 +169,44 @@ h3 {
 }
 
 
+/* close */
+
+.order-popup__close,
+.cart-popup__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.order-popup__close::after,
+.order-popup__close::before,
+.cart-popup__close::after,
+.cart-popup__close::before {
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 13px;
+    background-color: #d3d3d3;
+    top: 0px;
+    right: 5px;
+    transform: rotate(45deg);
+}
+
+.order-popup__close::before,
+.cart-popup__close::before {
+    transform: rotate(-45deg);
+}
+
+.cart-popup__close::after,
+.cart-popup__close::before {
+    top: 0;
+    right: 5px;
+    background-color: #c7315e;
+}
+
 /* button */
 
 .btn {
@@ -196,6 +215,7 @@ h3 {
     font-size: 16px;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .btn_pink {
