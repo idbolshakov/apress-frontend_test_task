@@ -22,6 +22,7 @@ h3 {
     flex-wrap: wrap;
     max-width: 1024px;
     margin: 0 auto;
+    margin-bottom: 150px;
 }
 
 .card {
@@ -45,8 +46,13 @@ h3 {
 .card__info-wrapper {
     display: flex;
     flex-direction: column;
+    width: 525px;
     padding-top: 20px;
     margin-left: 30px;
+}
+
+.card__price {
+    font-size: 18px;
 }
 
 .card__button-wrapper {
@@ -62,7 +68,7 @@ h3 {
     position: fixed;
     top: 30%;
     z-index: 12;
-    display: flex;
+    display: none; /*flex; */
     flex-direction: column;
     flex-wrap: wrap;
     padding: 15px;
@@ -124,10 +130,10 @@ h3 {
 
 .cart-popup {
     position: fixed;
-    top: 0;
-    right: 20px;
+    top: 20px;
+    right: 50px;
     z-index: 10;
-    display: inline-block;
+    display: none; /*inline-block; */
     max-width: 350px;
     max-height: 400px;
     word-break: break-all;
