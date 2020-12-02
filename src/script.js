@@ -1,38 +1,46 @@
 'use strict';
 
-const catalog = document.querySelector('.product-listing-wrapper');
-const cartPopup = document.querySelector('.cart-popup');
-const orderPopup = document.querySelector('.order-popup');
-const orderTitle = orderPopup.querySelector('.order-popup__name');
-const orderWrap = orderPopup.querySelector('.order-popup__wrapper');
-const orderForm = orderPopup.querySelector('.order-popup__form');
-const orderBtn = orderPopup.querySelector('.order-popup__button');
-const closeOrder = orderPopup.querySelector('.order-popup__close');
-const cartTitle = cartPopup.querySelector('.cart-popup__title');
+const catalog = document.querySelector('.product-listing-wrapper'),
+    cartPopup = document.querySelector('.cart-popup'),
+    orderPopup = document.querySelector('.order-popup'),
+    orderTitle = orderPopup.querySelector('.order-popup__name'),
+    orderWrap = orderPopup.querySelector('.order-popup__wrapper'),
+    orderForm = orderPopup.querySelector('.order-popup__form'),
+    orderBtn = orderPopup.querySelector('.order-popup__button'),
+    closeOrder = orderPopup.querySelector('.order-popup__close'),
+    cartTitle = cartPopup.querySelector('.cart-popup__title');
 
 
 function render() {
-    API.products.forEach(({id, title, price, img}) => {
-        let element = document.createElement('div');
-        element.classList.add('card');
-        element.setAttribute('data-id', id);
-        element.innerHTML = `
-            <div class="card__img"><img src=${img} alt=${title} width="200px" height="150px"></div>
-            <div class="card__info-wrapper">
-                <h3 class="card__name">${title}</h3>
-                <p class="card__price">${formatPrice(price)} руб.</p>
-            </div>
-            <div class="card__button-wrapper">
-                <button class="btn btn_pink card__order">Заказать</button>
-                <button class="btn card__in-cart">В корзину</button>
-            </div>
-        `;
-        catalog.append(element);
-    });
+    API.products.forEach(getElement);
+}
+  
+function getElement({id, title, price, img}) {
+  const element = document.createElement('div');
+
+  element.classList.add('card');
+  element.setAttribute('data-id', id);
+  element.innerHTML = getMarkup(title, price, img);
+
+  catalog.append(element);
+}
+
+function getMarkup(title, price, img) {
+  return (
+    `<div class="card__img"><img src=${img} alt=${title} width="200px" height="150px"></div>
+      <div class="card__info-wrapper">
+          <h3 class="card__name">${title}</h3>
+          <p class="card__price">${formatPrice(price)} руб.</p>
+      </div>
+      <div class="card__button-wrapper">
+          <button class="btn btn_pink card__order">Заказать</button>
+          <button class="btn card__in-cart">В корзину</button>
+      </div>`
+  );
 }
 
 function renderCart(title, price, img) {
-    let element = document.createElement('div');
+    const element = document.createElement('div');
     element.classList.add('cart-popup__product');
     element.innerHTML = `
         <span class="cart-popup__remove" tabindex="0"></span>
@@ -47,7 +55,7 @@ function renderCart(title, price, img) {
 
 function renderOrder(title, price, img) {
     orderTitle.textContent = `${title}`;
-    let element = document.createElement('div');
+    const element = document.createElement('div');
     element.classList.add('order-popup__info-wrapper');
     element.innerHTML = `
         <img src=${img} alt="${title}" width="150px" height="90px">
@@ -57,25 +65,25 @@ function renderOrder(title, price, img) {
 }
 
 function activationButtons() {
-    const buttonsOrder = catalog.querySelectorAll('.card__order');
-    const buttonsCart = catalog.querySelectorAll('.card__in-cart');
+    const buttonsOrder = catalog.querySelectorAll('.card__order'),
+        buttonsCart = catalog.querySelectorAll('.card__in-cart');
 
-    buttonsOrder.forEach(button => {
-        button.addEventListener('click', () => {
-            openPopup(orderPopup);
-            searchButtonId(button, renderOrder);
-            if (cartPopup.classList.contains('visible')) {
-                closePopup(cartPopup);
-            }
+    function listenerButtons(btnArr, popup, renderPopup) {
+        btnArr.forEach(button => {
+            button.addEventListener('click', () => {
+                openPopup(popup);
+                searchButtonId(button, renderPopup);
+                if (btnArr === buttonsOrder) {
+                    if (cartPopup.classList.contains('visible')) {
+                        closePopup(cartPopup);
+                    }
+                }
+            });
         });
-    });
+    }
 
-    buttonsCart.forEach(button => {
-        button.addEventListener('click', () => {
-            openPopup(cartPopup);
-            searchButtonId(button, renderCart);
-        });
-    });
+    listenerButtons(buttonsOrder, orderPopup, renderOrder);
+    listenerButtons(buttonsCart, cartPopup, renderCart);
 }
 
 function searchButtonId(button, f) {
@@ -106,7 +114,7 @@ function cleanCart(evt) {
     }
 }
 
-function closePopups() {
+function closeOrderPopup() {
     closeOrder.addEventListener('click', () => {
         cleanOrder();
     });
@@ -134,7 +142,9 @@ function closePopups() {
             orderForm.reset();
         }
     });
+}
 
+function closeCartPopup() {
     cartTitle.addEventListener('click', () => {
         closePopup(cartPopup);
     });
@@ -155,11 +165,14 @@ function formatPrice(num) {
 }
 
 function formatTitle(title) {
-    title = title.substring(0, 30);
-    title += '...';
+    if (title.length >= 30) {
+        title = title.substring(0, 30);
+        title += '...';
+    }
     return title;
 }
 
 render();
-closePopups();
+closeOrderPopup();
+closeCartPopup();
 activationButtons();
