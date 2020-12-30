@@ -1,0 +1,52 @@
+.site-list {
+	display: grid;
+	padding: 0;
+	width: 900px;
+}
+
+.site-list__item {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+}
+
+.site-list__picture {
+	width: 265px;
+	height: 190px;
+	object-fit: contain;
+}
+
+.site-list__wrapper {
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+	width: 400px;
+    min-height: 190px;
+    margin-left: 40px;
+}
+
+.site-list__price {
+	font-size: 18px;
+	margin: 0;
+}
+
+.site-list__button-wrapper {
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	width: 138px;
+    height: 85px;
+}
+
+.site-list__button {
+	font-style: inherit;
+    font-size: 14px;
+    width: 126px;
+    height: 35px;
+    border: 0;
+}
+
+.site-list__button--pink {
+	background-color: #e91e63;
+	color: white;
+}

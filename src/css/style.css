@@ -1,0 +1,253 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 1200px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", "Helvetica", sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 1200px;
+  padding: 0 100px;
+  margin: 0 auto;
+}
+
+.section-basket {
+  position: fixed;
+  display: none;
+  top: 10px;
+  left: 686px;
+  transform: translate(1%, 1%);
+  z-index: 100;
+}
+
+.section-basket__active {
+  display: block;
+}
+
+.section-basket__wrapper {
+  width: 400px;
+  height: 250px;
+  padding: 10px;
+  background-color: #e9e9e9;
+  box-shadow: 0px 20px 30px gray;
+}
+
+.section-basket__note {
+  position: relative;
+  width: 380px;
+  height: 35px;
+  background-color: gray;
+  padding-left: 25px;
+  padding-top: 7px;
+  color: white;
+  margin-top: 15px;
+}
+
+.section-basket__note::before {
+  content: ''; 
+  position: absolute; 
+  top: -20px;
+  right: 68px;
+  border: 10px solid transparent; 
+  border-bottom: 10px solid gray; 
+}
+
+.section-basket__text {
+  margin: 0;
+}
+
+.section-basket__wrapper-content {
+  width: 351px;
+  height: 120px;
+  overflow-y: scroll;
+}
+
+.button-delete {
+  position: absolute;
+  top: 77px;
+  right: 10px;
+  background-color: transparent;
+  border: 0;
+}
+
+.button-basket {
+  font-style: inherit;
+  font-size: 14px;
+  width: 150px;
+  height: 35px;
+  border: 0;
+  background-color: #e91e63;
+  color: white;
+}
+
+.order-form {
+  display: none;
+  position: fixed;
+  position: fixed;
+  top: 185px;
+  left: 315px;
+  transform: translate(10px, 10px);
+  z-index: 101;
+}
+
+.order-form-open {
+  display: block; 
+}
+
+.order-form__form {
+  padding: 10px;
+  width: 750px;
+  height: 350px;
+  border: 3px solid #d6d0d0;
+  background-color: white;
+}
+
+.button-clouse {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+}
+
+.order-form__content {
+  height: 219px;
+  float: left;
+  overflow: hidden;
+}
+
+.order-form__position {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0px;
+  width: 507px;
+  margin-top: 35px;
+}
+
+.order-form__comment {
+  display: flex;
+  text-align: end;
+  justify-content: space-between;
+  width: 450px;
+  height: 150px;
+  float: left;
+  border-left: 4px solid #E91E63;
+  padding-left:20px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.textarea {
+  background-color: #8080802e;
+  border: none;
+  height: 100px;
+}
+
+.order-form__data {
+  width: 450px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-form__label {
+  margin-left: -135px;
+}
+
+.order-form__input {
+  height: 25px;
+  margin-left: 30px;
+  border: none;
+  background-color: #8080802e;
+}
+
+.button-form {
+  width: 140px;
+  background-color: #E91E63;
+  border: none;
+  padding: 8px;
+  font-size: 14px;
+  color: white;
+  font-family: inherit;
+  margin-top: 25px;
+}
+
+/*стили для карточки товара корзины*/
+.wrapper-basket {
+  display: flex;
+  align-items: center;
+  width: 330px;
+  height: 125px;
+  padding: 10px 0 10px 0px;
+}
+
+.basket-img {
+  width: 100px;
+  height: 85px;
+}
+
+.wrapper-block-basket {
+  padding-left: 10px;
+}
+
+.basket-title {
+  font-size: 12px;
+}
+
+.basket-price {
+  font-size: 12px;
+  font-weight: bold;
+  color: #615f5f;
+}
+
+//стили для карточки заказа товара
+
+.title-order {
+  font-size: 20px;
+  max-width: 500px;
+  margin: 0;
+}
+
+.img-order {
+  width: 151px;
+  height: 114px;
+}
+
+.price-order {
+  font-size: 20px;
+  color: #eb0928;
+  margin: 0;
+  margin-bottom: 40px;
+}
