@@ -59,7 +59,7 @@ class Products {
 
 						<div class="modal-backet__heading">
 							<p class="">Вы добавили в карзину</p>	
-							<img class="modal-backet__triangle" src="src/assets/images/Vector25.png" />
+							<img class="modal-backet__triangle" src="assets/images/Vector25.png" />
 						</div>
 						
 						<div class="catalog-backet__coll">
@@ -71,7 +71,7 @@ class Products {
 								<p class="modal-backet__price">${price.toLocaleString()} руб</p>
 							</div>
 								<div class="">
-							<img class="modal-backet__img " src="src/assets/images/close.png" />
+							<img class="modal-backet__img " src="assets/images/close.png" />
 							</div>
 						</div>
 						
