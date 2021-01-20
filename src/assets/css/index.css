@@ -1,0 +1,221 @@
+/** @format */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	max-width: 1200px;
+	width: 90%;
+	margin: auto;
+	padding: 150px 0;
+	/* color: #59595a; */
+	color: #0a0a0a;
+	font-family: "Montserrat", sans-serif;
+	position: relative;
+}
+
+.button {
+	height: 30px;
+	max-width: 127px;
+	border: none;
+	padding: 10px 30px;
+	display: grid;
+	align-content: center;
+	font-size: 14px;
+}
+
+.catalog {
+	display: grid;
+	justify-content: center;
+}
+
+/* goods */
+
+.goods {
+	display: grid;
+	grid-template-columns: 300px 1fr auto;
+	grid-gap: 20px;
+	margin-bottom: 50px;
+	align-items: start;
+}
+
+.goods__img {
+	max-width: 300px;
+	width: 100%;
+}
+
+.goods__title {
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+.goods__price {
+	font-weight: 500;
+	font-size: 30px;
+	color: #cc2157;
+}
+
+.goods__btns {
+	display: grid;
+	grid-gap: 20px;
+}
+
+.goods__orger {
+	background: #cc2157;
+	cursor: pointer;
+	color: #fff;
+}
+
+.goods__basket {
+	background: #eaeaea;
+	cursor: pointer;
+	color: #59595a;
+}
+
+/* popap*/
+
+.modal-block {
+	border: 1px solid;
+	width: fit-content;
+	padding: 0px 0px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: rgb(255, 255, 255);
+	border-radius: 5px;
+}
+
+/* popap ----  order*/
+
+.modal-order {
+	padding: 20px;
+}
+.modal-order__title {
+	font-size: 25px;
+}
+
+.modal-order-info {
+	display: flex;
+	margin-top: 50px;
+}
+
+.modal-order-info__line {
+	border-right: 2px solid #cc2157;
+}
+
+.modal-order-info__price {
+	font-size: 30px;
+	color: #cc2157;
+}
+
+.modal-order-info__feedBack {
+	display: grid;
+	grid-template-columns: 0.1fr 4fr;
+	grid-gap: 30px;
+	margin-left: 15px;
+}
+.modal-order-info__title {
+	width: 8em;
+}
+.modal-order-info__input {
+	background: #eeeeef;
+	border: none;
+	height: 116px;
+	max-width: 487px;
+}
+
+.modal-order-feedBack {
+	display: grid;
+	margin-top: 30px;
+	grid-template-columns: 0.43fr 1fr;
+}
+
+.modal-order-feedBack__phone {
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: 30px;
+	justify-content: end;
+	padding-right: 15px;
+}
+
+.modal-order__btn {
+	background: #cc2157;
+	cursor: pointer;
+	color: #fff;
+	margin-top: 30px;
+	max-width: fit-content;
+	padding: 25px 40px;
+}
+
+input {
+	background: #eeeeef;
+	border: none;
+	height: 28px;
+}
+
+/* popap ----  backet*/
+
+.modal-backet {
+	max-width: 500px;
+	width: 100%;
+	border: none;
+	box-shadow: 0px 6px 7px 0px #3f3f44;
+	top: 4%;
+	left: 95%;
+	transform: translate(-100%, 0%);
+}
+.modal-backet__heading {
+	background: rgb(145, 145, 145);
+	color: whitesmoke;
+	padding: 20px;
+}
+
+.modal-backet__triangle {
+	position: absolute;
+	top: -11px;
+	right: 104px;
+	width: 21px;
+}
+
+.catalog-backet__coll {
+	display: grid;
+	grid-template-columns: 1fr 0.5fr 0.1fr;
+	justify-items: center;
+	padding: 20px;
+	grid-gap: 10px;
+}
+
+.modal-backet__img {
+	width: 14px;
+	cursor: pointer;
+}
+
+.modal-backet__info {
+	font-size: 14px;
+	display: grid;
+	grid-gap: 15px;
+	align-self: start;
+}
+
+.modal-backet__title {
+	max-width: 200px;
+	font-weight: 600;
+	font-size: 16px;
+}
+.modal-backet__price {
+	font-size: 20px;
+	color: #59595a;
+}
+
+.modal-backet__btn {
+	background: #cc2157;
+	cursor: pointer;
+	color: #fff;
+	margin-top: 30px;
+	max-width: fit-content;
+	padding: 25px 40px;
+	margin: auto 20px 20px 20px;
+}
