@@ -2,12 +2,66 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body>
-    <main class="product-listing-wrapper">
-    </main>
+    <header class="header">
+      <section class="popup popup-cart" id="popup-cart">
+        <div class="popup__box popup-cart__box">
+          <h2 class="popup-cart__title">Вы добавили в корзину:</h2>
+
+          <div class="popup-cart-item">
+            <div class="popup-cart-item__img">
+              <img src="assets/images/1.jpg" alt="">
+            </div>
+            <div class="popup-cart-item__info">
+              <button class="popup-cart-item__delete">&times;</button>
+              <h3 class="popup-cart-item__title">Выкатной детский диван Зайка производитель фабрика Blanes</h3>
+              <b class="popup-cart-item__price ruble">62 332</b>
+            </div>
+          </div>
+  
+          <a class="popup-cart__link-cart btn btn_primary" href="#">Перейти в корзину</a>
+        </div>
+      </section>
+    </header>
+
+    <main class="product-listing-wrapper"></main>
+
+    <section class="popup popup-order" id="popup-order">
+      <div class="popup__box popup-order__box">
+        <button class="popup__close popup-order__close" type="button">&times;</button>
+        <h2 class="popup-order__title"></h2>
+
+        <form class="popup-order__form">
+          <div class="popup-order__left">
+            <div class="popup-order__img">
+              <img src="" alt="">
+            </div>
+            <p class="popup-order__price ruble"></p>
+          </div>
+
+          <div class="popup-order__right">
+            <label class="popup-order__comment">
+              <span>Комментарий к&nbsp;заказу:</span>
+              <textarea class="input" rows="6"></textarea>
+            </label>
+          </div>
+
+          <div class="popup-order__left">
+            <label class="popup-order__phone-label" for="phone">Ваш телефон*:</label>
+          </div>
+
+          <div class="popup-order__right">
+            <input class="popup-order__phone input" type="tel" id="phone" required>
+            <button class="popup-order__submit btn btn_primary" type="submit">Отправить</button>
+          </div>
+        </form>
+      </div>
+    </section>
 
     <script src="api/products.js"></script>
+    <script src="js/script.js" type="module"></script>
   </body>
 </html>
