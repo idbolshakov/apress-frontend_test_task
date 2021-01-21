@@ -1,4 +1,4 @@
-class OrderPopup {
+class Product {
   constructor(title, price, image, id = null) {
     this.id = id;
     this.title = title;
@@ -9,6 +9,4 @@ class OrderPopup {
   static removePopup() {
     document.querySelector(".popup-wrapper").remove();
   }
-
-  static removeFromBusket() {}
 }

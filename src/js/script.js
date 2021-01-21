@@ -20,14 +20,14 @@ let productsArray = [];
 let currentBusketProduct;
 for (let i in API.products.reverse()) {
   document.querySelectorAll(".product__item-button--order")[i].addEventListener("click", () => {
-    let currentOrderProduct = new OrderPopup(API.products[i].title, API.products[i].price, API.products[i].img);
+    let currentOrderProduct = new Product(API.products[i].title, API.products[i].price, API.products[i].img);
     document.querySelector(".product-listing-wrapper").insertAdjacentHTML(
       "beforeBegin",
       `
       <div class="popup-wrapper">
         <div class="popup">
           <p class="popup__product-title">${currentOrderProduct.title}</p>
-          <span class="popup__close-btn" onclick="OrderPopup.removePopup()">&#10008;</span>
+          <span class="popup__close-btn" onclick="Product.removePopup()">&#10008;</span>
           <div class="popup__product-desc">
             <img class="popup__product-image" src="${currentOrderProduct.image}">
             <span class="popup__product-price">${currentOrderProduct.price} руб.</span>
@@ -49,7 +49,7 @@ for (let i in API.products.reverse()) {
     );
   });
   document.querySelectorAll(".product__item-button--busket")[i].addEventListener("click", () => {
-    currentBusketProduct = new OrderPopup(API.products[i].title, API.products[i].price, API.products[i].img, i);
+    currentBusketProduct = new Product(API.products[i].title, API.products[i].price, API.products[i].img, i);
     if (!productsArray.length) {
       document.querySelector(".product-listing-wrapper").insertAdjacentHTML(
         "beforeBegin",
@@ -63,7 +63,7 @@ for (let i in API.products.reverse()) {
         `
       );
     }
-    productsArray.push(new OrderPopup(API.products[i].title, API.products[i].price, API.products[i].img, i));
+    productsArray.push(new Product(API.products[i].title, API.products[i].price, API.products[i].img, i));
     document.querySelector(".busket__title").insertAdjacentHTML(
       "afterend",
       `
