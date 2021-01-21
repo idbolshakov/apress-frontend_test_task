@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
   <body>
-    <main class="product-listing-wrapper">
-    </main>
+    <main class="product-listing-wrapper"></main>
 
-    <script src="api/products.js"></script>
+    <div class="popup_basket">
+      <div class="popup_basket_message">Вы добавили в корзину:</div>
+      <a class="basket_link" href="#"> Перейти в корзину </a>
+    </div>
+    <div class="popup_order"></div>
+
+    <script src="./api/products.js"></script>
+    <script src="./js/app.js"></script>
   </body>
 </html>
