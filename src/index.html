@@ -1,13 +1,69 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-  </head>
 
-  <body>
-    <main class="product-listing-wrapper">
-    </main>
+<head>
+	<meta charset="UTF-8">
+	<title>Тестовое задание, Огаркова Анастасия</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/main.js" defer></script>
+</head>
 
-    <script src="api/products.js"></script>
-  </body>
+<body>
+	<header class="header">
+		<div class="container container-header">
+			<div class="cart"></div>
+		</div>
+	</header>
+	
+	<main class="product-listing-wrapper container">
+		
+	</main>
+
+	<template id="product-template">
+		<div class="product-item">
+			<img src="" alt="" class="product-img">
+			<div class="product-info">
+				<h2 class="product-title"></h2>
+				<div class="product-price"></div>
+			</div>
+			<div class="product-order">
+				<a href="#" class="btn btn-order">Заказать</a>
+				<a href="#" class="btn btn-cart">В корзину</a>
+			</div>
+		</div>
+	</template>
+
+	<div class="popup popup-order">
+		<a class="order-close" href="#">&times;</a>
+		<div class="order-title"></div>
+		<form method="post" action="#" class="order-form">
+			<div class="order-info">
+				<img src="" alt="" class="order-img">
+				<div class="order-price"></div>
+			</div>
+			<label class="popup-label" for="comment">Комментарий<br>к заказу:</label>
+			<textarea class="order-textarea" name="comment" id="comment" cols="30" rows="10"></textarea>
+			<label class="popup-label" for="phone">Ваш телефон *:</label>
+			<input class="order-input" type="text" id="phone" name="phone" />
+			<button class="btn btn-order btn-popup-order">Отправить</button>
+		</form>
+	</div>
+
+	<div class="popup popup-cart">
+		<div class="cart-head">Вы добавили в корзину:</div>
+		<div class="cart-body">
+			<img src="" alt="" class="cart-img">
+			<div class="cart-product-info">
+				<a class="cart-product-del" href="#">&times;</a>
+				<div class="cart-product-title"></div>
+				<div class="cart-product-price"></div>
+			</div>
+		</div>
+		<a href="#" class="btn btn-order btn-popup-cart">Перейти в корзину</a>
+	</div>
+
+	<div id="overlay"></div>
+	<script src="api/products.js"></script>
+</body>
+
 </html>

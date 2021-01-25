@@ -1,4 +1,4 @@
-var API = {
+const API = {
   products: [
     {
       "id": 1, 
