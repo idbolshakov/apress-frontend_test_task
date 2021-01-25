@@ -1,23 +1,44 @@
 "use strict";
 
-for (let i = 0; i < API.products.length; i++) {
+let arrayProducts = API.products,
+  itemCounter = 0;
+
+arrayProducts.forEach((item) => {
   document.querySelector(".product-listing-wrapper").insertAdjacentHTML(
     "beforeend",
-    `<section class="products">
-      <div class="products_item">
-        <img class="item-image" src="${API.products[i].img}" alt="product image" />
+    `<div class="products_item">
+        <img class="item-image" src="${item.img}" alt="product image" />
         <div class="item-descr">
-          <p class="item-title">${API.products[i].title}</p>
-          <p class="item-price">${API.products[i].price} руб.</p>
+          <p class="item-title">${item.title}</p>
+          <p class="item-price">${item.price} руб.</p>
         </div>
         <div class="item-btns">
-          <button class="button btn-red orderNow" data-product-value="${i}">Заказать</button>
-          <button class="button btn-grey toBasket" data-product-value="${i}">В корзину</button>
+          <button class="button btn-red orderNow" data-product-value="${itemCounter}">Заказать</button>
+          <button class="button btn-grey toBasket" data-product-value="${itemCounter}">В корзину</button>
         </div>
-      </div>
-    </section>`
+      </div>`
   );
-}
+  itemCounter++;
+});
+
+// for (let i = 0; i < API.products.length; i++) {
+//   document.querySelector(".product-listing-wrapper").insertAdjacentHTML(
+//     "beforeend",
+//     `<section class="products">
+//       <div class="products_item">
+//         <img class="item-image" src="${API.products[i].img}" alt="product image" />
+//         <div class="item-descr">
+//           <p class="item-title">${API.products[i].title}</p>
+//           <p class="item-price">${API.products[i].price} руб.</p>
+//         </div>
+//         <div class="item-btns">
+//           <button class="button btn-red orderNow" data-product-value="${i}">Заказать</button>
+//           <button class="button btn-grey toBasket" data-product-value="${i}">В корзину</button>
+//         </div>
+//       </div>
+//     </section>`
+//   );
+// }
 
 let toBasketBtns = document.querySelectorAll(".toBasket"),
   makeOrderBtns = document.querySelectorAll(".orderNow"),
@@ -25,22 +46,25 @@ let toBasketBtns = document.querySelectorAll(".toBasket"),
   dataCounter;
 
 toBasketBtns.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    dataCounter = btn.getAttribute("data-product-value");
+  btn.addEventListener("click", function (e) {
+    let eventBtn = e.target;
+    dataCounter = eventBtn.getAttribute("data-product-value");
     document.querySelector(".popup_basket").style.display = "block";
     showBasket(dataCounter);
   });
 });
+
 makeOrderBtns.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    dataCounter = btn.getAttribute("data-product-value");
+  btn.addEventListener("click", function (e) {
+    let eventBtn = e.target;
+    dataCounter = eventBtn.getAttribute("data-product-value");
     document.querySelector(".popup_order").style.display = "block";
     showOrder(dataCounter);
   });
 });
 
 function showOrder(dataCounter) {
-  let closePopupBtn = document.querySelector(".close_popup");
+  document.querySelector(".popup_order").innerHTML = "";
 
   document.querySelector(".popup_order").insertAdjacentHTML(
     "afterbegin",
@@ -69,6 +93,7 @@ function showOrder(dataCounter) {
     </form>
   </div>`
   );
+  let closePopupBtn = document.querySelector(".close_popup");
 
   closePopupBtn.addEventListener("click", sendFormOrder);
 
