@@ -1,15 +1,16 @@
 
 function showPopupOrder(idOfListing) {
+    const product = API.products[idOfListing];
     document.querySelector(".product-listing-wrapper").insertAdjacentHTML(
-        "afterbegin",
+        "beforebegin",
         `<div class="popup-order">
         <div class="popup-order-body">
-            <div class="popup-order-title">${API.products[idOfListing].title}</div>
+            <div class="popup-order-title">${product.title}</div>
             <button class="popup-order-close">X</button>
             <div class="popup-order-content">
                 <div class="popup-order-img-and-price">
-                    <img src="${API.products[idOfListing].img}" class="popup-order-img"/>
-                    <div class="popup-order-price">${API.products[idOfListing].price.toLocaleString()} руб.</div>
+                    <img src="${product.img}" class="popup-order-img" alt="${product.title}"/>
+                    <div class="popup-order-price">${product.price.toLocaleString()} руб.</div>
                 </div>
                 <form class="popup-order-form" action="#">
                     <div class="comment">
@@ -29,7 +30,7 @@ function showPopupOrder(idOfListing) {
         </div>
     </div>`
     );
-    let popupOrderCloseButton = document.querySelector('.popup-order-close');
+    const popupOrderCloseButton = document.querySelector('.popup-order-close');
     popupOrderCloseButton.addEventListener("click", function () {
         document.querySelector(".popup-order").remove();
     });

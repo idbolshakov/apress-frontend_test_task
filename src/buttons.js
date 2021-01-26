@@ -1,15 +1,13 @@
-const toCartButton = document.querySelectorAll('.products-element-cart-button');
-const orderButton = document.querySelectorAll('.products-element-order-button');
+const productsContainer = document.querySelector('.products-container');
 
-toCartButton.forEach((btn) => {
-    btn.addEventListener("click", function () {
-        idOfListing = btn.getAttribute("id") -1;
+productsContainer.onclick = function (event) {
+    let target = event.target;
+    if (target.tagName != 'BUTTON') return;
+    if (target.classList.contains('products-element-cart-button')) {
+        idOfListing = target.getAttribute("id") - 1;
         showPopupCart(idOfListing)
-    });
-})
-orderButton.forEach((btn) => {
-    btn.addEventListener("click", function () {
-        idOfListing = btn.getAttribute("id") -1;
+    } else {
+        idOfListing = target.getAttribute("id") - 1;
         showPopupOrder(idOfListing)
-    });
-});
+    }
+}
