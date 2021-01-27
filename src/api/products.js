@@ -74,10 +74,6 @@ var API = {
 
 
 
-let pro = API.products
-
-
-
 
 
 

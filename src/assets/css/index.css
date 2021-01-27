@@ -75,6 +75,9 @@ body {
 }
 
 /* popap*/
+.button:hover {
+	cursor: pointer;
+}
 
 .modal-block {
 	border: 1px solid;
@@ -86,6 +89,35 @@ body {
 	transform: translate(-50%, -50%);
 	background: rgb(255, 255, 255);
 	border-radius: 5px;
+}
+.modal-close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 10px;
+	height: 10px;
+}
+.modal-close:hover {
+	filter: contrast(0.1);
+}
+
+.modal-close:hover {
+	cursor: pointer;
+}
+
+.modal-wrapper-block {
+	background: antiquewhite;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #262523c9;
+	display: none;
+	backdrop-filter: blur(1px);
+	z-index: 4;
 }
 
 /* popap ----  order*/

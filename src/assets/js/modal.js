@@ -5,9 +5,9 @@ const modalCloseBg = document.querySelector(".modal-wrapper-block").getAttribute
 const modalCloseCrossBascet = document.querySelector(".modal-backet__img").getAttribute('class');
 
 
-document.querySelector('.products').addEventListener('click', e => {
+document.querySelector('.product-listing-wrapper').addEventListener('click', e => {
     e.preventDefault();
-    let modal = e.target.getAttribute('data-id');
+    const modal = e.target.getAttribute('data-id');
     onArray.forEach(event => {
         const modalClose = e.target.getAttribute('class');
         // open popap 
@@ -25,9 +25,9 @@ document.querySelector('.products').addEventListener('click', e => {
 // close popap "Esc"
 
 window.document.addEventListener('keyup', e => {
-    onArray.forEach(event => {
+    onArray.forEach(esc => {
         if (e.keyCode == "27") {
-            event.style.display = "none";
+            esc.style.display = "none";
         }
     });
 })

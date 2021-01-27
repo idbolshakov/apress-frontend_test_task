@@ -1,9 +1,9 @@
 /** @format */
-
+const ROOT_PRODUCTS = document.querySelector('.product-listing-wrapper');
 class Products {
 	render() {
 		let htmlCatalog = "";
-		pro.forEach(({ title, price, img, id }) => {
+		API.products.forEach(({ title, price, img, id }) => {
 			htmlCatalog += `
 
 	
