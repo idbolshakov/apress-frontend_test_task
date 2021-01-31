@@ -2,12 +2,37 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body>
     <main class="product-listing-wrapper">
+      <div class="list-container">
+      </div>
+
+      <div class="popup-order">
+      </div>
+
+      <div class="popup-basket">
+        <div class="popup-basket-content">
+
+          <div class="popup-basket-title-wrapper">
+            <div class="popup-basket-title-triangle"></div>
+            <div class="popup-basket-title">Вы добавили в корзину:</div>
+          </div>
+
+          <div class="popup-basket-product">
+          </div>
+
+          <button class="popup-basket-btn product-btn-order" type="button">Перейти в корзину</button>
+
+        </div>
+      </div>
+
+
     </main>
 
     <script src="api/products.js"></script>
+    <script type="module" src="js/script.js"></script>
   </body>
 </html>

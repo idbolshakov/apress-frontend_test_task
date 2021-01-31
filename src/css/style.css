@@ -1,0 +1,7 @@
+@import 'libs/bootstrap-reboot.min.css';
+@import 'libs/fonts.css';
+
+
+@import 'blocks/productCard.css';
+@import 'blocks/popupOrder.css';
+@import 'blocks/popupBasket.css';
