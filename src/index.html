@@ -2,12 +2,40 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/popup.css">
   </head>
 
   <body>
     <main class="product-listing-wrapper">
+    <div class="product-listing">
+    </div>
     </main>
 
+    <div class="order-popup popup">
+      <div class="popup__header">
+        <span class="popup__close" onclick="onCloseOrder()">&#x2715;</span>
+      </div>
+      <div class="popup__body popup-order-info">
+      </div>
+    </div>
+    <div class="cart-popup popup">
+      <div class="popup__header popup__header--cart">
+        <span class="cart__header-title">Вы добавили в корзину:</span>
+        <span class="popup__close" onclick="onCloseCart()">&#x2715;</span>
+      </div>
+      <div class="popup__body">
+        <div class="cart__products">
+        </div>
+        <button class="btn btn-primary">Перейти в корзину</button>
+      </div>
+    </div>
+
     <script src="api/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/order.js"></script>
+    <script src="js/products-list.js"></script>
   </body>
 </html>
