@@ -1,4 +1,5 @@
-var API = {
+"use strict"
+const API = {
   products: [
     {
       "id": 1, 
