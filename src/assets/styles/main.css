@@ -1,0 +1,15 @@
+@import url('./reset.css');
+@import url('./fonts.css');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', 'Tahoma', 'Arial', sans-serif;
+}
