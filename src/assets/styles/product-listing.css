@@ -19,6 +19,7 @@
 }
 
 .products {
+  padding: 2rem 0;
   width: 80%;
   max-width: 1024px;
   min-width: 768px;
