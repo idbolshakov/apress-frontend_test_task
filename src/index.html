@@ -1,13 +1,68 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-  </head>
 
-  <body>
-    <main class="product-listing-wrapper">
-    </main>
+<head>
+  <meta charset="UTF-8">
+  <title>Product Listing</title>
+</head>
 
-    <script src="api/products.js"></script>
-  </body>
+<body>
+  <main class="product-listing-wrapper">
+    <section class="products">
+      <ul class="products-list">
+        <li class="product">
+          <img src="assets/images/1.jpg" alt="Выкатной детский диван Зайка производитель фабрика Blanes - Фото" class="product__img">
+          <div class="product__content">
+            <h2 class="product__title">Выкатной детский диван Зайка производитель фабрика Blanes</h2>
+            <span class="product__price">11740</span>
+          </div>
+          <div class="product__btn-group">
+            <button type="button" class="btn">Заказать</button>
+            <button type="button" class="btn btn-cart">В корзину</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <div class="cart">
+    <div class="cart__notice">
+      Вы добавили в корзину:
+    </div>
+    <div class="cart__content">
+      <img src="assets/images/1.jpg" alt="" class="cart__product-img">
+      <div class="cart__product-info">
+        <h2 class="cart__product-title">
+          Выкатной детский диван Зайка производитель фабрика Blanes
+        </h2>
+        <span class="cart__product-price">11740</span>
+      </div>
+    </div>
+    <button type="button" class="btn">Перейти в корзину</button>
+    <button type="button" class="btn btn-close">&times;</button>
+  </div>
+
+  <div class="order-popup">
+    <h2 class="order-popup__title">
+      Выкатной детский диван Зайка производитель фабрика Blanes
+    </h2>
+    <form action="#" class="form order-popup__wrapper">
+      <div class="order-popup__info">
+        <img src="assets/images/1.jpg" alt="Выкатной детский диван Зайка производитель фабрика Blanes - Фото" class="order-popup__img">
+        <span class="order-popup__price"></span>
+      </div>
+      <fieldset class="order-popup__comment">
+        <label for="comment" class="label order-popup__label">Комментарий к заказу:</label>
+        <textarea name="comment" id="comment"></textarea>
+      </fieldset>
+      <label for="phone" class="label order-popup__label">Ваш телефон:</label>
+      <input id="phone" name="phone" type="text" class="input order-popup__input">
+      <button type="submit" class="btn order-popup__btn">Отправить</button>
+    </form>
+    <button type="button" class="btn btn-close order-popup__btn-close">&times;</button>
+  </div>
+
+  <script src="api/products.js"></script>
+</body>
+
 </html>
