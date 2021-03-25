@@ -1,11 +1,4 @@
 .product-listing-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.products {
   padding: 2rem 0;
   width: 80%;
   max-width: 1024px;
