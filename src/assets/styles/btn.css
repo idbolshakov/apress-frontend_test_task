@@ -2,7 +2,6 @@
   --color-bg: var(--color-accent);
   --color: #fff;
   border: none;
-  -webkit-border-radius: 0;
   border-radius: 0;
   font-size: .8rem;
   background-color: var(--color-bg);
