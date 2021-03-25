@@ -37,6 +37,7 @@ img {
 textarea,
 input {
   --color-bg: var(--color-light);
+  display: block;
   border: none;
   border-radius: 0;
   background-color: var(--color-bg);
@@ -45,6 +46,7 @@ input {
 }
 
 label {
+  display: block;
   font-size: .8rem;
   font-weight: 700;
 }
