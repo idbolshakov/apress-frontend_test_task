@@ -34,6 +34,21 @@ img {
   max-width: 100%;
 }
 
+textarea,
+input {
+  --color-bg: var(--color-light);
+  border: none;
+  border-radius: 0;
+  background-color: var(--color-bg);
+  font-size: .8rem;
+  padding: .2rem;
+}
+
+label {
+  font-size: .8rem;
+  font-weight: 700;
+}
+
 .no-scroll {
   overflow: hidden;
 }
