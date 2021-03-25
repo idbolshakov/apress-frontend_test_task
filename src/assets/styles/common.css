@@ -2,6 +2,7 @@
   --color-main: #59595a;
   --color-accent: #cc2157;
   --color-light: #eaeaea;
+  --color-cart: #919191;
   --color-shadow: rgba(0, 0, 0, 0.2);
   --shadow: 0px 4px 16px 0px var(--color-shadow);
 }
@@ -22,6 +23,7 @@ body {
 }
 
 body {
+  position: relative;
   color: var(--color-main);
   font-family: 'Roboto', 'Tahoma', 'Arial', sans-serif;
   font-size: 1rem;
