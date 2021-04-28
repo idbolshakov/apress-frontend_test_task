@@ -1,0 +1,288 @@
+/* ГЛАВНАЯ СТРАНИЦА */
+
+* {
+    box-sizing: border-box;
+}
+
+.center {
+    padding-left: calc(50% - 570px);
+    padding-right: calc(50% - 570px);
+}
+
+.product-listing-wrapper {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    position: absolute;
+}
+
+.goodItem {
+    display: flex;
+    margin-bottom: 50px;
+    height: 200px;
+}
+
+.img {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.info {
+    width: 50%;
+    margin: 30px;
+    font-family: Lato;
+    font-size: 18px;
+    line-height: 17px;
+    font-weight: 300;
+    color: #5D5D5D;
+}
+
+.btn {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn_buy {
+    width: 100%;
+    height: 40px;
+    background-color: #e32636;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.btn_buy:hover {
+    background-color: #b91826;
+    cursor: pointer;
+}
+
+.btn_cart {
+    height: 40px;
+    background-color: #c8c8c8;
+    border: none;
+    color: #4d4d4d;
+    font-size: 16px;
+}
+
+.btn_cart:hover {
+    background-color: #999999;
+    cursor: pointer;
+}
+
+.price {
+    font-size: 24px;
+    color: #404040;
+}
+
+/* Попап корзины */
+
+.pop-up-cart {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+
+.cart {
+    height: 350px;
+    background-color: #ebebeb;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 5% 5% auto auto;
+    border: 1px solid #888;
+    width: 40%;
+    z-index: 99999;
+
+}
+
+.top {
+    width: 100%;
+    height: 80px;
+    background-color: #6e6e6e;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.top_text {
+    font-family: Lato;
+    font-size: 26px;
+    line-height: 17px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.content {
+    height: 170px;
+    display: flex;
+    margin: 20px;
+}
+
+.content img {
+    max-height: 120px;
+    align-self: center;
+    object-fit: cover;
+    width: 30%;
+}
+
+.close_modal {
+    margin-top: 15px;
+    height: 28px;
+    background-color: #ebebeb;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    color: #e32636;
+}
+
+.close_modal:hover {
+    color: #b91826;
+}
+
+.cart_info {
+    margin-left: 15px;
+    margin-right: 15px;
+    align-self: start;
+    width: 70%;
+}
+
+.cart_btn {
+    margin-left: 20px;
+    width: 250px;
+}
+
+/* Попап заказа */
+
+.order {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 100px;
+    margin-left: 100px;
+    padding: 0 0 20px 40px;
+    border: 1px solid #888;
+    width: 80%;
+    z-index: 99999;
+    background-color: #ffffff;
+}
+
+.order__top {
+    display: flex;
+    align-items: flex-end
+}
+
+.order__top .top_text {
+    font-family: Lato;
+    font-size: 22px;
+    line-height: 17px;
+    font-weight: 300;
+    color: #5D5D5D;
+}
+
+.order_content_info {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.order_content_info-left {
+    width: 300px;
+}
+
+.order_content_info-left img {
+    max-width: 90%;
+    max-height: 150px;
+    object-fit: cover;
+}
+
+.top_price {
+    font-size: 24px;
+    color: #b91826;
+    font-weight: bold;
+}
+
+.order_content_info-right {
+    width: 800px;
+    border-left: 5px solid #b91826;
+    padding-left: 30px;
+    display: flex;
+}
+
+.order_content_info-right p {
+    width: 100px;
+    margin-top: 0;
+}
+
+.order_content_info-right input {
+    width: 600px;
+    height: 70%;
+    border: none;
+    background-color: #ebebeb;
+}
+
+.order__content_phone {
+    display: flex;
+    align-items: end;
+    margin-left: 150px;
+}
+
+.order__content_phone p {
+    margin-top: 0;
+}
+
+.order__content_phone input {
+    border: none;
+    background-color: #ebebeb;
+    width: 300px;
+    height: 40px;
+}
+
+.cart_btn {
+    margin-top: 20px;
+    margin-left: 295px;
+}
+
+.close_modal-order {
+    height: 28px;
+    background-color: #ffffff;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    color: #c8c8c8;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close_modal-order:hover {
+    color: #999999;
+}
+
+.top_text-mini {
+    font-family: Lato;
+    font-size: 18px;
+    line-height: 17px;
+    font-weight: 300;
+    color: #5D5D5D;
+    margin-right: 30px;
+    text-align: right;
+}
