@@ -2,12 +2,58 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" , type="text/css" , href="clear.css"/>
+  	<link rel="stylesheet" , type="text/css" , href="index.css"/>
   </head>
 
   <body>
-    <main class="product-listing-wrapper">
+    <main class="product-listing-wrapper js-main-wrapper">
     </main>
-
-    <script src="api/products.js"></script>
-  </body>
+    <div class="cart-popup-wrapper js-cart-popup-wrapper dn">
+      <div class="cart-pop-up-title">
+        Вы добавили в корзину
+      </div>
+      <div class="cart-popup-list-product js-list-product">
+      </div>
+      <button class="cart-popup-button-basket">
+        Перейти в корзину
+      </button> 
+    </div> 
+    <div class="order-popup-main-wrapper js-order-popup dn">
+      <div class="order-popup-wrapper">
+        <div class="close-order-popup js-close-order-popup">
+          &times;
+        </div>
+        <div class="order-popup-title js-order-popup-title">
+          <span class="js-order-popup-product-title"></span>
+        </div>
+        <div class="order-popup-data-main-wrapper">
+          <div class="order-popup-data-wrapper js-order-popup-wrapper-data">
+            <img class="order-popup-product-image js-order-popup-product-image" src="" alt=""/>
+            <span class="order-popup-product-price js-order-popup-product-price"></span>
+          </div>
+          <div class="comment-order-wrapper">
+            <span class="comment-text">
+              Комментарий к заказу:
+            </span>
+            <textarea class="form-comment-order"></textarea>
+          </div>
+        </div>
+        <div class="wrapper-send-phone">
+          <span class="user-phone-title">
+            Ваш телефон *:
+          </span>
+          <div class="wrapper-form-phone">
+            <input class="input-user-phone">
+            <button class="order-popup-busket-send-order js-add-item-busket">
+              Заказать
+            </button>
+          </div>
+        </div>
+      </div>
+    </body>
+  
+  <script src="api/products.js"></script>
+  <script src="scripts/listener.js"></script>
+  <script src="scripts/renderData.js"></script>
 </html>
