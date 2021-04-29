@@ -1,7 +1,7 @@
 const renderData = () => { 
   const cartPopUp = document.querySelector('.js-cart-popup-wrapper');
   const cartPopUpList = document.querySelector('.js-list-product');
-  const buttonCartPopUpClose = document.querySelector('.js-close-order-popup');
+  const buttonCloseCart = document.querySelector('.js-close-cart-popup');
 
   const orderPopUp = document.querySelector('.js-order-popup');
   const buttonAddItemBusket = document.querySelector('.js-add-item-busket');
@@ -65,14 +65,14 @@ const renderData = () => {
           <span class="cart-popup-product-title">${addedItemBusket.title}</span>
           <span class="cart-popup-product-price">${addSpacePrice} руб.</span>
         </div>
-        <div class="close-cart-pop-up js-close-cart-popup">
+        <div class="delete-item-cart-popup js-delete-cart-popup">
           &times;
         </div>
       </div>`
     );
 
     const elementBusket = document.getElementById(`for-delete-${addedItemBusket.id}`);
-    const buttonDelete = elementBusket.querySelector('.js-close-cart-popup');
+    const buttonDelete = elementBusket.querySelector('.js-delete-cart-popup');
 
     buttonDelete.onclick = () => elementBusket.remove();
   };
@@ -97,8 +97,8 @@ const renderData = () => {
     });
   });
 
-  buttonCartPopUpClose.onclick = () => cartPopUp.classList.add('dn');
   buttonOrderPopUpClose.onclick = () => orderPopUp.classList.add('dn'); 
+  buttonCloseCart.onclick = () => cartPopUp.classList.add('dn');
 };
 
 renderData();
