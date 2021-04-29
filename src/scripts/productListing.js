@@ -1,27 +1,30 @@
-const listener = () => {
+const productListing = () => {
   const productsWrapper = document.querySelector('.js-main-wrapper');
+  let allHtmlProducts = '';
 
-  API.products.forEach((item) => {
-    const addSpacePrice = String(item.price).replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 ');
+  const htmlProduct = (item) => {
+    const addSpacePrice = String(item.price).replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1 '); 
 
-    productsWrapper.insertAdjacentHTML('beforeend',`
-      <div class="product-wrapper"> 
+    return(
+      `<div class="product-wrapper"> 
         <div class="image-wrapper"> 
           <img class="product-image" src="${item.img}" alt="${item.title}">
         </div> 
         <div class="wrapper-data">
-          <h2>${item.title}</h2>
+          <h2 class="product-titlte">${item.title}</h2>
           <span class="product-price">${addSpacePrice} руб.</span>
         </div>
         <div class="button-wrapper">
           <button 
-            class="button-product listener-button-basket js-listener-button-busket" 
+            class="button-product listener-button-busket js-listener-button-busket" 
+            type="button"
             data-id=${item.id}
           >
             Заказать
           </button>
           <button 
             class="button-product listener-button-order js-listener-button-order" 
+            type="button"
             data-id=${item.id}
           >
             В корзину
@@ -29,7 +32,11 @@ const listener = () => {
         </div>
       </div>`
     );
-  });  
-}
+  };
 
-listener();
+  API.products.forEach((item) => allHtmlProducts += htmlProduct(item));  
+
+  productsWrapper.insertAdjacentHTML('beforeend', allHtmlProducts);
+};
+
+productListing();

@@ -1,8 +1,3 @@
-h2 {
-  font-size: 15px;
-  font-weight: normal;
-}
-
 .product-listing-wrapper {
   position: absolute;
   left: 30%;
@@ -34,6 +29,11 @@ h2 {
   padding-top: 20px;
 }
 
+.product-titlte {
+  font-size: 15px;
+  font-weight: normal;
+}
+
 .product-image {
   height: 100%;
   width: 100%;
@@ -52,7 +52,7 @@ h2 {
   margin-top: 10px;
 }
 
-.listener-button-basket {
+.listener-button-busket {
   background-color: #cc2157;
   color: #fff;
   border: none;
@@ -168,8 +168,8 @@ h2 {
 }
 
 .order-popup-product-image {
-  height: 175px;
-  width: 175px;
+  height: 155px;
+  width: 155px;
 }
 
 .order-popup-product-price {

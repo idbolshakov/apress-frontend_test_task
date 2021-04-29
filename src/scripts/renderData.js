@@ -1,24 +1,37 @@
 const renderData = () => { 
+  const productsWrapper = document.querySelector('.js-main-wrapper');
+  
   const cartPopUp = document.querySelector('.js-cart-popup-wrapper');
   const cartPopUpList = document.querySelector('.js-list-product');
-  const buttonCloseCart = document.querySelector('.js-close-cart-popup');
+  const buttonCloseCartPopUp = document.querySelector('.js-close-cart-popup');
 
   const orderPopUp = document.querySelector('.js-order-popup');
   const buttonAddItemBusket = document.querySelector('.js-add-item-busket');
-  const buttonOrderPopUpClose = document.querySelector('.js-close-order-popup');
-  const buttonAddInOrder = document.querySelectorAll('.js-listener-button-busket');
+  const buttonCloseOrderPopUp = document.querySelector('.js-close-order-popup');
 
   let saveItemForOrder;
 
-  buttonAddInOrder.forEach((item) => {
-    item.addEventListener('click', () => {
-      orderPopUp.classList.remove('dn');
-      cartPopUp.classList.add('dn');
+  productsWrapper.addEventListener('click', (e) => {
+    const checkTargetButtonBusket = e.target.classList.contains('js-listener-button-busket');
+    const checkTargetButtonOrder = e.target.classList.contains('js-listener-button-order');
+    const idProduct = e.target.getAttribute('data-id');
 
-      const idProduct = item.getAttribute('data-id');
+    if (checkTargetButtonBusket) {
+      isVisibleCartOrder(orderPopUp, cartPopUp);
       findProduct(idProduct);
-    });
+      return;
+    } 
+
+    if (checkTargetButtonOrder) {
+      isVisibleCartOrder(cartPopUp, orderPopUp);
+      renderItemBusket(idProduct);
+    }
   });
+
+  const isVisibleCartOrder = (removeSelector, addSelector) => {
+    removeSelector.classList.remove('dn');
+    addSelector.classList.add('dn');
+  }
 
   const renderItemOrder = (parentSelector, item) => {
     const imageProduct = parentSelector.querySelector(`.js-order-popup-product-image`);
@@ -79,26 +92,11 @@ const renderData = () => {
 
   buttonAddItemBusket.onclick = () => {
     renderItemBusket(saveItemForOrder);
-    
-    orderPopUp.classList.add('dn');
-    cartPopUp.classList.remove('dn');
+    isVisibleCartOrder(cartPopUp, orderPopUp);
   };
 
-  const buttonAddBasket = document.querySelectorAll('.js-listener-button-order');
-
-  buttonAddBasket.forEach((item) => {
-    item.addEventListener('click', () => {
-      const idProduct = item.getAttribute('data-id');
-
-      renderItemBusket(idProduct);
-
-      cartPopUp.classList.remove('dn');
-      orderPopUp.classList.add('dn');
-    });
-  });
-
-  buttonOrderPopUpClose.onclick = () => orderPopUp.classList.add('dn'); 
-  buttonCloseCart.onclick = () => cartPopUp.classList.add('dn');
+  buttonCloseOrderPopUp.onclick = () => orderPopUp.classList.add('dn'); 
+  buttonCloseCartPopUp.onclick = () => cartPopUp.classList.add('dn');
 };
 
 renderData();
