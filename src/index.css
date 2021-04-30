@@ -1,5 +1,5 @@
 .product-listing-wrapper {
-  position: absolute;
+  position: fixed;
   left: 30%;
   top: 20%;
 }
