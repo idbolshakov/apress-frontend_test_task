@@ -1,5 +1,5 @@
 class Card {
-  constructor(cardSelector, card, handleBasketClick, handleOrderClick) {
+  constructor(cardSelector, card, { handleBasketClick, handleOrderClick }) {
     const { id, title, price, img } = card;
     this._data = card;
     this._cardSelector = cardSelector;

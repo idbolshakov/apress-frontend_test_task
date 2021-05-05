@@ -1,12 +1,23 @@
 class Popup {
   constructor(popupSelector, config) {
     this._popup = document.querySelector(popupSelector);
-    this._popupOpen = config.popupOpen;
-    this._closeButton = this._popup.querySelector(config.popupCloseButton);
-    this._overlay = this._popup.querySelector(config.popupOverlay);
+    this._popupOpen = config.open;
+    this._closeButton = this._popup.querySelector(config.closeButton);
+    this._overlay = this._popup.querySelector(config.overlay);
+
+    this._image = this._popup.querySelector(config.imageProduct);
+    this._title = this._popup.querySelector(config.titleProduct);
+    this._price = this._popup.querySelector(config.priceProduct);
   }
 
-  open() {
+  open(data) {
+    const { title, price, img } = data;
+
+    this._image.src = img;
+    this._image.alt = `Фотография товара ${title}`;
+    this._title.textContent = title;
+    this._price.textContent = `${price.toLocaleString('ru')} руб.`;
+
     this._popup.classList.add(this._popupOpen);
     document.addEventListener('keydown', this._handleEscClose);
     this._setEventListeners();
@@ -35,40 +46,21 @@ class Popup {
 class PopupBasket extends Popup {
   constructor(popupSelector, config) {
     super(popupSelector, config);
-    this._image = this._popup.querySelector(config.popupBasketImage);
-    this._title = this._popup.querySelector(config.popupBasketTitle);
-    this._price = this._popup.querySelector(config.popupBasketPrice);
+    this._buttonToBasket = this._popup.querySelector(config.toBasket);
   }
 
-  open(data) {
-    const { title, price, img } = data;
-
-    this._image.src = img;
-    this._image.alt = `Фотография товара ${title}`;
-    this._title.textContent = title;
-    this._price.textContent = `${price.toLocaleString('ru')} руб.`;
-    super.open();
+  _setEventListeners() {
+    this._buttonToBasket.addEventListener('click', () => {
+      this.close();
+    });
+    super._setEventListeners();
   }
 }
 
 class PopupOrder extends Popup {
   constructor(popupSelector, config) {
     super(popupSelector, config);
-    this._image = this._popup.querySelector(config.popupBasketImage);
-    this._title = this._popup.querySelector(config.popupBasketTitle);
-    this._price = this._popup.querySelector(config.popupBasketPrice);
-    
-    this._form = this._popup.querySelector(config.popupForm);
-  }
-
-  open(data) {
-    const { title, price, img } = data;
-
-    this._image.src = img;
-    this._image.alt = `Фотография товара ${title}`;
-    this._title.textContent = title;
-    this._price.textContent = `${price.toLocaleString('ru')} руб.`;
-    super.open();
+    this._form = this._popup.querySelector(config.form);
   }
 
   _setEventListeners() {
