@@ -1,0 +1,43 @@
+.card {
+  display: flex;
+  gap: 25px;
+  min-height: 180px;
+}
+
+.card__image {
+  width: 200px;
+  margin: auto 0;
+}
+
+.card__title {
+  margin: 14px 0;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.card__price {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card__buttons-container {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card__button {
+  width: 100px;
+  height: 30px;
+}
+
+.card__button_order {
+  background-color: #cc2157;
+  color: white;
+}
+
+.card__button_basket {
+  background-color: #eaeaea;
+}

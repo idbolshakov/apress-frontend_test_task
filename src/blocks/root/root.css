@@ -1,0 +1,7 @@
+.root {
+  font-family: Roboto, Tahoma, Arial, sans-serif;
+  max-width: 1240px;
+  min-width: 850px;
+  margin: 0 auto;
+  padding: 30px 0;
+}

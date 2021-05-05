@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="index.css" />
   </head>
 
-  <body>
-    <main class="product-listing-wrapper">
+  <body class="root">
+    <main class="product">
+      <ul class="product__list"></ul>
     </main>
+    <template id="card-template">
+      <li class="product__item card">
+        <img src="#" alt="#" class="card__image" />
+        <div class="card__about">
+          <h2 class="card__title"></h2>
+          <p class="card__price"></p>
+        </div>
+        <div class="card__buttons-container">
+          <button class="button card__button card__button_order">
+            Заказать
+          </button>
+          <button class="button card__button card__button_basket">
+            В корзину
+          </button>
+        </div>
+      </li>
+    </template>
 
     <script src="api/products.js"></script>
   </body>
