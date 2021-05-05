@@ -10,6 +10,26 @@
       <ul class="product__list"></ul>
     </main>
 
+    <section class="popup popup_basket">
+      <div class="popup__overlay"></div>
+      <div class="popup__body">
+        <div class="popup__header">
+          <h3 class="popup__title">Вы добавили в корзину:</h3>
+        </div>
+        <div class="popup__basket-description">
+          <img class="popup__image" src="#" alt="#" />
+          <div class="popup__description-product">
+            <h4 class="popup__product-title"></h4>
+            <p class="popup__price"></p>
+          </div>
+          <button class="button popup__button popup__button_remove">×</button>
+        </div>
+        <button class="button popup__button popup__button_go-basket">
+          Перейти в корзину
+        </button>
+      </div>
+    </section>
+
     <template id="card-template">
       <li class="card">
         <img src="#" alt="#" class="card__image" />
@@ -27,9 +47,11 @@
         </div>
       </li>
     </template>
+
     <script src="./api/products.js"></script>
     <script src="./utils/constants.js"></script>
     <script src="./blocks/card/card.js"></script>
+    <script src="./blocks/popup/popup.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
