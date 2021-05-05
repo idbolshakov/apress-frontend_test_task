@@ -39,7 +39,6 @@ class Popup {
 
   _setEventListeners() {
     this._closeButton.addEventListener('click', () => this.close());
-    this._overlay.addEventListener('click', () => this.close());
   }
 }
 
@@ -47,6 +46,11 @@ class PopupBasket extends Popup {
   constructor(popupSelector, config) {
     super(popupSelector, config);
     this._buttonToBasket = this._popup.querySelector(config.toBasket);
+  }
+
+  open(data) {
+    setTimeout(() => this._popup.classList.remove(this._popupOpen), 5000);
+    super.open(data);
   }
 
   _setEventListeners() {
@@ -64,6 +68,7 @@ class PopupOrder extends Popup {
   }
 
   _setEventListeners() {
+    this._overlay.addEventListener('click', () => this.close());
     this._form.addEventListener('submit', (evt) => {
       evt.preventDefault();
       this.close();
