@@ -2,6 +2,7 @@ class Popup {
   constructor(popupSelector, config) {
     this._popup = document.querySelector(popupSelector);
     this._popupOpen = config.popupOpen;
+    this._closeButton = this._popup.querySelector(config.popupCloseButton);
     this._overlay = this._popup.querySelector(config.popupOverlay);
   }
 
@@ -26,6 +27,7 @@ class Popup {
   };
 
   _setEventListeners() {
+    this._closeButton.addEventListener('click', () => this.close());
     this._overlay.addEventListener('click', () => this.close());
   }
 }
@@ -46,5 +48,34 @@ class PopupBasket extends Popup {
     this._title.textContent = title;
     this._price.textContent = `${price.toLocaleString('ru')} руб.`;
     super.open();
+  }
+}
+
+class PopupOrder extends Popup {
+  constructor(popupSelector, config) {
+    super(popupSelector, config);
+    this._image = this._popup.querySelector(config.popupBasketImage);
+    this._title = this._popup.querySelector(config.popupBasketTitle);
+    this._price = this._popup.querySelector(config.popupBasketPrice);
+    
+    this._form = this._popup.querySelector(config.popupForm);
+  }
+
+  open(data) {
+    const { title, price, img } = data;
+
+    this._image.src = img;
+    this._image.alt = `Фотография товара ${title}`;
+    this._title.textContent = title;
+    this._price.textContent = `${price.toLocaleString('ru')} руб.`;
+    super.open();
+  }
+
+  _setEventListeners() {
+    this._form.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+      this.close();
+    });
+    super._setEventListeners();
   }
 }

@@ -1,5 +1,5 @@
 class Card {
-  constructor(cardSelector, card, handleBasketClick) {
+  constructor(cardSelector, card, handleBasketClick, handleOrderClick) {
     const { id, title, price, img } = card;
     this._data = card;
     this._cardSelector = cardSelector;
@@ -8,6 +8,7 @@ class Card {
     this._price = price;
     this._id = id;
     this._handleBasketClick = handleBasketClick;
+    this._handleOrderClick = handleOrderClick;
   }
 
   _getTemplate() {
@@ -19,6 +20,9 @@ class Card {
   }
 
   _setEventListeners() {
+    this._order.addEventListener('click', () => {
+      this._handleOrderClick(this._data);
+    });
     this._basket.addEventListener('click', () => {
       this._handleBasketClick(this._data);
     });
@@ -28,6 +32,7 @@ class Card {
     this._element = this._getTemplate();
 
     this._basket = this._element.querySelector('.card__button_basket');
+    this._order = this._element.querySelector('.card__button_order');
 
     this._productName = this._element.querySelector('.card__title');
     this._productName.textContent = this._title;

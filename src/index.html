@@ -13,20 +13,81 @@
     <section class="popup popup_basket">
       <div class="popup__overlay"></div>
       <div class="popup__body">
-        <div class="popup__header">
+        <div class="popup__header popup__header_basket">
           <h3 class="popup__title">Вы добавили в корзину:</h3>
         </div>
         <div class="popup__basket-description">
-          <img class="popup__image" src="#" alt="#" />
+          <img class="popup__image popup__image_basket" src="#" alt="#" />
           <div class="popup__description-product">
             <h4 class="popup__product-title"></h4>
-            <p class="popup__price"></p>
+            <p class="popup__price popup__price_basket"></p>
           </div>
-          <button class="button popup__button popup__button_remove">×</button>
+          <button
+            type="button"
+            aria-label="Закрыть"
+            class="button popup__button popup__button_close"
+          >
+            ×
+          </button>
         </div>
-        <button class="button popup__button popup__button_go-basket">
+        <button
+          type="button"
+          aria-label="Перейти в корзину"
+          class="button popup__button popup__button_go-basket"
+        >
           Перейти в корзину
         </button>
+      </div>
+    </section>
+
+    <section class="popup popup_order">
+      <div class="popup__overlay"></div>
+      <div class="popup__body popup__body_order">
+        <div class="popup__header popup__header_order">
+          <h4 class="popup__product-title popup__product-title_order"></h4>
+          <button
+            type="button"
+            aria-label="Закрыть"
+            class="button popup__button popup__button_close"
+          >
+            ×
+          </button>
+        </div>
+
+        <form class="popup__form">
+          <div class="popup__order-description">
+            <img class="popup__image popup__image_order" src="#" alt="#" />
+            <p class="popup__price popup__price_order"></p>
+          </div>
+
+          <div class="popup__comment">
+            <label for="comment" class="popup__input-label"
+              >Комментарий к заказу:</label
+            >
+            <textarea
+              id="comment"
+              class="popup__input popup__input_comment"
+            ></textarea>
+          </div>
+
+          <label for="input" class="popup__input-label popup__input-label_phone"
+            >Ваш телефон*:</label
+          >
+
+          <input
+            required
+            type="number"
+            id="input"
+            class="popup__input popup__input_phone"
+          />
+          <button
+            type="submit"
+            aria-label="Отправить заказ"
+            class="button popup__button popup__button_order"
+          >
+            Отправить
+          </button>
+        </form>
       </div>
     </section>
 
@@ -38,10 +99,18 @@
           <p class="card__price"></p>
         </div>
         <div class="card__buttons-container">
-          <button class="button card__button card__button_order">
+          <button
+            type="button"
+            aria-label="Заказать товар"
+            class="button card__button card__button_order"
+          >
             Заказать
           </button>
-          <button class="button card__button card__button_basket">
+          <button
+            type="button"
+            aria-label="Добавить товар в корзина"
+            class="button card__button card__button_basket"
+          >
             В корзину
           </button>
         </div>

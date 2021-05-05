@@ -41,15 +41,29 @@
   gap: 15px;
 }
 
-.popup__header {
-  background-color: #919191;
-  color: white;
+.popup__body_order {
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 5px solid #eeeeef;
   padding: 15px;
+  box-sizing: border-box;
+}
+
+.popup__header {
   box-sizing: border-box;
   position: relative;
 }
 
-.popup__header::before {
+.popup__header_basket {
+  background-color: #919191;
+  color: white;
+  padding: 15px;
+}
+
+.popup__header_basket::before {
   content: '';
   position: absolute;
   right: 20%;
@@ -58,6 +72,12 @@
   border-left: 10px solid #919191;
   transform: rotate(-90deg);
   -webkit-transform: rotate(-90deg);
+}
+
+.popup__header_order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .popup__title {
@@ -73,8 +93,15 @@
 }
 
 .popup__image {
-  width: 100px;
   height: 100%;
+}
+
+.popup__image_basket {
+  width: 100px;
+}
+
+.popup__image_order {
+  width: 200px;
 }
 
 .popup__description-product {
@@ -89,20 +116,35 @@
   margin: 0;
 }
 
+.popup__product-title_order {
+  font-weight: bold;
+  font-size: 18px;
+}
+
 .popup__price {
   margin: 0;
   margin-top: auto;
+}
+
+.popup__price {
   font-size: 16px;
+}
+
+.popup__price_order {
+  font-size: 20px;
+  color: #cc2157;
+  font-weight: bold;
 }
 
 .popup__button {
   background-color: transparent;
 }
 
-.popup__button_remove {
+.popup__button_close {
   color: #cc2157;
   margin-bottom: auto;
-  font-size: 20px;
+  font-size: 29px;
+  line-height: 1;
 }
 
 .popup__button_go-basket {
@@ -111,4 +153,62 @@
   height: 40px;
   margin: 0 0 15px 15px;
   color: white;
+}
+
+.popup__button_order {
+  background-color: #cc2157;
+  width: 150px;
+  height: 40px;
+  color: white;
+  grid-column: 2/3;
+  font-size: 14px;
+}
+
+.popup__comment-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
+.popup__order-description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.popup__comment {
+  display: flex;
+  gap: 15px;
+  border-left: 3px solid #cc2157;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.popup__form {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 2fr;
+}
+
+.popup__input-label {
+  font-size: 14px;
+  text-align: right;
+}
+
+.popup__input-label_phone {
+  align-self: center;
+}
+
+.popup__input {
+  background-color: #eeeeef;
+  border: none;
+}
+
+.popup__input_comment {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.popup__input_phone {
+  width: 150px;
+  height: 25px;
 }
