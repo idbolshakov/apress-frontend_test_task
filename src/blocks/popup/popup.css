@@ -17,12 +17,12 @@
 }
 
 .popup_basket {
-  width: 90%;
-  max-width: 1400px;
+  width: auto;
+  max-width: initial;
+  min-width: initial;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 10px;
+  left: 95%;
 }
 
 .popup__overlay {
