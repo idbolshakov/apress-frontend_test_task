@@ -19,15 +19,6 @@ class Card {
     return cardTemplate;
   }
 
-  _setEventListeners() {
-    this._order.addEventListener('click', () => {
-      this._handleOrderClick(this._data);
-    });
-    this._basket.addEventListener('click', () => {
-      this._handleBasketClick(this._data);
-    });
-  }
-
   generateCard() {
     this._element = this._getTemplate();
 
@@ -43,7 +34,6 @@ class Card {
     this._image = this._element.querySelector('.card__image');
     this._image.src = this._img;
     this._image.alt = `Фото ${this._title}`;
-    this._setEventListeners();
     return this._element;
   }
 }
