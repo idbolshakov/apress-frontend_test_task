@@ -1,0 +1,74 @@
+.catalog-container {
+   display: flex;
+   flex-direction: column;
+}
+
+.catalog-item {
+   display: flex;
+   padding: 30px;
+   box-shadow: var(--boxShadowItem);
+   box-sizing: border-box;
+   border-radius: var(--borderRadiusMiddle);
+   margin-bottom: 10px;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.catalog-item__img {
+   width: 25%;
+   height: 200px;
+}
+
+.catalog-item__block-text {
+   display: flex;
+   flex-direction: column;
+   width: 50%;
+}
+
+.catalog-title {
+   font-size: 18px;
+   line-height: 40px;
+}
+
+.catalog-price {
+   font-weight: 700;
+   font-size: 28px;
+   line-height: 50px;
+}
+
+.catalog-item__block-btn {
+   display: flex;
+   flex-direction: column;
+}
+
+.catalog-item__btn-buy {
+   background: var(--colorLigthPink);
+   border: none;
+   border-radius: var(--borderRadiusBtn);
+   color: var(--colorWhite);
+   width: 150px;
+   height: 40px;
+   font-size: 15px;
+   margin-bottom: 15px;
+   cursor: pointer;
+}
+
+.catalog-item__btn-buy:hover {
+   box-shadow: var(--boxShadowBtnHover);
+}
+
+.catalog-item__btn-add:hover {
+   box-shadow: var(--boxShadowBtnHover);
+}
+
+.catalog-item__btn-add {
+   margin-bottom: 15px;
+   background: var(--colorLigthGrey);
+   border: none;
+   border-radius: var(--borderRadiusBtn);
+   color: var(--colorWhite);
+   width: 150px;
+   height: 40px;
+   font-size: 15px;
+   cursor: pointer;
+}

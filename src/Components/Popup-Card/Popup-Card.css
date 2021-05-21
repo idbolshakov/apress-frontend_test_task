@@ -1,0 +1,78 @@
+.product-popup-card {
+   position: fixed;
+   box-shadow: var(--boxShadowPopup);
+   border-radius: var(--borderRadiusBtn);
+   background: var(--colorWhite);
+   top: 5%;
+   right: 10%;
+   z-index: 1;
+}
+
+.popup-card__container {
+   padding: 25px;
+   box-sizing: content-box;
+   width: 450px;
+}
+
+.popup-card__block {
+   display: flex;
+}
+
+.popup-card__item {
+   width: 450px;
+   top: 10%;
+   right: 10%;
+}
+
+.popup-card__title {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: var(--colorWhite);
+   background: var(--colorLigthGrey);
+   padding: 0;
+   height: 50px;
+}
+
+.popup-card__img {
+   width: 50%;
+}
+
+.popup-card__text {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.popup-card__subtitle {
+   font-weight: 700;
+   width: 200px;
+   margin-top: 20%;
+}
+
+.popup-card__price {
+   margin-top: 20px;
+}
+
+.popup-card__close {
+   color: var(--colorLigthPink);
+   cursor: pointer;
+   margin-top: 5%;
+}
+
+.popup-card__btn {
+   background: var(--colorLigthPink);
+   border: none;
+   border-radius: var(--borderRadiusBtn);
+   color: var(--colorWhite);
+   width: 150px;
+   height: 40px;
+   font-size: 15px;
+   margin-bottom: 15px;
+   cursor: pointer;
+   margin: 0 0 10px 25px;
+}
+
+.popup-card__btn:hover {
+   box-shadow: var(--boxShadowBtnHover);
+}

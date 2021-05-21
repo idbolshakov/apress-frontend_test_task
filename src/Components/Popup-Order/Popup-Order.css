@@ -1,0 +1,116 @@
+.product-popup-order {
+   position: fixed;
+   top: 20%;
+   display: block;
+   width: 73%;
+   border-radius: var(--borderRadiusMiddle);
+   box-shadow: var(--boxShadowPopup);
+   background: var(--colorWhite);
+}
+
+.product-order__container {
+   display: flex;
+   padding: 40px;
+}
+
+.product-order__item {
+   width: 100%;
+}
+
+.product-order__block-top {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.product-order__block-body {
+   display: flex;
+   justify-content: start;
+   align-items: center;
+}
+
+.product-order__title {
+   font-weight: 700;
+   font-size: 28px;
+   line-height: 50px;
+}
+
+.product-order__close {
+   color: var(--colorLigthPink);
+   cursor: pointer;
+}
+
+.product-order__block-left {
+   display: flex;
+   flex-direction: column;
+   /* width: 50%; */
+}
+
+.product-order__img {
+   width: 350px;
+}
+
+.product-order__price {
+   font-weight: 700;
+   font-size: 28px;
+   color: var(--colorLigthPink);
+}
+
+.product-order__line {
+   width: 5px;
+   height: 250px;
+   margin-left: 25px;
+   background: var(--colorLigthPink);
+}
+
+.product-order__block-comment {
+   display: flex;
+}
+
+.product-order__comment {
+   font-size: 18px;
+   font-weight: 700;
+   margin: 0 15px;
+}
+
+.product-order__textarea {
+   resize: none;
+   background: var(--colorLigthGrey);
+   color: var(--colorWhite);
+}
+
+.product-order__block-footer {
+   display: flex;
+   align-items: center;
+   height: 40px;
+   margin: 20px;
+}
+
+.product-order__phone {
+   font-size: 18px;
+}
+
+.product-order__input {
+   color: var(--colorWhite);
+   height: 25px;
+   margin-left: 25px;
+   background: var(--colorLigthGrey);
+   border: none;
+}
+
+.product-order__btn {
+   background: var(--colorLigthPink);
+   border: none;
+   border-radius: var(--borderRadiusBtn);
+   color: var(--colorWhite);
+   width: 150px;
+   height: 40px;
+   font-size: 15px;
+   margin-bottom: 15px;
+   cursor: pointer;
+   margin: 0 0 10px 25px;
+}
+
+.product-order__btn:hover {
+   box-shadow: var(--boxShadowBtnHover);
+}

@@ -1,0 +1,16 @@
+html {
+   --colorLigthPink: rgb(207, 52, 78);
+   --colorLigthGrey: rgb(173, 160, 162);
+   --colorWhite: #ffff;
+   --borderRadiusBtn: 5px;
+   --borderRadiusMiddle: 10px;
+   --boxShadowPopup: 0px 0px 15px rgba(0, 0, 0, 0.5);
+   --boxShadowItem: 5px 5px 15px rgba(0, 0, 0, 0.3);
+   --boxShadowBtnHover: 0px 0px 15px rgba(0, 0, 0, 1);
+}
+
+body {
+   display: block;
+   margin: 50px auto;
+   max-width: 70%;
+}
