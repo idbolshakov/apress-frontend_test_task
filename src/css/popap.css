@@ -35,7 +35,6 @@
 }
 
 ::-webkit-scrollbar-thumb {
-	/* background-color: #9194ff; */
 	border-radius: 9em;
 	box-shadow: inset 1px 1px 10px #f3faf7;
 	border: 1px solid #8c8c8c;
@@ -74,10 +73,10 @@
 
 .modal-block-show {
 	display: block;
-	animation: anim 0.5s ease;
+	animation: animModalShow 0.5s ease;
 }
 
-@keyframes anim {
+@keyframes animModalShow {
 	0% {
 		opacity: 0;
 	}

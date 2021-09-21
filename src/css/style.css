@@ -49,7 +49,7 @@ body {
 	width: 100%;
 }
 
-.btn {
+.product__button_order {
 	background: var(--colorGeneral);
 	border-radius: 5px;
 	width: fit-content;
@@ -58,7 +58,7 @@ body {
 	cursor: pointer;
 }
 
-.btn2 {
+.product__button_basket {
 	background: var(--inputBg);
 	border-radius: 5px;
 	width: fit-content;
