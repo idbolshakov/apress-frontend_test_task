@@ -4,7 +4,7 @@ const _modalWrapper = document.querySelector('.modal-wrapper')
 const _mainContent = document.querySelector('.js-body')
 const _basketCurrent = document.querySelector('.iconBasket__current')
 const _body = document.querySelector('body')
-
+const _productCatalog = '';
 
 const Api = {
     async products() {
@@ -16,7 +16,6 @@ const Api = {
     }
 }
 
-const _productCatalog = '';
 
 const getProducts = async () => {
     const products = await Api.products()
@@ -240,6 +239,7 @@ const getProducts = async () => {
     });
 }
 
+//если модальное окно корзины больше высобы рабочей области
 function heightModalBasket(modalBlock) {
     //получаем высоту экрана (рабочей области)
     const height = document.documentElement.clientHeight
