@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Test</title>
+    <link href="./vendors/normalize.css" rel="stylesheet" type="text/css" />
     <link href="./pages/index.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -15,8 +16,10 @@
     <template id="product-template">
       <li class="product">
         <img src="#" alt="" class="product__image" />
-        <h2 class="product__title"></h2>
-        <span class="product__price"></span>
+        <div class="product__info">
+          <h3 class="product__title"></h2>
+          <span class="product__price"></span>
+        </div>
         <div class="product__buttons">
           <button type="button" class="product__button product__button_order">Заказать</button>
           <button type="button" class="product__button product__button_cart">В корзину</button>
