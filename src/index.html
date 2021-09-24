@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+    <link href="./pages/index.css" rel="stylesheet" type="text/css" />
   </head>
-
   <body>
     <main class="product-listing-wrapper">
+      <section class="products">
+        <ul class="products__list"></ul>
+      </section>
     </main>
-
-    <script src="api/products.js"></script>
+    <template id="product-template">
+      <li class="product">
+        <img src="#" alt="" class="product__image" />
+        <h2 class="product__title"></h2>
+        <span class="product__price"></span>
+        <div class="product__buttons">
+          <button type="button" class="product__button product__button_order">Заказать</button>
+          <button type="button" class="product__button product__button_cart">В корзину</button>
+        </div>
+      </li>
+    </template>
+    <script src="./api/products.js"></script>
+    <script src="./components/Product.js"></script>
+    <script src="./components/Section.js"></script>
+    <script src="./pages/index.js"></script>
   </body>
 </html>
