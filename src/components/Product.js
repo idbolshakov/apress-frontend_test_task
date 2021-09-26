@@ -1,8 +1,10 @@
 class Product {
-  constructor({ data }, productSelector) {
+  constructor({ data, handleClickCartBtn, handleClickOrderBtn }, productSelector) {
     this._title = data.title;
     this._urlImg = data.img;
     this._price = data.price;
+    this._handleClickCartBtn = handleClickCartBtn;
+    this._handleClickOrderBtn = handleClickOrderBtn;
     this._productSelector = productSelector;
   }
 
@@ -46,10 +48,18 @@ class Product {
 
   _setEventListener(btnOrder, btnCart) {
     btnOrder.addEventListener("click", () => {
-      console.log("Оформить заказ!");
+      this._handleClickOrderBtn({
+        title: this._title,
+        price: this._priceConversion(),
+        image: this._urlImg,
+      });
     });
     btnCart.addEventListener("click", () => {
-      console.log("Товар добавлен!");
+      this._handleClickCartBtn({
+        title: this._title,
+        price: this._priceConversion(),
+        image: this._urlImg,
+      });
     });
   }
 }

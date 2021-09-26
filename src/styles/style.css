@@ -1,0 +1,25 @@
+:root {
+  --primary-fs: 16px;
+  --small-fs: 14px;
+  --big-fs: 20px;
+  --primary-color: rgb(59, 59, 59);
+  --color-black: rgb(0, 0, 0);
+  --color-white: #fff;
+  --color-pink: rgb(199, 21, 95);
+  --color-gray-light: rgb(226, 226, 226);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 50px 100px;
+  font-family: "Roboto", sans-serif;
+  font-size: var(--primary-fs);
+  color: var(--primary-color);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}

@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Test</title>
-    <link href="./vendors/normalize.css" rel="stylesheet" type="text/css" />
     <link href="./pages/index.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -13,11 +12,72 @@
         <ul class="products__list"></ul>
       </section>
     </main>
+    <div class="popup popup_type_cart">
+      <div class="popup__container popup__container_type_cart">
+        <p class="popup__title">Вы добавили в корзину:</p>
+        <div class="popup__product popup__product_type_cart">
+          <img src="#" alt="" class="popup__product-image popup__product-image_type_cart" />
+          <div class="popup__product-info">
+            <h2 class="popup__product-title"></h2>
+            <span class="popup__product-price popup__product-price_type_cart"></span>
+          </div>
+        </div>
+        <button type="button" class="popup__button popup__button_in-cart">Перейти в корзину</button>
+        <button type="button" class="popup__button-close popup__button-close_type_cart">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="rgb(199, 21, 95)"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="popup popup_type_order">
+      <div class="popup__container popup__container_type_order">
+        <h2 class="popup__product-title popup__product-title_type_order"></h2>
+        <div class="popup__container-wrapper">
+          <div class="popup__product popup__product_type_order">
+            <img src="#" alt="" class="popup__product-image popup__product-image_type_order" />
+            <span class="popup__product-price popup__product-price_type_order"></span>
+          </div>
+          <form class="popup__form form">
+            <label class="form__label form__label_type_comment">
+              <span>Комментарий к заказу:</span>
+              <textarea name="comment" class="form__comment"></textarea>
+            </label>
+            <label class="form__label form__label_type_phone">
+              <span>Ваш телефон *:</span>
+              <input name="phone" class="form__input form__input_type_phone" />
+            </label>
+            <button type="button" class="popup__button popup__button_submit">Отправить</button>
+          </form>
+        </div>
+        <button type="button" class="popup__button-close popup__button-close_type_order">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="rgb(172, 172, 172)"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
     <template id="product-template">
       <li class="product">
         <img src="#" alt="" class="product__image" />
         <div class="product__info">
-          <h3 class="product__title"></h2>
+          <h3 class="product__title"></h3>
           <span class="product__price"></span>
         </div>
         <div class="product__buttons">
@@ -29,6 +89,7 @@
     <script src="./api/products.js"></script>
     <script src="./components/Product.js"></script>
     <script src="./components/Section.js"></script>
+    <script src="./components/Popup.js"></script>
     <script src="./pages/index.js"></script>
   </body>
 </html>
