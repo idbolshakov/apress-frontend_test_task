@@ -1,0 +1,195 @@
+.wrap {
+    margin-left: 50px;
+    display: flex;
+    max-width: 900px;
+}
+
+.img {
+    flex : 1;
+    height: 200px;
+    background-size: contain;
+    background-repeat:no-repeat ;
+
+}
+
+.description {
+    flex:2;
+}
+
+.actions {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-evenly;
+
+}
+
+button {
+
+    /*display: block;*/
+    /*margin-top: 10px;*/
+    width: 80px;
+}
+
+.inOrder {
+    height: 40px;
+    background-color: crimson;
+    width: 120px;
+}
+.inCart {
+    height: 40px;
+    background-color: lightgrey;
+    width: 120px;
+}
+.wrapOrder {
+    height: 400px;
+    width: 800px;
+    position:fixed;
+    left: 100px;
+    top: 100px;
+    z-index: 1;
+    border: cadetblue 5px solid;
+    background-color: white;
+
+}
+
+
+
+.close {
+    width: 16px;
+    height: 16px;
+    padding-left: 2px;
+    padding-top: 0px;
+
+}
+
+.topOrder {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.mainInfo {
+    display: flex;
+    justify-content: space-between;
+
+}
+.vl {
+    width: 5px;
+    background-color: crimson;
+}
+
+.descriptionOrder {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.imgOrder {
+   height: 200px;
+    width: 200px;
+    background-size: contain;
+    background-repeat:no-repeat ;
+}
+
+
+
+.orderComment{
+    display: flex;
+
+}
+.textComment {
+    height: 100px;
+    width: 300px;
+    margin-right: 50px;
+    background-color: lightgrey;
+}
+.textOrderComment {
+    margin-top: 0px;
+    margin-right: 20px;
+}
+.textPriceOrder {
+    margin-top: 0px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+}
+.textPhone {
+    margin-left: 100px;
+}
+.inputPhoneNumber {
+    display: flex;
+    flex-direction: column;
+    margin-right: 350px;
+    padding-top: 20px;
+    justify-content: space-between;
+}
+.phoneNumber {
+    background-color: lightgrey;
+}
+.inCartTitle {
+    background-color: lightgrey;
+}
+
+.wrapCart {
+    height: 400px;
+    width: 400px;
+        z-index: 1;
+    position: fixed;
+    right: 50px;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: space-between;
+}
+
+.inCartTitle {
+    color:white;
+    height: 80px;
+    background-color: dimgrey;
+}
+
+.inCartTitle p {
+    margin-left: 20px;
+    font-size: large;
+}
+
+.inCartImg {
+    background-size: contain;
+    background-repeat:no-repeat ;
+    height: 200px;
+    width: 200px;
+}
+.inCartMain {
+    display: flex;
+
+}
+.inCartDescription {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+.inCartDescription p {
+    font: bold;
+}
+
+.goToCart {
+    height: 100px;
+
+}
+.goToCart button {
+    width: 230px;
+    height: 60px;
+    background: crimson;
+    color: white ;
+    margin-top: 20px;
+}
