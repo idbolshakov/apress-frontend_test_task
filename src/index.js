@@ -1,7 +1,26 @@
-function closeCard() {
+function createInvisiblebBackground() {
+    const el = document.createElement('div');
+    el.className = 'invisibleBackground';
+    document.body.appendChild(el)
+}
+function deleteInvisibleBackground(){
+    const el = document.querySelector('.invisibleBackground');
+    el.parentNode.removeChild(el)
+}
 
-    let order =  document.body.querySelector('.wrapOrder')
-    let cart = document.body.querySelector('.wrapCart')
+function check(e) {
+    if(e.target.className === 'inCart') {
+     inCart(e)
+        }
+    if(e.target.className === 'inOrder') {
+        inOrder(e)
+        }
+}
+
+function closeCard() {
+    deleteInvisibleBackground();
+    const order =  document.body.querySelector('.wrapOrder');
+    const cart = document.body.querySelector('.wrapCart');
 
     if (order){
        order.parentElement.removeChild(order)
@@ -13,33 +32,32 @@ function closeCard() {
 }
 
 function inCart(e) {
+   createInvisiblebBackground();
     const id = e.target.parentNode.parentNode.dataset.id;
     const purchase = API.products.filter((item)=>item.id == id)[0];
     const el = document.createElement('div');
     el.classList ="wrapCart";
     el.innerHTML = ` 
+           
             <button class="close" onClick = "closeCard()" style="position: absolute; right: 0px" >X</button>
             <div class="inCartTitle" > <p>Вы добавили в корзину</p></div>
             <div class = "inCartMain">
                 <div class="inCartImg" style=background-image:url(${purchase.img})></div>
                 <div class = "inCartDescription"><p> ${purchase.title}</p> \n <p> ${purchase.price}руб</p> </div>
-              
-            </div>
-            <div class = "goToCart"> <button> Перейти в корзину </button></div>
-        
-        
-    
-    `
+              </div>
+            <div class = "goToCart"> <button> Перейти в корзину </button></div> 
+                      `
        return document.body.appendChild(el)
 }
 
-
 function inOrder(e) {
+createInvisiblebBackground();
+
     const id = e.target.parentNode.parentNode.dataset.id;
     const purchase = API.products.filter((item)=>item.id == id)[0];
 
-    const el = document.createElement('div')
-    el.classList ="wrapOrder"
+    const el = document.createElement('div');
+    el.classList ="wrapOrder";
 
     el.innerHTML = `
 <div class = "topOrder">
@@ -67,9 +85,9 @@ function inOrder(e) {
         <button type="submit">Отправить</button>
         </div>
     </div>`
-
     return document.body.appendChild(el)
  }
+
 
 API.products.forEach(({id, img, price, title})=> {
        const el = document.createElement('div')
@@ -90,15 +108,9 @@ API.products.forEach(({id, img, price, title})=> {
 
 } )
 
-let inOrderButtons = document.querySelectorAll('.inOrder');
-let inCartButtons = document.querySelectorAll('.inCart');
+document.addEventListener('click', check)
 
-inOrderButtons.forEach((item)=> {
-    item.addEventListener('click', inOrder )
-})
-inCartButtons.forEach((item)=> {
-    item.addEventListener('click',inCart)
-})
+
 
 
 
