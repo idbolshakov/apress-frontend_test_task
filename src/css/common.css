@@ -8,3 +8,8 @@ html {
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
 }
+
+img {
+  pointer-events: none;
+  user-select: none;
+}

@@ -16,6 +16,7 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   margin-top: 50px;
+  padding: 25px 15px 25px 25px;
 }
 .product:hover {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
