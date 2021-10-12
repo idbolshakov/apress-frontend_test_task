@@ -6,6 +6,6 @@ const products = [];
 
 for(let i = 0; i < API.products.length; i++) {
   products[i] = new Product(API.products[i]);
-  products[i].addEventListeners(popupCart, popupOrder);
+  products[i].addEventListeners(popupOrder, popupCart);
   products[i].appendElement();
 }
