@@ -17,7 +17,7 @@
 
     <div class="popup popup__order">
       <div class="popup__container popup__container_order">
-        <header class="popup__header popup__title"></header>
+        <h2 class="popup__header popup__title"></h2>
         <button type="reset" class="popup__button_close">
           <img class="popup__image" src="assets/thumbnails/cross_grey.png">
         </button>
@@ -29,15 +29,17 @@
           </div>
 
           <div class="popup__form">
-
             <div class="popup__input popup__input_comment">
               <span class="popup__input_caption">
-                <b>Комментарий <br>к заказу:</b></span>
+                <b>Комментарий <br>к заказу:</b>
+              </span>
               <input type="textarea" name="comment" class="popup__input_textarea">
             </div>
 
             <div class="popup__input popup__input_number">
-              <span class="popup__input_caption popup__caption_number"><b>Ваш телефон*:</b></span>
+              <span class="popup__input_caption popup__caption_number">
+                <b>Ваш телефон*:</b>
+              </span>
               <input type="text" name="number" class="popup__input_text">
             </div>
             
@@ -49,7 +51,7 @@
     </div>
     <div class="popup popup__cart">
       <div class="popup__container popup__container_cart">
-        <header class="popup__header popup__header_cart">Вы добавили в корзину:</header>
+        <h2 class="popup__header popup__header_cart">Вы добавили в корзину:</h2>
 
         <main class="popup__body popup__body_cart">
           <div class="popup__info popup__info_cart">
@@ -74,9 +76,9 @@
 
     <template>
       <div class="product">
-        <img src="assets/images/3.jpg" alt="" class="product__image">
+        <img src="" alt="product image" class="product__image">
         <div class="product__info">
-          <span class="product__title">2 кресла и стол чайный - комплект "Виктория" (Эдем)</span>
+          <h2 class="product__title"></h2>
           <span class="product__price"></span> 
         </div>
         <div class="product__form">

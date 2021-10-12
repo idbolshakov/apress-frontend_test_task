@@ -34,6 +34,7 @@
 }
 .product__title {
   font-weight: 600;
+  font-size: 1rem;
 }
 .product__price {
   margin-top: 5px;
