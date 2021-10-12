@@ -18,15 +18,9 @@ class Popup {
     this.priceContainer.innerHTML = price;
     this.imageElement.src = imageSrc;
 
-    this.closeButton.addEventListener('click', () => {
-      this.close();
-    });
+    this.closeButton.addEventListener('click', this.closeButtonClickHandler.bind(this));
 
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape') {
-        this.close();
-      }
-    })
+    document.addEventListener('keydown', this.escButtonHandler.bind(this))
 
     this.popupElement.classList.add('popup_opened');
   }
@@ -34,20 +28,21 @@ class Popup {
   close() {
     this.popupElement.classList.remove('popup_opened');
 
-    this.closeButton.removeEventListener('click', () => {
-      this.close();
-    });
+    this.closeButton.removeEventListener('click', this.closeButtonClickHandler);
 
-    document.removeEventListener('keydown', (e) => {
-      if(e.key === 'Escape') {
-        this.close();
-      }
-    })
+    document.removeEventListener('keydown', this.escButtonHandler)
 
     if(this.inputNumber && this.inputComment) {
       this.inputNumber.value = '';
       this.inputComment.value = '';
     }
-
+  }
+  closeButtonClickHandler() {
+    this.close();
+  }
+  escButtonHandler(e) {
+    if(e.key === 'Escape') {
+      this.close();
+    }
   }
 }
