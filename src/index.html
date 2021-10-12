@@ -2,11 +2,87 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/product.css">
   </head>
 
   <body>
-    <main class="product-listing-wrapper">
+    <main class="product-listing__wrapper">
+      <div class="product-listing__container">
+      </div>
     </main>
+
+    <div class="popup popup__order">
+      <div class="popup__container popup__container_order">
+        <header class="popup__header popup__title"></header>
+        <button type="reset" class="popup__button_close">
+          <img class="popup__image" src="assets/thumbnails/cross_grey.png">
+        </button>
+
+        <main class="popup__body">
+          <div class="popup__info">
+            <img src="" class="popup__image">
+            <span class="popup__price popup__price_order"></span>
+          </div>
+
+          <div class="popup__form">
+
+            <div class="popup__input popup__input_comment">
+              <span class="popup__input_caption">
+                <b>Комментарий <br>к заказу:</b></span>
+              <input type="textarea" name="comment" class="popup__input_textarea">
+            </div>
+
+            <div class="popup__input popup__input_number">
+              <span class="popup__input_caption popup__caption_number"><b>Ваш телефон*:</b></span>
+              <input type="text" name="number" class="popup__input_text">
+            </div>
+            
+            <button type="submit" class="popup__button popup__button_order">Отправить</button>
+          </div>
+        </main>
+
+      </div>
+    </div>
+    <div class="popup popup__cart">
+      <div class="popup__container popup__container_cart">
+        <header class="popup__header popup__header_cart">Вы добавили в корзину:</header>
+
+        <main class="popup__body popup__body_cart">
+          <div class="popup__info popup__info_cart">
+            <img src="" class="popup__image popup__image_cart">
+            <p>
+              <span class="popup__title"></span>
+              <br>
+              <span class="popup__price popup__price_cart"></span>
+            </p>
+          </div>
+
+          <div class="popup__form_cart">
+            <button class="popup__button popup__button_cart">Перейти в корзину</button>
+          </div>
+
+          <button type="reset" class="popup__button_close popup__button_close_cart">
+            <img class="popup__image" src="assets/thumbnails/cross_red.png">
+          </button>
+        </main>
+      </div>
+    </div>
+
+    <template>
+      <div class="product">
+        <img src="assets/images/3.jpg" alt="" class="product__image">
+        <div class="product__info">
+          <span class="product__title">2 кресла и стол чайный - комплект "Виктория" (Эдем)</span>
+          <span class="product__price"></span> 
+        </div>
+        <div class="product__form">
+          <button class="product__button product__button_order">Заказать</button>
+          <button class="product__button product__button_cart">В корзину</button>
+        </div>
+      </div>
+    </template>
 
     <script src="api/products.js"></script>
   </body>
