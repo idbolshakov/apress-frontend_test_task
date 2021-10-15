@@ -3,11 +3,52 @@
   <head>
     <meta charset="UTF-8">
   </head>
-
+  <link rel="stylesheet" href="./styles/index.css">
   <body>
+    <div class="background-popup">
+      <div class="product-listing-wrapper-popup">
+        <div class="product-listing-wrapper-popup-title">
+          <span class="product-listing-wrapper-popup-title-span">2 Кресла стол чайник и жопа</span>
+          <span class="product-listing-wrapper-popup-title-close">&#10008;</span>
+        </div>
+        <div class="product-listing-wrapper-popup-block">
+          <div class="product-listing-wrapper-popup-block-img">
+            <img class="product-listing-wrapper-popup-block-img-img" src="./assets/images/10.jpg" alt="">
+            <span class="product-listing-wrapper-popup-block-img-price">60 000 руб.</span>
+          </div>
+          <div class="product-listing-wrapper-popup-block-comments">
+            <div class="product-listing-wrapper-popup-block-comments-line"></div>
+            <span>Комментарии <br> к заказу:</span>
+            <textarea></textarea>
+          </div>
+        </div>
+        <div class="product-listing-wrapper-popup-footer">
+          <form>
+            <div class="product-listing-wrapper-popup-footer-form">
+              <label for="phone">Ваш телефон <sup>*</sup>:</label>
+              <input id="phone" type="text">
+            </div>
+            <button>Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="product-listing-wrapper-basket">
+      <div class="product-listing-wrapper-basket-title">
+        <span>Вы добавили в корзину:</span>
+      </div>
+      <div class="items">
+        
+      </div>
+      <div class="product-listing-wrapper-basket-footer">
+        <button>Перейти в корзину</button>
+      </div>
+    </div>
     <main class="product-listing-wrapper">
     </main>
-
     <script src="api/products.js"></script>
+    <script src="./popup.js"></script>
+    <script src="./basket.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
