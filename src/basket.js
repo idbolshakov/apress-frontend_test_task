@@ -52,17 +52,4 @@ class Basket {
     this.renderList();
   }
 }
-{
-  /* <div class="product-listing-wrapper-basket-item">
-          <div class="product-listing-wrapper-basket-item-img">
-            <img src="./assets/images/4.jpg" alt="">
-          </div>
-          <div class="product-listing-wrapper-basket-item-price">
-            <span>2 кресла и стол чайный комплект - сегодня утром</span>
-            <p>62 320 руб.</p>
-          </div>
-          <div class="product-listing-wrapper-basket-item-delete">
-            &#10008;
-          </div>
-    </div> */
-}
+
