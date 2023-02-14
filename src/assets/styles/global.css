@@ -1,0 +1,189 @@
+@import url("./modal.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1001;
+  width: 100%;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  color: #333333;
+  font-size: 18px;
+  line-height: 1.2;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  background-color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  transition: 0.3s all ease-in-out;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-transform: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+ol li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  /*наследует цвет у родителя*/
+  display: inline-block;
+}
+
+main {
+  flex: 1 1 auto;
+  width: 100%;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+[class*="__container"] {
+  max-width: 1440px;
+  box-sizing: content-box;
+  margin: 0 auto;
+}
+
+
+.icon-basket {
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHdpZHRoPSI0OCI+PHBhdGggZD0iTTkuOCA0MnEtLjggMC0xLjQyNS0uNDc1VDcuNTUgNDAuM0wxLjkgMTkuOTVxLS4yLS43NS4yNzUtMS4zNS40NzUtLjYgMS4yNzUtLjZoMTBMMjIuNyA0LjVxLjI1LS4zLjU1LS40NzUuMy0uMTc1LjctLjE3NS40IDAgLjcuMTc1LjMuMTc1LjU1LjQ3NUwzNC40IDE4aDEwLjI1cS43NSAwIDEuMjI1LjYuNDc1LjYuMjc1IDEuMzVsLTUuNyAyMC4zNXEtLjIuNzUtLjgyNSAxLjIyNVEzOSA0MiAzOC4yIDQyWm0uNS0zaDI3LjRsNS4wNS0xOEg1LjNaTTI0IDMzcTEuMjUgMCAyLjEyNS0uODc1VDI3IDMwcTAtMS4yNS0uODc1LTIuMTI1VDI0IDI3cS0xLjI1IDAtMi4xMjUuODc1VDIxIDMwcTAgMS4yNS44NzUgMi4xMjVUMjQgMzNabS02LjktMTVoMTMuNjVsLTYuOC0xMFptLTYuOCAyMWgyNy40WiIvPjwvc3ZnPg==);
+  -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNDgiIHdpZHRoPSI0OCI+PHBhdGggZD0iTTkuOCA0MnEtLjggMC0xLjQyNS0uNDc1VDcuNTUgNDAuM0wxLjkgMTkuOTVxLS4yLS43NS4yNzUtMS4zNS40NzUtLjYgMS4yNzUtLjZoMTBMMjIuNyA0LjVxLjI1LS4zLjU1LS40NzUuMy0uMTc1LjctLjE3NS40IDAgLjcuMTc1LjMuMTc1LjU1LjQ3NUwzNC40IDE4aDEwLjI1cS43NSAwIDEuMjI1LjYuNDc1LjYuMjc1IDEuMzVsLTUuNyAyMC4zNXEtLjIuNzUtLjgyNSAxLjIyNVEzOSA0MiAzOC4yIDQyWm0uNS0zaDI3LjRsNS4wNS0xOEg1LjNaTTI0IDMzcTEuMjUgMCAyLjEyNS0uODc1VDI3IDMwcTAtMS4yNS0uODc1LTIuMTI1VDI0IDI3cS0xLjI1IDAtMi4xMjUuODc1VDIxIDMwcTAgMS4yNS44NzUgMi4xMjVUMjQgMzNabS02LjktMTVoMTMuNjVsLTYuOC0xMFptLTYuOCAyMWgyNy40WiIvPjwvc3ZnPg==);
+  mask-repeat: no-repeat;
+  -webkit-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  background-color: gray;
+  background-position: center;
+  -webkit-position: no-repeat;
+  -webkit-mask-position: center;
+  transition: all 0.3s ease;
+}
+
+.content {
+  margin-top: 120px;
+}
+
+.content__container {
+  width: 100%;
+}
+
+.button-cancel,
+.button-confirm {
+  padding: 7px 40px ;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.button-cancel {
+  background-color: darkgray;
+}
+.button-confirm {
+  color: #ffffff;
+  background-color: hotpink;
+}

@@ -1,0 +1,15 @@
+@import url("./basket.css");
+
+.header__container {
+  padding: 16px;
+}
+
+.list-nav {
+  display: flex;
+  padding: 8px 0;
+}
+
+.list-nav__item-busket {
+  margin: 0 0 0 auto;
+  position: relative;
+}

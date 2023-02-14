@@ -1,0 +1,64 @@
+.basket {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  min-width: 336px;
+  z-index: 2;
+  background: #fff;
+}
+
+.basket-header {
+  background-color: gray;
+  color: #fff;
+  padding: 21px;
+}
+
+.basket-body {
+  padding: 21px;
+}
+
+.basket.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.item-basket {
+  display: flex;
+}
+
+.item-basket__info-title {
+  font-size: 14px;
+}
+
+.item-basket__info-price {
+  margin-top: 8px;
+}
+
+.item-basket__actions {
+  margin-left: auto;
+}
+
+.item-basket__img-block {
+  width: 137px;
+  height: 137px;
+  flex: 0 0 137px;
+  margin-right: 14px;
+}
+
+.item-basket__img-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.item-basket__actions-remove {
+  color: red;
+  cursor: pointer;
+}
+
+.basket-link .button-confirm {
+  padding: 16px 39px;
+}
