@@ -1,0 +1,201 @@
+body {
+    color: #7e7e7f;
+}
+.order__item , .order__information{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.order__image {
+    width: 250px;
+    height: 250px;
+}
+
+.order__item {
+    width: 860px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+button, .modal__button {
+    width: 127px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.order__button, .modal__button, .popup__button {
+    color: #fff;
+    background: #cc2157;
+    margin-bottom: 25px;
+}
+.modal {
+    display: none;
+    position: relative;
+}
+.modal__close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    background: none;
+}
+.modal__tittle{ 
+    display: inline-block;
+    padding-bottom: 25px;
+}
+.order__tittle { 
+    font-size: 15px;
+    padding-bottom: 20px;
+}
+.order__price {
+    display: inline-block;
+    font-weight: bold;
+    padding-top: 5px;
+    font-size: 20px;
+}
+
+
+button { 
+    cursor: pointer;
+}
+
+.modal {
+    width: 860px; 
+    position: fixed;
+    top: 50%;
+    background: #Fff;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0; 
+    border: 2px solid #7e7e7f;
+
+    padding: 10px 20px;
+}
+.modal-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+textarea {
+    width: 400px; 
+    height: 113px;
+    background: #eeeeef;
+    border: none;
+}
+
+.modal__right {
+    border-left: 3px solid #cc2157;
+    height: 195px;
+}
+.modal__comment {
+    text-align: right;
+    margin-right: 20px;
+    padding-left: 20px;    
+    font-weight: bold;
+}
+
+
+.modal_image {
+    height: 130px;
+}
+.modal__form {
+    margin-left: 170px;
+    margin-top: 40px;
+}
+
+.modal__button {
+    margin-left: 140px;
+    margin-top: 30px;
+}
+.form__text {
+    margin-left: 32px;
+    background: #eeeeef;
+    border: none;
+    height: 25px;
+}
+
+.modal__price {
+    color: #cc2157;
+    font-weight: bold;
+    font-size: 20px;
+    display: inline-block;
+    padding-top: 22px;
+}
+
+ 
+
+.modal__tittle {
+    font-weight: bold;
+}
+
+
+.bucket {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+}
+
+.popup {
+    width: 400px;
+    position: relative;
+    background: #f7f7f7;
+    
+}
+.bucketlist {
+    padding: 0 10px; 
+
+}
+.toadded {
+    padding: 20px;
+     background: #7e7e7f;;
+     color: #fff;
+     margin-bottom: 30px;
+}
+
+.popup__image {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+.popup__button {
+    width: 200px;
+    margin-top: 10px;
+    padding: 20px 0px;
+    height: auto;
+}
+
+.popup__ordername {
+    font-weight: bold;
+}
+
+.popup-flex {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.popup__close {
+    position: absolute;
+    right: 0px;
+    top: -20px;
+    background: none;
+    width: 30px;
+    height: 30px;
+    color: #cc2157;
+    
+}
+.popup__information {
+    margin-left: 20px;
+
+}
+
+.popup__orderprice {
+    display: inline-block;
+    margin-top: 10px;
+}

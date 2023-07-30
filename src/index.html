@@ -1,13 +1,70 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ 
 
-  <body>
-    <main class="product-listing-wrapper">
-    </main>
+  <div class="orderlist">
+    <div class="products-container">
+      <!-- Контейнер, в который будем добавлять карточки продуктов -->
+  </div>
+ 
+  </div>
 
-    <script src="api/products.js"></script>
-  </body>
+
+  <div class="modal">
+    <span class="modal__tittle">rew</span>
+    <button class="modal__close">X</button>
+    <div class="modal-flex">
+      <div class="modal__left">
+        <img src="assets/images/4.jpg" alt="" class="modal_image"> <br>
+
+        <span class="modal__price">32 350 руб.</span>
+      </div>
+      <div class="modal__right">
+        <div class="modal-flex">
+          <span class="modal__comment">Комментарий <br> к заказу: </span>
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="modal__form">
+      <form class="form-flex">
+        <label for="">Ваш телефон*:</label>
+        <input type="text" name="" class="form__text" id=""> <br>
+        <input type="submit" value="Отправить" class="modal__button">
+      </form>
+    </div>
+  </div> 
+  <div class="bucket">
+    <div class="popup"> 
+      <div class="toadded">
+        <span>Вы добавили в корзину: </span>
+      </div>
+      <div class="bucketlist">
+        <div class="popup-flex">
+          <button class="popup__close">X</button>
+          <img src="images/4.jpg" alt="" class="popup__image">
+          <div class="popup__information">
+            <span class="popup__ordername">
+              52243722
+            </span> <br>
+            <span class="popup__orderprice">62 350 Руб.</span> <br> 
+          </div>
+        </div>
+    
+        <button class="popup__button">Перейти в корзину</button>
+      </div>
+    </div>
+  </div>
+  <script src="api/products.js" type="module"></script>
+  
+  <script src="script.js" type="module"></script>
+  
+</body>
 </html>

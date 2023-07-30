@@ -1,4 +1,4 @@
-var API = {
+export  var API = {
   products: [
     {
       "id": 1, 
