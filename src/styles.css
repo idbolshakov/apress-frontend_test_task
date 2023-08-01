@@ -1,0 +1,180 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.productsCard {
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.text {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 200px;
+}
+
+.price {
+  font-size: 25px;
+  font-weight: bold;
+  color: #5a5959;
+}
+
+.card__img {
+  width: 250px;
+}
+
+.productsCard img {
+  float: none;
+  display: block;
+}
+
+.btn {
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  background-color: rgb(221, 53, 53);
+  color: #fff;
+  font-size: 18px;
+}
+
+.basket {
+  background-color: rgb(240, 233, 233);
+  color: #7c7c7c;
+}
+/* Карточки продуктов конец */
+
+/* Попап начало */
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999998;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+
+.modal__box {
+  position: relative;
+  max-width: 800px;
+  padding: 45px;
+  z-index: 1;
+  margin: 30px 15px;
+  background-color: white;
+  border: 3px solid gray;
+}
+
+#modal-img {
+  width: 250px;
+}
+
+.close-modal-btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 5px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.modal.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Попап конец */
+
+/* Корзина */
+
+.basket-popap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999998;
+  display: grid;
+  align-items: start;
+  justify-content: right;
+  overflow-y: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+.basket__box {
+  position: relative;
+  max-width: 350px;
+  min-height: 300px;
+  z-index: 1;
+  margin: 30px 15px;
+  background-color: white;
+  border: 3px solid gray;
+}
+
+.basket-popap.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.basket-body {
+}
+
+.basket-name {
+  display: block;
+  height: 50px;
+  background-color: #7c7c7c;
+  color: #fff;
+}
+
+#basket-img {
+  width: 200px;
+}
+.close-basket-btn {
+  background-color: red;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 5px;
+  position: absolute;
+  top: 100px;
+  right: 8px;
+}
+.basket-price {
+  margin: 10px;
+}
+#basket-btn {
+  margin: 10px;
+  box-sizing: border-box;
+  width: fit-content;
+  padding: 15px;
+}

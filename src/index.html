@@ -1,13 +1,54 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Testovoe</title>
   </head>
-
   <body>
-    <main class="product-listing-wrapper">
-    </main>
-
-    <script src="api/products.js"></script>
+    <div>
+      <!-- Верстка модального окна -->
+      <div class="modal">
+        <div id="modal-box" class="modal__box">
+          <button class="close-modal-btn">
+            <img
+              src="/assets/icons/4115230-cancel-close-cross-delete_114048.png"
+              alt="Крестик"
+            />
+          </button>
+          <h2 id="modal-title" class="modal-title" data-h2="1"></h2>
+          <img id="modal-img" class="modal-img" alt="ФОТО МЕБЕЛИ" />
+          <p><b id="modal-price"></b></p>
+          <form>
+            <p><b>Комментарий к заказу:</b></p>
+            <p><textarea rows="10" cols="80" name="comment"></textarea></p>
+            <p><b>Ваш телефон:</b><input type="number" /></p>
+            <p><input class="btn" type="submit" /></p>
+          </form>
+        </div>
+      </div>
+      <!-- Верстка корзины -->
+      <div class="basket-popap">
+        <div class="basket__box">
+          <h2 class="basket-name">Вы добавили в корзину:</h2>
+          <div class="basket-body">
+            <button class="close-basket-btn">
+              <img
+                src="/assets/icons/4115230-cancel-close-cross-delete_114048.png"
+                alt="Крестик"
+              />
+            </button>
+            <h3 id="basket-title" class="basket-title"></h3>
+            <img id="basket-img" class="basket-img" src="" alt="ФОТО МЕБЕЛИ" />
+            <p id="basket-price" class="basket-price"></p>
+          </div>
+          <button type="submit" id="basket-btn" class="btn">
+            Перейти в корзину
+          </button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./scripts.js"></script>
   </body>
 </html>
